@@ -3,7 +3,9 @@
 
 echo "Building guide"
 mkdir -p public
+cp scalars/*.png public
 spec-md --githubSource "https://github.com/graphql/graphql-scalars/blame/main/" scalars/guide.md > public/guide.html
+
 
 # Create the index file
 echo "Rebuilding: / (index)"
