@@ -1,5 +1,7 @@
 The goal of this repo is to contain GraphQL custom scalar specifications.
 
+# THIS A WORK IN PROGRESS
+
 # Contributing to this repo
 
 This repository is managed by EasyCLA. Project participants must sign the free
