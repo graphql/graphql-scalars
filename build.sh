@@ -55,12 +55,13 @@ HTML="<html>
 
 echo "building specs"
 for AUTHOR in scalars/contributed/*; do
+  mkdir public/"$(basename $AUTHOR)"
   for FILE in "$AUTHOR"/*; do
-    spec-md --githubSource "https://github.com/graphql/graphql-scalars/blame/main/" "$FILE" > public/"$(basename $AUTHOR)"-"$(basename $FILE)".html
+    spec-md --githubSource "https://github.com/graphql/graphql-scalars/blame/main/" "$FILE" > public/"$(basename $AUTHOR)"/"$(basename $FILE .md)".html
     HTML="$HTML
       <tr>
         <td>$(basename $AUTHOR)</td>
-        <td><a href=\"$(basename $AUTHOR)-$(basename $FILE).html\">$(basename ${FILE%.*})</a></td>
+        <td><a href=\"$(basename $AUTHOR)/$(basename $FILE .md).html\">$(basename ${FILE%.*})</a></td>
       </tr>"
     true
   done
