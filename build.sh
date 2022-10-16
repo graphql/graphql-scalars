@@ -45,10 +45,13 @@ HTML="<html>
   </head>
   <body>
   This is a list of custom Scalars specifications, contributed by the community.
-  They are hosted on scalars.graphql.org
-    <h1>GraphQL Custom Scalars specs</h1>
-    <a href=\"guide.html\">Scalars implementation guide</a></td>
-    <table>"
+    <h1><a href=\"guide.html\">Scalars implementation guide</a></td></h1>
+    <h1>List of Scalars specs</h1>
+    <table>
+     <tr>
+        <th>Author</th>
+        <th>Spec name</th>
+      </tr>"
 
 echo "building specs"
 for AUTHOR in scalars/contributed/*; do
