@@ -1,53 +1,56 @@
 # GraphQL Scalars implementation guide
 
-[Scalar types](https://spec.graphql.org/draft/#sec-Scalars) are primitive types in the GraphQL type system, usable for input
-and output.
+[Scalar types](https://spec.graphql.org/draft/#sec-Scalars) are primitive types
+in the GraphQL type system, usable for input and output.
 
 ## Serialization and Deserialization
 
 A GraphQL request often requires a deserialization step before being executed
-and a serialization of the execution result. By far the most frequently used example is a GraphQL request sent over HTTP POST via JSON. The request body is a
+and a serialization of the execution result. By far the most frequently used
+example is a GraphQL request sent over HTTP POST via JSON. The request body is a
 JSON document that needs to be deserialized, containing the GraphQL document and
 optionally an operation name and variables.
 
-The execution result then is serialized to JSON for the HTTP response. As JSON serialization is the most common GraphQL serialization format, 
-the spec defines how a GraphQL result should be [serialized to JSON](https://spec.graphql.org/draft/#sec-JSON-Serialization).
+The execution result then is serialized to JSON for the HTTP response. As JSON
+serialization is the most common GraphQL serialization format, the spec defines
+how a GraphQL result should be
+[serialized to JSON](https://spec.graphql.org/draft/#sec-JSON-Serialization).
 
 For the discussion of Scalars, the deserialization of the variables is
-significant. Deserialized variable values are one of the possible inputs a Scalar
-implementation needs to handle.
+significant. Deserialized variable values are one of the possible inputs a
+Scalar implementation needs to handle.
 
 ## Observability
 
-A Scalar implementation can be observed in three different ways: 
+A Scalar implementation can be observed in three different ways:
 
-1. the serialized result of an execution in JSON 
+1. the serialized result of an execution in JSON
 2. the variables JSON input
-3. the GraphQL literal input 
+3. the GraphQL literal input
 
 We must choose a serialization format in order to observe a Scalar
-implementation, as inside the GraphQL type system a Scalar is a primitive and how
-a Scalar is represented in an execution result before serialization is entirely
-up to the specific engine. 
+implementation, as inside the GraphQL type system a Scalar is a primitive and
+how a Scalar is represented in an execution result before serialization is
+entirely up to the specific engine.
 
-We are choosing to only consider JSON. Although JSON is only one possible serialization
-format, it is by far the most important and the only format defined by the GraphQL
-spec. 
+We are choosing to only consider JSON. Although JSON is only one possible
+serialization format, it is by far the most important and the only format
+defined by the GraphQL spec.
 
 ## Coercion
 
 The process of ensuring that a value is valid and optionally converting it into
-a more appropriate representation is called "coercion". For Scalars, 
-there are two different coercion mechanisms: "Result Coercion" and "Input
-Coercion". Both are implemented as a set of functions taking an input and
-producing an output. Result coercion consists of one function and input coercion
-of up to three different ones. 
+a more appropriate representation is called "coercion". For Scalars, there are
+two different coercion mechanisms: "Result Coercion" and "Input Coercion". Both
+are implemented as a set of functions taking an input and producing an output.
+Result coercion consists of one function and input coercion of up to three
+different ones.
 
-Note: The input of a function is not
-to be confused with "Input Coercion". The phrase "Input Coercion" refers to the overall
-mechanism, but the word "input" describes what is consumed by a function.
+Note: The input of a function is not to be confused with "Input Coercion". The
+phrase "Input Coercion" refers to the overall mechanism, but the word "input"
+describes what is consumed by a function.
 
-## Result Coercion values and function 
+## Result Coercion values and function
 
 Result coercion is implemented as a single function per Scalar type called
 `coerceResult`. The input is a "raw result value" and the output a "coerced
@@ -62,12 +65,12 @@ produce.
 ## Input Coercion values
 
 Input coercion deals with three different kind of values: literal, raw input
-value and coerced input value. 
+value and coerced input value.
 
 ### Literal
 
-A literal is an element of the GraphQL language representing a fixed value.
-For example, `"foo"` is a `StringValue` literal and `123` is an `IntValue` literal.
+A literal is an element of the GraphQL language representing a fixed value. For
+example, `"foo"` is a `StringValue` literal and `123` is an `IntValue` literal.
 
 Literals are used for:
 
@@ -87,7 +90,8 @@ A raw input value is one of the following:
 
 3. programmatically provided default value for an input object field
 
-4. programmatically provided value for a directive argument in schema definition language (SDL)
+4. programmatically provided value for a directive argument in schema definition
+   language (SDL)
 
 Not every GraphQL implementation may offer a programmatic way to provide these
 input values, but every implementation needs to allow for raw input values
@@ -141,7 +145,8 @@ input value can be represented as literal.
 
 **Rule 2:** for every valid input for `parseLiteral` there must at least one
 corresponding input for `parseRawInputValue` resulting in the same coerced input
-value. This rule ensures that all literals can be represented as raw input value.
+value. This rule ensures that all literals can be represented as raw input
+value.
 
 **Rule 3:** every output for `rawInputVariableToLiteral` must be a valid input
 for `parseLiteral`.
@@ -152,14 +157,15 @@ value and vice versa.
 ## Coercion guidelines
 
 While the specifics of the all coercion methods are implementation specific, as
-a general rule they should only coerce a value when no information is lost and raise
-an error otherwise.
+a general rule they should only coerce a value when no information is lost and
+raise an error otherwise.
 
 Additionally, the input coercion should be liberal in what it accepts, while the
-result coercion should be much more restricted and never produce different JSON values
-for logically identical values. For example a `MyLocalDate` scalar could accept the literals `"01-10-2022"` and
-`"01102022"` as input for the first of October 2022, but the result coercion
-should always return one of the possible representations.
+result coercion should be much more restricted and never produce different JSON
+values for logically identical values. For example a `MyLocalDate` scalar could
+accept the literals `"01-10-2022"` and `"01102022"` as input for the first of
+October 2022, but the result coercion should always return one of the possible
+representations.
 
 ## Scalars specification outline
 
