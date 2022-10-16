@@ -19,3 +19,17 @@ You can find
 [detailed information here](https://github.com/graphql/graphql-wg/tree/main/membership).
 If you have issues, please email
 [operations@graphql.org](mailto:operations@graphql.org).
+
+## Local development setup
+
+Install dependencies with
+```shell
+npm install
+```
+
+Then build with
+```shell
+npm run build
+```
+
+Navigate to the `/public` folder to view the built files.
