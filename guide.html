@@ -14,7 +14,7 @@
 <header>
 <h1>GraphQL Scalars implementation guide</h1>
 <section id="intro">
-<p data-source="scalars/guide.md#L3-L4">Scalar types are primitive types in the GraphQL type system, usable for input and output.</p>
+<p data-source="scalars/guide.md#L3-L4"><a href="https://spec.graphql.org/draft/#sec-Scalars">Scalar types</a> are primitive types in the GraphQL type system, usable for input and output.</p>
 </section>
 <nav class="spec-toc">
 <div class="title">Contents</div>
@@ -22,118 +22,139 @@
 <li><a href="#sec-Serialization-and-Deserialization"><span class="spec-secid">1</span>Serialization and Deserialization</a></li>
 <li><a href="#sec-Observability"><span class="spec-secid">2</span>Observability</a></li>
 <li><a href="#sec-Coercion"><span class="spec-secid">3</span>Coercion</a></li>
-<li><a href="#sec-Result-Coercion"><span class="spec-secid">4</span>Result Coercion</a></li>
-<li><a href="#sec-Input-Coercion"><span class="spec-secid">5</span>Input Coercion</a><ol>
+<li><a href="#sec-Result-Coercion-values-and-function"><span class="spec-secid">4</span>Result Coercion values and function</a></li>
+<li><a href="#sec-Input-Coercion-values"><span class="spec-secid">5</span>Input Coercion values</a><ol>
 <li><a href="#sec-Literal"><span class="spec-secid">5.1</span>Literal</a></li>
 <li><a href="#sec-Raw-Input-Value"><span class="spec-secid">5.2</span>Raw Input Value</a></li>
 <li><a href="#sec-Coerced-Input-Value"><span class="spec-secid">5.3</span>Coerced Input Value</a></li>
-<li><a href="#sec-Parse-Literal"><span class="spec-secid">5.4</span>Parse Literal</a></li>
-<li><a href="#sec-Parse-Raw-Input-Value"><span class="spec-secid">5.5</span>Parse Raw Input Value</a></li>
-<li><a href="#sec-Raw-Input-Value-to-Literal"><span class="spec-secid">5.6</span>Raw Input Value to Literal</a></li>
-<li><a href="#sec-Implementation-rules"><span class="spec-secid">5.7</span>Implementation rules</a></li>
-<li><a href="#sec-Coercion-guidelines"><span class="spec-secid">5.8</span>Coercion guidelines</a></li>
 </ol>
 </li>
-<li><a href="#sec-Scalars-specification-outline"><span class="spec-secid">6</span>Scalars specification outline</a></li>
+<li><a href="#sec-Input-coercion-functions"><span class="spec-secid">6</span>Input coercion functions</a><ol>
+<li><a href="#sec-Parse-Literal"><span class="spec-secid">6.1</span>Parse Literal</a></li>
+<li><a href="#sec-Parse-Raw-Input-Value"><span class="spec-secid">6.2</span>Parse Raw Input Value</a></li>
+<li><a href="#sec-Raw-Input-Value-to-Literal"><span class="spec-secid">6.3</span>Raw Input Value to Literal</a></li>
+<li><a href="#sec-Implementation-rules"><span class="spec-secid">6.4</span>Implementation rules</a></li>
+</ol>
+</li>
+<li><a href="#sec-Coercion-guidelines"><span class="spec-secid">7</span>Coercion guidelines</a></li>
+<li><a href="#sec-Scalars-specification-outline"><span class="spec-secid">8</span>Scalars specification outline</a><ol>
+<li><a href="#sec-Example-implementation-outline"><span class="spec-secid">8.1</span>Example implementation outline</a></li>
+</ol>
+</li>
 </ol>
 </nav>
 </header>
 <section id="sec-Serialization-and-Deserialization" secid="1">
 <h1 data-source="scalars/guide.md#L6"><span class="spec-secid" title="link to this section"><a href="#sec-Serialization-and-Deserialization">1</a></span>Serialization and Deserialization</h1>
-<p data-source="scalars/guide.md#L8-L12">A GraphQL request often requires a deserialization step before being executed and and a serialization of the execution result. By far the most important example is a GraphQL request send over HTTP POST via JSON. The request body is a JSON document that needs to be deserialized containing the GraphQL document and optionally an operation name and variables.</p>
-<p data-source="scalars/guide.md#L14-L17">The execution result then is serialized to JSON for the HTTP response. Because this JSON serialization is the most important GraphQL serialization the spec clearly defines how a GraphQL result should be serialized to JSON. See the <a href="https://spec.graphql.org/draft/#sec-Serialization-Format">GraphQL spec</a>.</p>
-<p data-source="scalars/guide.md#L19-L21">For the discussion of Scalars the deserialization of the variables is significant. Deserialized variable values are one of the possible input a Scalar implementation need to handle.</p>
+<p data-source="scalars/guide.md#L8-L12">A GraphQL request often requires a deserialization step before being executed and a serialization of the execution result. By far the most frequently used example is a GraphQL request sent over HTTP POST via JSON. The request body is a JSON document that needs to be deserialized, containing the GraphQL document and optionally an operation name and variables.</p>
+<p data-source="scalars/guide.md#L14-L17">The execution result then is serialized to JSON for the HTTP response. As JSON serialization is the most common GraphQL serialization format, the spec defines how a GraphQL result should be <a href="https://spec.graphql.org/draft/#sec-JSON-Serialization">serialized to JSON</a>.</p>
+<p data-source="scalars/guide.md#L19-L21">For the discussion of Scalars, the deserialization of the variables is significant. Deserialized variable values are one of the possible inputs a Scalar implementation needs to handle.</p>
 </section>
 <section id="sec-Observability" secid="2">
 <h1 data-source="scalars/guide.md#L23"><span class="spec-secid" title="link to this section"><a href="#sec-Observability">2</a></span>Observability</h1>
-<p data-source="scalars/guide.md#L25-L32">A Scalar implementation can be observed in three different ways: the serialized result of an execution in JSON, the variables JSON input and the GraphQL literal input. We need to choose a serialization format in order to observe a Scalar implementation as inside the GraphQL type system a Scalar is a primitive and how a Scalar is represented in an execution result before serialization is entirely up to the specific engine. In theory JSON is just one possible serialization format, but it is by far the most important and also the only format the GraphQL spec clearly defines, therefore we choose to only consider JSON here.</p>
+<p data-source="scalars/guide.md#L25">A Scalar implementation can be observed in three different ways:</p>
+<ol>
+<li data-source="scalars/guide.md#L27">the serialized result of an execution in JSON</li>
+<li data-source="scalars/guide.md#L28">the variables JSON input</li>
+<li data-source="scalars/guide.md#L29">the GraphQL literal input</li>
+</ol>
+<p data-source="scalars/guide.md#L31-L34">We must choose a serialization format in order to observe a Scalar implementation, as inside the GraphQL type system a Scalar is a primitive and how a Scalar is represented in an execution result before serialization is entirely up to the specific engine.</p>
+<p data-source="scalars/guide.md#L36-L38">We are choosing to only consider JSON. Although JSON is only one possible serialization format, it is by far the most important and the only format defined by the GraphQL spec.</p>
 </section>
 <section id="sec-Coercion" secid="3">
-<h1 data-source="scalars/guide.md#L34"><span class="spec-secid" title="link to this section"><a href="#sec-Coercion">3</a></span>Coercion</h1>
-<p data-source="scalars/guide.md#L36-L43">The process of ensuring that a value is valid and optionally converting it into a more appropriate representation is called &ldquo;coercion&rdquo;. For Scalars specifically there are two different coercion mechanism: &ldquo;Result Coercion&rdquo; and &ldquo;Input Coercion&rdquo;. Both are implemented as a set of functions taking an input and producing an output. Result coercion consists of one function and input coercion of up to three different ones. (Warning naming: the input of a function is not to be confused with &ldquo;Input Coercion&rdquo;. Input coercion refers to the overall mechanism, but just &ldquo;input&rdquo; is what is consumed by a function.)</p>
+<h1 data-source="scalars/guide.md#L40"><span class="spec-secid" title="link to this section"><a href="#sec-Coercion">3</a></span>Coercion</h1>
+<p data-source="scalars/guide.md#L42-L47">The process of ensuring that a value is valid and optionally converting it into a more appropriate representation is called &ldquo;coercion&rdquo;. For Scalars, there are two different coercion mechanisms: &ldquo;Result Coercion&rdquo; and &ldquo;Input Coercion&rdquo;. Both are implemented as a set of functions taking an input and producing an output. Result coercion consists of one function and input coercion of up to three different ones.</p>
+<div id="note-10d3c" class="spec-note" data-source="scalars/guide.md#L49-L51">
+<a href="#note-10d3c">Note</a>
+The input of a function is not to be confused with &ldquo;Input Coercion&rdquo;. The phrase &ldquo;Input Coercion&rdquo; refers to the overall mechanism, but the word &ldquo;input&rdquo; describes what is consumed by a function.</div>
 </section>
-<section id="sec-Result-Coercion" secid="4">
-<h1 data-source="scalars/guide.md#L45"><span class="spec-secid" title="link to this section"><a href="#sec-Result-Coercion">4</a></span>Result Coercion</h1>
-<p data-source="scalars/guide.md#L47-L50">Result coercion is implemented as a single function per Scalar type called &ldquo;coerceResult&rdquo;. The input is a &ldquo;raw result value&rdquo; and the output a &ldquo;coerced result value&rdquo;. The raw result value is the output of a previously invoked resolver function, which is then coerced by invoking <code>coerceResult</code>.</p>
-<p data-source="scalars/guide.md#L52-L55">The coerced result value is a leaf value of the overall execution result which is serialized to JSON. The serialized JSON value can be observed and a GraphQL Scalar spec must clearly define the possible JSON values that a Scalar type can produce.</p>
+<section id="sec-Result-Coercion-values-and-function" secid="4">
+<h1 data-source="scalars/guide.md#L53"><span class="spec-secid" title="link to this section"><a href="#sec-Result-Coercion-values-and-function">4</a></span>Result Coercion values and function</h1>
+<p data-source="scalars/guide.md#L55-L58">Result coercion is implemented as a single function per Scalar type called <code>coerceResult</code>. The input is a &ldquo;raw result value&rdquo; and the output a &ldquo;coerced result value&rdquo;. The raw result value is the output of a previously invoked resolver function, which is then coerced by invoking <code>coerceResult</code>.</p>
+<p data-source="scalars/guide.md#L60-L63">The coerced result value is a leaf value of the overall execution result, which is serialized to JSON. The serialized JSON value can be observed and a GraphQL Scalar spec must clearly define the possible JSON values that a Scalar type can produce.</p>
 </section>
-<section id="sec-Input-Coercion" secid="5">
-<h1 data-source="scalars/guide.md#L57"><span class="spec-secid" title="link to this section"><a href="#sec-Input-Coercion">5</a></span>Input Coercion</h1>
-<p data-source="scalars/guide.md#L59-L60">Input coercion deals with three different kind of values: literal, raw input value and coerced input value.</p>
-<p data-source="scalars/guide.md#L62"><img src="input-coercion.png" alt="Input Coercion"/></p>
+<section id="sec-Input-Coercion-values" secid="5">
+<h1 data-source="scalars/guide.md#L65"><span class="spec-secid" title="link to this section"><a href="#sec-Input-Coercion-values">5</a></span>Input Coercion values</h1>
+<p data-source="scalars/guide.md#L67-L68">Input coercion deals with three different kind of values: literal, raw input value and coerced input value.</p>
 <section id="sec-Literal" secid="5.1">
-<h2 data-source="scalars/guide.md#L64"><span class="spec-secid" title="link to this section"><a href="#sec-Literal">5.1</a></span>Literal</h2>
-<p data-source="scalars/guide.md#L66-L68">A literal is an element of the GraphQL language representing a fixed value. Examples are <code>"foo"</code> or <code>123</code> for <code>StringValue</code> and <code>IntValue</code> literals. Literals are used for:</p>
+<h2 data-source="scalars/guide.md#L70"><span class="spec-secid" title="link to this section"><a href="#sec-Literal">5.1</a></span>Literal</h2>
+<p data-source="scalars/guide.md#L72-L73">A literal is an element of the GraphQL language representing a fixed value. For example, <code>"foo"</code> is a <code>StringValue</code> literal and <code>123</code> is an <code>IntValue</code> literal.</p>
+<p data-source="scalars/guide.md#L75">Literals are used for:</p>
 <ol>
-<li data-source="scalars/guide.md#L70">argument values for fields or directives</li>
-<li data-source="scalars/guide.md#L72">argument default values for fields or directives</li>
-<li data-source="scalars/guide.md#L74">variable default values of a GraphQL operation</li>
+<li data-source="scalars/guide.md#L77">argument values for fields or directives</li>
+<li data-source="scalars/guide.md#L79">argument default values for fields or directives</li>
+<li data-source="scalars/guide.md#L81">variable default values of a GraphQL operation</li>
 </ol>
 </section>
 <section id="sec-Raw-Input-Value" secid="5.2">
-<h2 data-source="scalars/guide.md#L76"><span class="spec-secid" title="link to this section"><a href="#sec-Raw-Input-Value">5.2</a></span>Raw Input Value</h2>
-<p data-source="scalars/guide.md#L78">A raw input value is one of the following:</p>
+<h2 data-source="scalars/guide.md#L83"><span class="spec-secid" title="link to this section"><a href="#sec-Raw-Input-Value">5.2</a></span>Raw Input Value</h2>
+<p data-source="scalars/guide.md#L85">A raw input value is one of the following:</p>
 <ol>
-<li data-source="scalars/guide.md#L80">variable value for a GraphQL request</li>
-<li data-source="scalars/guide.md#L82">programmatically provided default argument value for a field or directive</li>
-<li data-source="scalars/guide.md#L84">programmatically provided default value for an input object field</li>
-<li data-source="scalars/guide.md#L86">programmatically provided value for a directive argument in a SDL</li>
+<li data-source="scalars/guide.md#L87">variable value for a GraphQL request</li>
+<li data-source="scalars/guide.md#L89">programmatically provided default argument value for a field or directive</li>
+<li data-source="scalars/guide.md#L91">programmatically provided default value for an input object field</li>
+<li data-source="scalars/guide.md#L93-L94">programmatically provided value for a directive argument in schema definition language (SDL)</li>
 </ol>
-<p data-source="scalars/guide.md#L88-L90">Not every GraphQL implementation may offer a programmatic way to provide these input values, but every implementation needs to allow for raw input values offered as variable values for a request.</p>
-<p data-source="scalars/guide.md#L92-L94">The details of a raw input value is implementation specific. In JavaScript it might a Map, in Java it might a object. The only way to observe a raw input value is to through the not yet deserialized JSON value.</p>
+<p data-source="scalars/guide.md#L96-L98">Not every GraphQL implementation may offer a programmatic way to provide these input values, but every implementation needs to allow for raw input values offered as variable values for a request.</p>
+<p data-source="scalars/guide.md#L100-L102">The details of a raw input value is implementation specific. In JavaScript, it might a Map, in Java it might be an object. The only way to observe a raw input value is through the JSON value before deserialization.</p>
 </section>
 <section id="sec-Coerced-Input-Value" secid="5.3">
-<h2 data-source="scalars/guide.md#L96"><span class="spec-secid" title="link to this section"><a href="#sec-Coerced-Input-Value">5.3</a></span>Coerced Input Value</h2>
-<p data-source="scalars/guide.md#L98-L99">A coerced input value is a value that is ready for consumption by a resolver. It is coerced either from a literal or raw input value.</p>
-<p data-source="scalars/guide.md#L101-L102">Input coercion is implemented as a set of three functions <code>parseLiteral</code>, <code>parseRawInputValue</code> and <code>rawInputValueToLiteral</code>.</p>
-<p data-source="scalars/guide.md#L104"><img src="Coercion.png" alt="image"/></p>
-</section>
-<section id="sec-Parse-Literal" secid="5.4">
-<h2 data-source="scalars/guide.md#L106"><span class="spec-secid" title="link to this section"><a href="#sec-Parse-Literal">5.4</a></span>Parse Literal</h2>
-<p data-source="scalars/guide.md#L108-L109"><code>parseLiteral</code> takes a GraphQL language literal as input and produces a coerced input value as output.</p>
-</section>
-<section id="sec-Parse-Raw-Input-Value" secid="5.5">
-<h2 data-source="scalars/guide.md#L111"><span class="spec-secid" title="link to this section"><a href="#sec-Parse-Raw-Input-Value">5.5</a></span>Parse Raw Input Value</h2>
-<p data-source="scalars/guide.md#L113-L114"><code>parseRawInputValue</code> takes a &ldquo;raw input value&rdquo; as input and produces a &ldquo;coerced input value&rdquo;.</p>
-</section>
-<section id="sec-Raw-Input-Value-to-Literal" secid="5.6">
-<h2 data-source="scalars/guide.md#L116"><span class="spec-secid" title="link to this section"><a href="#sec-Raw-Input-Value-to-Literal">5.6</a></span>Raw Input Value to Literal</h2>
-<p data-source="scalars/guide.md#L118-L119"><code>rawInputValueToLiteral</code> takes a raw input value as input and produces a GraphQL language literal.</p>
-<p data-source="scalars/guide.md#L121-L124">It is used when a literal representation of a raw input value is required. For example the default value for a field in an Introspection response. If a GraphQL implementation doesn&rsquo;t provide a way to define a raw input value programmatically, <code>rawInputValueToLiteral</code> might not be needed.</p>
-</section>
-<section id="sec-Implementation-rules" secid="5.7">
-<h2 data-source="scalars/guide.md#L126"><span class="spec-secid" title="link to this section"><a href="#sec-Implementation-rules">5.7</a></span>Implementation rules</h2>
-<p data-source="scalars/guide.md#L128">These three functions need to be compatible to each other, specifically:</p>
-<p data-source="scalars/guide.md#L130-L132"><strong>Rule 1:</strong> every valid input for <code>parseRawInputValue</code> must be a valid input for <code>rawInputVariableToLiteral</code> and vice versa. This rule ensure that every raw input value can be represented as literal.</p>
-<p data-source="scalars/guide.md#L134-L136"><strong>Rule 2:</strong> for every valid input for <code>parseLiteral</code> there must at least one corresponding input for <code>parseRawInputValue</code> resulting in the same coerced input value. This rule ensure that all literals can be represented as raw input value.</p>
-<p data-source="scalars/guide.md#L138-L139"><strong>Rule 3:</strong> every output for <code>rawInputVariableToLiteral</code> must be a valid input for <code>parseLiteral</code></p>
-<p data-source="scalars/guide.md#L141-L142">These rules ensure that for every valid literal we have at least one valid raw value and vice versa.</p>
-</section>
-<section id="sec-Coercion-guidelines" secid="5.8">
-<h2 data-source="scalars/guide.md#L144"><span class="spec-secid" title="link to this section"><a href="#sec-Coercion-guidelines">5.8</a></span>Coercion guidelines</h2>
-<p data-source="scalars/guide.md#L146-L148">While the specifics of the all coercion methods are implementation specific, as a general they should only coerce a value when no information is lost and raise an error otherwise.</p>
-<p data-source="scalars/guide.md#L150-L152">Additionally, the input coercion should be liberal in what it accepts, while the result coercion should be much more restricted and never different JSON values for the same logically value.</p>
-<p data-source="scalars/guide.md#L154-L156">For example a <code>MyLocalDate</code> scalar could accept the literals <code>"01-10-2022"</code> and <code>"01102022"</code> as input for the first of October 2022, but the result coercion should always return one of the possible representations.</p>
+<h2 data-source="scalars/guide.md#L104"><span class="spec-secid" title="link to this section"><a href="#sec-Coerced-Input-Value">5.3</a></span>Coerced Input Value</h2>
+<p data-source="scalars/guide.md#L106-L107">A coerced input value is a value that is ready for consumption by a resolver. It is coerced either from a literal or raw input value.</p>
 </section>
 </section>
-<section id="sec-Scalars-specification-outline" secid="6">
-<h1 data-source="scalars/guide.md#L158"><span class="spec-secid" title="link to this section"><a href="#sec-Scalars-specification-outline">6</a></span>Scalars specification outline</h1>
-<p data-source="scalars/guide.md#L160-L161">A Scalars specification must clearly define the three observable aspects of a Scalar:</p>
+<section id="sec-Input-coercion-functions" secid="6">
+<h1 data-source="scalars/guide.md#L109"><span class="spec-secid" title="link to this section"><a href="#sec-Input-coercion-functions">6</a></span>Input coercion functions</h1>
+<p data-source="scalars/guide.md#L111-L112">Input coercion is implemented as a set of three functions <code>parseLiteral</code>, <code>parseRawInputValue</code> and <code>rawInputValueToLiteral</code>.</p>
+<p data-source="scalars/guide.md#L114">The diagram illustrates the relationships between input coercion values.</p>
+<p data-source="scalars/guide.md#L116"><img src="input-coercion.png" alt="Input Coercion"/></p>
+<section id="sec-Parse-Literal" secid="6.1">
+<h2 data-source="scalars/guide.md#L118"><span class="spec-secid" title="link to this section"><a href="#sec-Parse-Literal">6.1</a></span>Parse Literal</h2>
+<p data-source="scalars/guide.md#L120-L121"><code>parseLiteral</code> takes a GraphQL language literal as input and produces a coerced input value as output.</p>
+</section>
+<section id="sec-Parse-Raw-Input-Value" secid="6.2">
+<h2 data-source="scalars/guide.md#L123"><span class="spec-secid" title="link to this section"><a href="#sec-Parse-Raw-Input-Value">6.2</a></span>Parse Raw Input Value</h2>
+<p data-source="scalars/guide.md#L125-L126"><code>parseRawInputValue</code> takes a &ldquo;raw input value&rdquo; as input and produces a &ldquo;coerced input value&rdquo;.</p>
+</section>
+<section id="sec-Raw-Input-Value-to-Literal" secid="6.3">
+<h2 data-source="scalars/guide.md#L128"><span class="spec-secid" title="link to this section"><a href="#sec-Raw-Input-Value-to-Literal">6.3</a></span>Raw Input Value to Literal</h2>
+<p data-source="scalars/guide.md#L130-L131"><code>rawInputValueToLiteral</code> takes a raw input value as input and produces a GraphQL language literal.</p>
+<p data-source="scalars/guide.md#L133-L136">It is used when a literal representation of a raw input value is required. For example the default value for a field in an Introspection response. If a GraphQL implementation doesn&rsquo;t provide a way to define a raw input value programmatically, <code>rawInputValueToLiteral</code> might not be needed.</p>
+</section>
+<section id="sec-Implementation-rules" secid="6.4">
+<h2 data-source="scalars/guide.md#L138"><span class="spec-secid" title="link to this section"><a href="#sec-Implementation-rules">6.4</a></span>Implementation rules</h2>
+<p data-source="scalars/guide.md#L140">These three functions need to be compatible to each other, specifically:</p>
+<p data-source="scalars/guide.md#L142-L144"><strong>Rule 1:</strong> every valid input for <code>parseRawInputValue</code> must be a valid input for <code>rawInputVariableToLiteral</code> and vice versa. This rule ensures that every raw input value can be represented as literal.</p>
+<p data-source="scalars/guide.md#L146-L149"><strong>Rule 2:</strong> for every valid input for <code>parseLiteral</code> there must at least one corresponding input for <code>parseRawInputValue</code> resulting in the same coerced input value. This rule ensures that all literals can be represented as raw input value.</p>
+<p data-source="scalars/guide.md#L151-L152"><strong>Rule 3:</strong> every output for <code>rawInputVariableToLiteral</code> must be a valid input for <code>parseLiteral</code>.</p>
+<p data-source="scalars/guide.md#L154-L155">These rules ensure that for every valid literal we have at least one valid raw value and vice versa.</p>
+</section>
+</section>
+<section id="sec-Coercion-guidelines" secid="7">
+<h1 data-source="scalars/guide.md#L157"><span class="spec-secid" title="link to this section"><a href="#sec-Coercion-guidelines">7</a></span>Coercion guidelines</h1>
+<p data-source="scalars/guide.md#L159-L161">While the specifics of the all coercion methods are implementation specific, as a general rule they should only coerce a value when no information is lost and raise an error otherwise.</p>
+<p data-source="scalars/guide.md#L163-L168">Additionally, the input coercion should be liberal in what it accepts, while the result coercion should be much more restricted and never produce different JSON values for logically identical values. For example a <code>MyLocalDate</code> scalar could accept the literals <code>"01-10-2022"</code> and <code>"01102022"</code> as input for the first of October 2022, but the result coercion should always return one of the possible representations.</p>
+</section>
+<section id="sec-Scalars-specification-outline" secid="8">
+<h1 data-source="scalars/guide.md#L170"><span class="spec-secid" title="link to this section"><a href="#sec-Scalars-specification-outline">8</a></span>Scalars specification outline</h1>
+<p data-source="scalars/guide.md#L172-L173">A Scalars specification must clearly define the three observable aspects of a Scalar:</p>
 <ol>
-<li data-source="scalars/guide.md#L163">The possible JSON result values</li>
-<li data-source="scalars/guide.md#L165">The possible literal input values</li>
-<li data-source="scalars/guide.md#L167">The possible JSON variable input values</li>
+<li data-source="scalars/guide.md#L175">The possible JSON result values</li>
+<li data-source="scalars/guide.md#L177">The possible literal input values</li>
+<li data-source="scalars/guide.md#L179">The possible JSON variable input values</li>
 </ol>
-<p data-source="scalars/guide.md#L169-L170">Additionally, it is recommended to give positive and negative examples for each of the values.</p>
-<p data-source="scalars/guide.md#L172">It is also recommend to give a recommended Scalar name.</p>
-<p data-source="scalars/guide.md#L174">Possible content outline:</p>
+<p data-source="scalars/guide.md#L181">Provide positive and negative examples for each of the values.</p>
+<p data-source="scalars/guide.md#L183">The Scalar should also be given a name.</p>
+<section id="sec-Example-implementation-outline" secid="8.1">
+<h2 data-source="scalars/guide.md#L185"><span class="spec-secid" title="link to this section"><a href="#sec-Example-implementation-outline">8.1</a></span>Example implementation outline</h2>
 <ul>
-<li data-source="scalars/guide.md#L176">Background</li>
-<li data-source="scalars/guide.md#L178">Naming recommendation</li>
-<li data-source="scalars/guide.md#L180">Valid values</li>
-<li data-source="scalars/guide.md#L182">Examples</li>
-<li data-source="scalars/guide.md#L184-L185">References </li>
+<li data-source="scalars/guide.md#L187">Background</li>
+<li data-source="scalars/guide.md#L189">Naming recommendation</li>
+<li data-source="scalars/guide.md#L191">Valid values</li>
+<li data-source="scalars/guide.md#L193">Examples</li>
+<li data-source="scalars/guide.md#L195-L196">References </li>
 </ul>
+</section>
 </section>
 </article>
 <footer>
@@ -145,21 +166,31 @@ Written in <a href="https://spec-md.com" target="_blank">Spec Markdown</a>.</foo
 <ol><li id="_sidebar_1"><a href="#sec-Serialization-and-Deserialization"><span class="spec-secid">1</span>Serialization and Deserialization</a></li>
 <li id="_sidebar_2"><a href="#sec-Observability"><span class="spec-secid">2</span>Observability</a></li>
 <li id="_sidebar_3"><a href="#sec-Coercion"><span class="spec-secid">3</span>Coercion</a></li>
-<li id="_sidebar_4"><a href="#sec-Result-Coercion"><span class="spec-secid">4</span>Result Coercion</a></li>
-<li id="_sidebar_5"><a href="#sec-Input-Coercion"><span class="spec-secid">5</span>Input Coercion</a>
+<li id="_sidebar_4"><a href="#sec-Result-Coercion-values-and-function"><span class="spec-secid">4</span>Result Coercion values and function</a></li>
+<li id="_sidebar_5"><a href="#sec-Input-Coercion-values"><span class="spec-secid">5</span>Input Coercion values</a>
 <input hidden class="toggle" type="checkbox" id="_toggle_5" /><label for="_toggle_5"></label>
 <ol>
 <li id="_sidebar_5.1"><a href="#sec-Literal"><span class="spec-secid">5.1</span>Literal</a></li>
 <li id="_sidebar_5.2"><a href="#sec-Raw-Input-Value"><span class="spec-secid">5.2</span>Raw Input Value</a></li>
 <li id="_sidebar_5.3"><a href="#sec-Coerced-Input-Value"><span class="spec-secid">5.3</span>Coerced Input Value</a></li>
-<li id="_sidebar_5.4"><a href="#sec-Parse-Literal"><span class="spec-secid">5.4</span>Parse Literal</a></li>
-<li id="_sidebar_5.5"><a href="#sec-Parse-Raw-Input-Value"><span class="spec-secid">5.5</span>Parse Raw Input Value</a></li>
-<li id="_sidebar_5.6"><a href="#sec-Raw-Input-Value-to-Literal"><span class="spec-secid">5.6</span>Raw Input Value to Literal</a></li>
-<li id="_sidebar_5.7"><a href="#sec-Implementation-rules"><span class="spec-secid">5.7</span>Implementation rules</a></li>
-<li id="_sidebar_5.8"><a href="#sec-Coercion-guidelines"><span class="spec-secid">5.8</span>Coercion guidelines</a></li>
 </ol>
 </li>
-<li id="_sidebar_6"><a href="#sec-Scalars-specification-outline"><span class="spec-secid">6</span>Scalars specification outline</a></li>
+<li id="_sidebar_6"><a href="#sec-Input-coercion-functions"><span class="spec-secid">6</span>Input coercion functions</a>
+<input hidden class="toggle" type="checkbox" id="_toggle_6" /><label for="_toggle_6"></label>
+<ol>
+<li id="_sidebar_6.1"><a href="#sec-Parse-Literal"><span class="spec-secid">6.1</span>Parse Literal</a></li>
+<li id="_sidebar_6.2"><a href="#sec-Parse-Raw-Input-Value"><span class="spec-secid">6.2</span>Parse Raw Input Value</a></li>
+<li id="_sidebar_6.3"><a href="#sec-Raw-Input-Value-to-Literal"><span class="spec-secid">6.3</span>Raw Input Value to Literal</a></li>
+<li id="_sidebar_6.4"><a href="#sec-Implementation-rules"><span class="spec-secid">6.4</span>Implementation rules</a></li>
+</ol>
+</li>
+<li id="_sidebar_7"><a href="#sec-Coercion-guidelines"><span class="spec-secid">7</span>Coercion guidelines</a></li>
+<li id="_sidebar_8"><a href="#sec-Scalars-specification-outline"><span class="spec-secid">8</span>Scalars specification outline</a>
+<input hidden class="toggle" type="checkbox" id="_toggle_8" /><label for="_toggle_8"></label>
+<ol>
+<li id="_sidebar_8.1"><a href="#sec-Example-implementation-outline"><span class="spec-secid">8.1</span>Example implementation outline</a></li>
+</ol>
+</li>
 </ol>
 </div>
 </div>
