@@ -5,7 +5,7 @@ The goal of this repo is to contain GraphQL custom scalar specifications.
 # Contributing to this repo
 
 This repository is managed by EasyCLA. Project participants must sign the free
-([GraphQL Specification Membership agreement](https://preview-spec-membership.graphql.org)
+[GraphQL Specification Membership agreement](https://preview-spec-membership.graphql.org)
 before making a contribution. You only need to do this one time, and it can be
 signed by
 [individual contributors](http://individual-spec-membership.graphql.org/) or
@@ -23,11 +23,13 @@ If you have issues, please email
 ## Local development setup
 
 Install dependencies with
+
 ```shell
 npm install
 ```
 
 Then build with
+
 ```shell
 npm run build
 ```
