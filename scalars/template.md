@@ -2,13 +2,14 @@
 
 # Custom Scalar spec \<name\>
 
-"Author:\<github user name\>  "
+"Author:\<github user name\> "
 
 "Date: \<the date of the first publication\>"
 
 # Overview
 
-Provide an overview what this Scalar does and provide any background information.
+Provide an overview what this Scalar does and provide any background
+information.
 
 # Name
 
@@ -16,7 +17,7 @@ Talk about the name and list alternatives, if available.
 
 # Result JSON spec
 
-Define which JSON values can be returned. 
+Define which JSON values can be returned.
 
 # Literal Input spec
 

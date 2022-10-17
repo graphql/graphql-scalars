@@ -1,10 +1,10 @@
 # This template is meant to be copied and modified
 
-# This template is meant for Scalars which are based on the build in String Scalar 
+# This template is meant for Scalars which are based on the build in String Scalar
 
 # Custom Scalar spec \<name\>
 
-"Author:\<github user name\>  "
+"Author:\<github user name\> "
 
 "Date: \<the date of the first publication\>"
 
@@ -22,10 +22,9 @@ Define which Strings can be returned.
 
 # Input spec
 
-Define which String values are accepted as input as GraphQL Literal and as JSON raw input.
+Define which String values are accepted as input as GraphQL Literal and as JSON
+raw input.
 
 # References
 
 List external references, other background information etc.
-
-
