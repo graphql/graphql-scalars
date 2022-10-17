@@ -6,6 +6,10 @@ mkdir -p public
 cp scalars/*.png public
 spec-md --githubSource "https://github.com/graphql/graphql-scalars/blame/main/" scalars/guide.md > public/guide.html
 
+spec-md --githubSource "https://github.com/graphql/graphql-scalars/blame/main/" scalars/template.md > public/template.html
+spec-md --githubSource "https://github.com/graphql/graphql-scalars/blame/main/" scalars/template-string.md > public/template-string.html
+spec-md --githubSource "https://github.com/graphql/graphql-scalars/blame/main/" scalars/new-scalar.md > public/new-scalar.html
+
 
 # Create the index file
 echo "Rebuilding: / (index)"
@@ -48,6 +52,9 @@ HTML="<html>
 
     <p>Specifications in this directory can be referred to with the <a href=\"https://spec.graphql.org/draft/#sec--specifiedBy\">@specifiedBy directive</a>, a built-in directive for documenting the behavior of custom scalar types.</p>
     <h1><a href=\"guide.html\">Scalars implementation guide</a></td></h1>
+    <h1><a href=\"new-scalar.html\">How to contribute a new Scalar</a></td></h1>
+    <h1><a href=\"template.html\">Template for new Scalars</a></td></h1>
+    <h1><a href=\"template-string.html\">Simplified template for new String based Scalars</a></td></h1>
     <h1>Custom Scalar specifications</h1>
     <table>
      <tr>
@@ -57,7 +64,7 @@ HTML="<html>
 
 echo "building specs"
 for AUTHOR in scalars/contributed/*; do
-  mkdir public/"$(basename $AUTHOR)"
+  mkdir -p public/"$(basename $AUTHOR)"
   for FILE in "$AUTHOR"/*; do
     spec-md --githubSource "https://github.com/graphql/graphql-scalars/blame/main/" "$FILE" > public/"$(basename $AUTHOR)"/"$(basename $FILE .md)".html
     HTML="$HTML
