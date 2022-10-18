@@ -58,15 +58,16 @@ In order to simplify this Scalar this convention is dropped and an offset of
 
 **Examples**
 
-The general format is described in [RFC3339 Section 5.6](https://www.rfc-editor.org/rfc/rfc3339#section-5.6).
+The general format is described in
+[RFC3339 Section 5.6](https://www.rfc-editor.org/rfc/rfc3339#section-5.6).
 
-Under consideration of the additional restrictions and explanations above here are valid 
-and invalid examples:
+Under consideration of the additional restrictions and explanations above here
+are valid and invalid examples:
 
 These are valid examples:
 
 | String                          | Explanation                                        |
-|---------------------------------|----------------------------------------------------|
+| ------------------------------- | -------------------------------------------------- |
 | `2011-08-30T13:22:53.108Z`      | A DateTime with UTC offset (+00:00).               |
 | `2011-08-30T13:22:53.108+00:00` | A DateTime with `+00:00` which is the same as UTC. |
 | `2011-08-30t13:22:53.108z`      | The `z` and `t` may be lower case.                 |
@@ -76,7 +77,7 @@ These are valid examples:
 These are invalid examples:
 
 | String                             | Why is it invalid                                                  |
-|------------------------------------|--------------------------------------------------------------------|
+| ---------------------------------- | ------------------------------------------------------------------ |
 | `2011-08-30T13:22:53.108-03`       | The minutes of the offset are missing.                             |
 | `2011-08-30T13:22:53.108912Z`      | Too many digits for fractions of a second. Exactly three expected. |
 | `2011-08-30T24:22:53Z`             | Fractions of a second are missing.                                 |
@@ -88,7 +89,6 @@ These are invalid examples:
 | `2010-02-30T21:22:53.108Z`         | 30th of February is not a valid date                               |
 | `2010-02-11T21:22:53.108Z+25:11`   | 25 is not a valid hour for offset                                  |
 
-
 # Name
 
 The recommended name is `DateTime`. An alternative is `OffsetDateTime`.
@@ -96,12 +96,12 @@ The recommended name is `DateTime`. An alternative is `OffsetDateTime`.
 `Date` is potentially misleading as this Scalar also specifies a time, not only
 a date.
 
-# Result 
+# Result
 
 The result must be formatted as described above with the further requirement
-that UTC offset should be always be represented as `Z` and not `+00:00` and the two divider characters
-`T` and `Z` are always uppercase, never `t` or `z`.
+that UTC offset should be always be represented as `Z` and not `+00:00` and the
+two divider characters `T` and `Z` are always uppercase, never `t` or `z`.
 
-# Input 
+# Input
 
-As Input every valid String as described above must be accepted. 
+As Input every valid String as described above must be accepted.
