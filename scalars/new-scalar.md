@@ -60,3 +60,9 @@ Your specification will then be reviewed by a maintainer of the
 maintainers will verify that the template has been completed, but note that the
 correctness of the specification is the responsibility of the original
 contributor.
+
+## Immutable specifications
+
+A new version of a Custom Scalar specification should have a new scalar name, such as `<scalar-name>2`, `<scalar-name>3`, and so on. Specification semantics must not change, as they are publicly available reference documents.
+
+We will permit small edits which do not change specification semantics, such as typo fixes.
