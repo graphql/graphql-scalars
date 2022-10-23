@@ -63,9 +63,9 @@ contributor.
 
 ## Immutable specifications
 
-A new version of a Custom Scalar specification should have a new scalar name,
-such as `<scalar-name>2`, `<scalar-name>3`, and so on. Specification semantics
-must not change, as specifications are publicly available reference documents.
+Specification semantics must not change, as specifications are publicly
+available reference documents. We will permit small edits which do not change
+specification semantics, such as typo fixes.
 
-We will permit small edits which do not change specification semantics, such as
-typo fixes.
+A new version of a Custom Scalar specification should have a new scalar name,
+such as `<scalar-name>2`, `<scalar-name>3`, and so on.
