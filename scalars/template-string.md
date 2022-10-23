@@ -4,7 +4,7 @@
 
 "Author:\<github user name\> "
 
-"Date: \<the date of the first publication\>"
+"Date: \<the date of the first publication in YYYY.MM.DD format\>"
 
 # Overview
 
