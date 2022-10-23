@@ -54,7 +54,7 @@ If you have issues, please email
 
 ## Review process
 
-Your specification will then be reviewed by a maintainer of the
+Your specification pull request will be reviewed by a maintainer of the
 [graphql-scalars repository](https://github.com/graphql/graphql-scalars). The
 maintainers will verify that the template has been completed, but note that the
 correctness of the specification is the responsibility of the original
