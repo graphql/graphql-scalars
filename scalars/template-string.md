@@ -1,6 +1,4 @@
-# This template is meant to be copied and modified
-
-# This template is meant for Scalars which are based on the built-in String Scalar
+# This template is meant to be copied and modified. This template is meant for Scalars which are based on the built-in String Scalar
 
 # Custom Scalar spec \<name\>
 
