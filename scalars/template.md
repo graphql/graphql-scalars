@@ -8,24 +8,30 @@
 
 # Overview
 
-Provide an overview what this Scalar does and provide any background
+Provide an overview of what this Scalar does and provide any background
 information.
 
 # Name
 
-Talk about the name and list alternatives, if available.
+Provide a recommended Scalar name and list alternatives, if available.
 
 # Result JSON spec
 
 Define which JSON values can be returned.
 
+Provide positive and negative examples of JSON values.
+
 # Literal Input spec
 
 Define which GraphQL Literals are accepted as input.
 
+Provide positive and negative examples of literals.
+
 # Raw Input JSON spec
 
 Define which JSON values are accepted as input.
+
+Provide positive and negative examples of JSON values.
 
 # References
 
