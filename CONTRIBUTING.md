@@ -12,7 +12,7 @@ to document and standardize behavior across different languages.
 
 We will confirm the domain details soon. We are currently setting this up.
 
-Please ensure that you read the [Code of Conduct](CODE_OF_CONDUCT.md) before
+Please ensure that you read the [Code of Conduct](https://graphql.org/codeofconduct/) before
 contributing to this project.
 
 ## How to contribute
