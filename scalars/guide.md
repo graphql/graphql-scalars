@@ -166,30 +166,3 @@ values for logically identical values. For example a `MyLocalDate` scalar could
 accept the literals `"01-10-2022"` and `"01102022"` as input for the first of
 October 2022, but the result coercion should always return one of the possible
 representations.
-
-## Scalars specification outline
-
-A Scalars specification must clearly define the three observable aspects of a
-Scalar:
-
-1. The possible JSON result values
-
-2. The possible literal input values
-
-3. The possible JSON variable input values
-
-Provide positive and negative examples for each of the values.
-
-The Scalar should also be given a name.
-
-### Example implementation outline
-
-- Background
-
-- Naming recommendation
-
-- Valid values
-
-- Examples
-
-- References
