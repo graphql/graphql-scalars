@@ -37,10 +37,6 @@
 </ol>
 </li>
 <li><a href="#sec-Coercion-guidelines"><span class="spec-secid">7</span>Coercion guidelines</a></li>
-<li><a href="#sec-Scalars-specification-outline"><span class="spec-secid">8</span>Scalars specification outline</a><ol>
-<li><a href="#sec-Example-implementation-outline"><span class="spec-secid">8.1</span>Example implementation outline</a></li>
-</ol>
-</li>
 </ol>
 </nav>
 </header>
@@ -133,28 +129,7 @@ The input of a function is not to be confused with &ldquo;Input Coercion&rdquo;.
 <section id="sec-Coercion-guidelines" secid="7">
 <h1 data-source="scalars/guide.md#L157"><span class="spec-secid" title="link to this section"><a href="#sec-Coercion-guidelines">7</a></span>Coercion guidelines</h1>
 <p data-source="scalars/guide.md#L159-L161">While the specifics of the all coercion methods are implementation specific, as a general rule they should only coerce a value when no information is lost and raise an error otherwise.</p>
-<p data-source="scalars/guide.md#L163-L168">Additionally, the input coercion should be liberal in what it accepts, while the result coercion should be much more restricted and never produce different JSON values for logically identical values. For example a <code>MyLocalDate</code> scalar could accept the literals <code>"01-10-2022"</code> and <code>"01102022"</code> as input for the first of October 2022, but the result coercion should always return one of the possible representations.</p>
-</section>
-<section id="sec-Scalars-specification-outline" secid="8">
-<h1 data-source="scalars/guide.md#L170"><span class="spec-secid" title="link to this section"><a href="#sec-Scalars-specification-outline">8</a></span>Scalars specification outline</h1>
-<p data-source="scalars/guide.md#L172-L173">A Scalars specification must clearly define the three observable aspects of a Scalar:</p>
-<ol>
-<li data-source="scalars/guide.md#L175">The possible JSON result values</li>
-<li data-source="scalars/guide.md#L177">The possible literal input values</li>
-<li data-source="scalars/guide.md#L179">The possible JSON variable input values</li>
-</ol>
-<p data-source="scalars/guide.md#L181">Provide positive and negative examples for each of the values.</p>
-<p data-source="scalars/guide.md#L183">The Scalar should also be given a name.</p>
-<section id="sec-Example-implementation-outline" secid="8.1">
-<h2 data-source="scalars/guide.md#L185"><span class="spec-secid" title="link to this section"><a href="#sec-Example-implementation-outline">8.1</a></span>Example implementation outline</h2>
-<ul>
-<li data-source="scalars/guide.md#L187">Background</li>
-<li data-source="scalars/guide.md#L189">Naming recommendation</li>
-<li data-source="scalars/guide.md#L191">Valid values</li>
-<li data-source="scalars/guide.md#L193">Examples</li>
-<li data-source="scalars/guide.md#L195-L196">References </li>
-</ul>
-</section>
+<p data-source="scalars/guide.md#L163-L169">Additionally, the input coercion should be liberal in what it accepts, while the result coercion should be much more restricted and never produce different JSON values for logically identical values. For example a <code>MyLocalDate</code> scalar could accept the literals <code>"01-10-2022"</code> and <code>"01102022"</code> as input for the first of October 2022, but the result coercion should always return one of the possible representations. </p>
 </section>
 </article>
 <footer>
@@ -185,12 +160,6 @@ Written in <a href="https://spec-md.com" target="_blank">Spec Markdown</a>.</foo
 </ol>
 </li>
 <li id="_sidebar_7"><a href="#sec-Coercion-guidelines"><span class="spec-secid">7</span>Coercion guidelines</a></li>
-<li id="_sidebar_8"><a href="#sec-Scalars-specification-outline"><span class="spec-secid">8</span>Scalars specification outline</a>
-<input hidden class="toggle" type="checkbox" id="_toggle_8" /><label for="_toggle_8"></label>
-<ol>
-<li id="_sidebar_8.1"><a href="#sec-Example-implementation-outline"><span class="spec-secid">8.1</span>Example implementation outline</a></li>
-</ol>
-</li>
 </ol>
 </div>
 </div>
