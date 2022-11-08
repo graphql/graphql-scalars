@@ -2,7 +2,7 @@
 
 "Author: andimarek"
 
-"Date: 2022.10.18"
+"Date: 2022-10-18"
 
 This is a String based Scalars (TODO: add link to explanation).
 
