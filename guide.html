@@ -120,9 +120,9 @@ The input of a function is not to be confused with &ldquo;Input Coercion&rdquo;.
 <section id="sec-Implementation-rules" secid="6.4">
 <h2 data-source="scalars/guide.md#L138"><span class="spec-secid" title="link to this section"><a href="#sec-Implementation-rules">6.4</a></span>Implementation rules</h2>
 <p data-source="scalars/guide.md#L140">These three functions need to be compatible to each other, specifically:</p>
-<p data-source="scalars/guide.md#L142-L144"><strong>Rule 1:</strong> every valid input for <code>parseRawInputValue</code> must be a valid input for <code>rawInputVariableToLiteral</code> and vice versa. This rule ensures that every raw input value can be represented as literal.</p>
+<p data-source="scalars/guide.md#L142-L144"><strong>Rule 1:</strong> every valid input for <code>parseRawInputValue</code> must be a valid input for <code>rawInputValueToLiteral</code> and vice versa. This rule ensures that every raw input value can be represented as literal.</p>
 <p data-source="scalars/guide.md#L146-L149"><strong>Rule 2:</strong> for every valid input for <code>parseLiteral</code> there must at least one corresponding input for <code>parseRawInputValue</code> resulting in the same coerced input value. This rule ensures that all literals can be represented as raw input value.</p>
-<p data-source="scalars/guide.md#L151-L152"><strong>Rule 3:</strong> every output for <code>rawInputVariableToLiteral</code> must be a valid input for <code>parseLiteral</code>.</p>
+<p data-source="scalars/guide.md#L151-L152"><strong>Rule 3:</strong> every output for <code>rawInputValueToLiteral</code> must be a valid input for <code>parseLiteral</code>.</p>
 <p data-source="scalars/guide.md#L154-L155">These rules ensure that for every valid literal we have at least one valid raw value and vice versa.</p>
 </section>
 </section>
