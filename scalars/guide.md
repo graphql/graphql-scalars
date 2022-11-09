@@ -140,16 +140,16 @@ programmatically, `rawInputValueToLiteral` might not be needed.
 These three functions need to be compatible to each other, specifically:
 
 **Rule 1:** every valid input for `parseRawInputValue` must be a valid input for
-`rawInputVariableToLiteral` and vice versa. This rule ensures that every raw
-input value can be represented as literal.
+`rawInputValueToLiteral` and vice versa. This rule ensures that every raw input
+value can be represented as literal.
 
 **Rule 2:** for every valid input for `parseLiteral` there must at least one
 corresponding input for `parseRawInputValue` resulting in the same coerced input
 value. This rule ensures that all literals can be represented as raw input
 value.
 
-**Rule 3:** every output for `rawInputVariableToLiteral` must be a valid input
-for `parseLiteral`.
+**Rule 3:** every output for `rawInputValueToLiteral` must be a valid input for
+`parseLiteral`.
 
 These rules ensure that for every valid literal we have at least one valid raw
 value and vice versa.
