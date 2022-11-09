@@ -5,14 +5,11 @@ Thanks for contributing to GraphQL Scalars.
 The goal of the GraphQL Scalars project is to provide a directory of GraphQL
 Custom Scalar specifications, contributed by the community. Contributed
 specifications will be hosted on a GraphQL Foundation owned domain
-https://scalars.graphql.org, which can be referenced with the built-in
+[scalars.graphql.org](https://scalars.graphql.org), which can be referenced with the built-in
 `@specifiedBy` GraphQL directive.
 
 GraphQL Custom Scalar specifications are language agnostic and thus can be used
 to document and standardize behavior across different languages.
-
-The scalars will be hosted at https://scalars.graphql.org. We are currently
-setting this up.
 
 Please ensure that you read the
 [Code of Conduct](https://graphql.org/codeofconduct/) before contributing to
@@ -70,5 +67,4 @@ available reference documents. We will permit small edits which do not change
 specification semantics, such as typo fixes.
 
 A new version of a Custom Scalar specification should have a new scalar name,
-such as `<scalar-name>2`, `<scalar-name>3`, or a completely different name like
-OffsetDateTime is different to DateTime.
+either with a number appended such as `<scalar-name>2`, or a different name such as `OffsetDateTime` to differentiate from `DateTime`.
