@@ -21,6 +21,10 @@
 <span class="spec-nt"><a href="#Date" data-name="Date">Date</a></span><div class="spec-rhs"><span class="spec-t">2022-10-18</span></div>
 </div>
 <p data-source="scalars/contributed/andimarek/date-time.md#L7">This is a String-based Scalar.</p>
+<section id="sec-License-and-Copyright" class="subsec">
+<h6 data-source="scalars/contributed/andimarek/date-time.md#L9"><a href="#sec-License-and-Copyright" title="link to this subsection">License and Copyright</a></h6>
+<p data-source="scalars/contributed/andimarek/date-time.md#L11-L12">Copyright © GraphQL contributors. This specification is licensed under <a href="https://www.openwebfoundation.org/the-agreements/the-owf-1-0-agreements-granted-claims/owfa-1-0">OWFa 1.0</a>.</p>
+</section>
 </section>
 <nav class="spec-toc">
 <div class="title">Contents</div>
@@ -34,115 +38,115 @@
 </nav>
 </header>
 <section id="sec-Overview" secid="1">
-<h1 data-source="scalars/contributed/andimarek/date-time.md#L9"><span class="spec-secid" title="link to this section"><a href="#sec-Overview">1</a></span>Overview</h1>
-<p data-source="scalars/contributed/andimarek/date-time.md#L11-L12">This Scalar represents an exact point in time. This point in time is specified by having an offset to UTC and does <strong>not</strong> use a time zone.</p>
-<p data-source="scalars/contributed/andimarek/date-time.md#L14-L16">It is a slightly refined version of <a href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> including the <a href="https://www.rfc-editor.org/errata/rfc3339">errata</a>.</p>
-<p data-source="scalars/contributed/andimarek/date-time.md#L18-L19">All definitions of RFC 3339 are adopted and nothing is added or removed unless explicitly mentioned here.</p>
-<p data-source="scalars/contributed/andimarek/date-time.md#L21">The following refinements/clarifications apply:</p>
+<h1 data-source="scalars/contributed/andimarek/date-time.md#L14"><span class="spec-secid" title="link to this section"><a href="#sec-Overview">1</a></span>Overview</h1>
+<p data-source="scalars/contributed/andimarek/date-time.md#L16-L17">This Scalar represents an exact point in time. This point in time is specified by having an offset to UTC and does <strong>not</strong> use a time zone.</p>
+<p data-source="scalars/contributed/andimarek/date-time.md#L19-L21">It is a slightly refined version of <a href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> including the <a href="https://www.rfc-editor.org/errata/rfc3339">errata</a>.</p>
+<p data-source="scalars/contributed/andimarek/date-time.md#L23-L24">All definitions of RFC 3339 are adopted and nothing is added or removed unless explicitly mentioned here.</p>
+<p data-source="scalars/contributed/andimarek/date-time.md#L26">The following refinements/clarifications apply:</p>
 <section id="sec-Overview.Only-date-time-" class="subsec">
-<h6 data-source="scalars/contributed/andimarek/date-time.md#L23"><a href="#sec-Overview.Only-date-time-" title="link to this subsection">Only &ldquo;date-time&rdquo;</a></h6>
-<p data-source="scalars/contributed/andimarek/date-time.md#L25">This scalar represents a &ldquo;date-time&rdquo; as specified in section 5.6 of RFC 3339.</p>
-<p data-source="scalars/contributed/andimarek/date-time.md#L27-L28">The other productions in section 5.6 are only used to support &ldquo;date-time&rdquo; but never stand alone for this Scalar.</p>
+<h6 data-source="scalars/contributed/andimarek/date-time.md#L28"><a href="#sec-Overview.Only-date-time-" title="link to this subsection">Only &ldquo;date-time&rdquo;</a></h6>
+<p data-source="scalars/contributed/andimarek/date-time.md#L30">This scalar represents a &ldquo;date-time&rdquo; as specified in section 5.6 of RFC 3339.</p>
+<p data-source="scalars/contributed/andimarek/date-time.md#L32-L33">The other productions in section 5.6 are only used to support &ldquo;date-time&rdquo; but never stand alone for this Scalar.</p>
 </section>
 <section id="sec-Overview.Non-optional-exact-milliseconds" class="subsec">
-<h6 data-source="scalars/contributed/andimarek/date-time.md#L30"><a href="#sec-Overview.Non-optional-exact-milliseconds" title="link to this subsection">Non-optional exact milliseconds</a></h6>
-<p data-source="scalars/contributed/andimarek/date-time.md#L32">RFC 3339 defines <code>time-secfrac</code> optional as:</p>
-<pre data-source="scalars/contributed/andimarek/date-time.md#L34-L36"><code>time-secfrac    = "." 1*DIGIT (Meaning 1 or more DIGIT)
+<h6 data-source="scalars/contributed/andimarek/date-time.md#L35"><a href="#sec-Overview.Non-optional-exact-milliseconds" title="link to this subsection">Non-optional exact milliseconds</a></h6>
+<p data-source="scalars/contributed/andimarek/date-time.md#L37">RFC 3339 defines <code>time-secfrac</code> optional as:</p>
+<pre data-source="scalars/contributed/andimarek/date-time.md#L39-L41"><code>time-secfrac    = "." 1*DIGIT (Meaning 1 or more DIGIT)
 </code></pre>
-<p data-source="scalars/contributed/andimarek/date-time.md#L38-L39">This allows for an unlimited numbers of digits. For this scalar the rule is not optional anymore and refined as:</p>
-<pre data-source="scalars/contributed/andimarek/date-time.md#L41-L43"><code>time-secfrac    = "." DIGIT DIGIT DIGIT
+<p data-source="scalars/contributed/andimarek/date-time.md#L43-L44">This allows for an unlimited numbers of digits. For this scalar the rule is not optional anymore and refined as:</p>
+<pre data-source="scalars/contributed/andimarek/date-time.md#L46-L48"><code>time-secfrac    = "." DIGIT DIGIT DIGIT
 </code></pre>
-<p data-source="scalars/contributed/andimarek/date-time.md#L45">consisting always of exact three digits representing milliseconds.</p>
+<p data-source="scalars/contributed/andimarek/date-time.md#L50">consisting always of exact three digits representing milliseconds.</p>
 </section>
 <section id="sec-Overview.No-Unknown-Local-Offset-Convention-" class="subsec">
-<h6 data-source="scalars/contributed/andimarek/date-time.md#L47"><a href="#sec-Overview.No-Unknown-Local-Offset-Convention-" title="link to this subsection">No &lsquo;Unknown Local Offset Convention&rsquo;</a></h6>
-<p data-source="scalars/contributed/andimarek/date-time.md#L49"><a href="https://tools.ietf.org/html/rfc3339#section-4.3">Section 4.3</a> says:</p>
-<pre data-source="scalars/contributed/andimarek/date-time.md#L51-L54"><code>If the time in UTC is known, but the offset to local time is unknown,
+<h6 data-source="scalars/contributed/andimarek/date-time.md#L52"><a href="#sec-Overview.No-Unknown-Local-Offset-Convention-" title="link to this subsection">No &lsquo;Unknown Local Offset Convention&rsquo;</a></h6>
+<p data-source="scalars/contributed/andimarek/date-time.md#L54"><a href="https://tools.ietf.org/html/rfc3339#section-4.3">Section 4.3</a> says:</p>
+<pre data-source="scalars/contributed/andimarek/date-time.md#L56-L59"><code>If the time in UTC is known, but the offset to local time is unknown,
 this can be represented with an offset of "-00:00".
 </code></pre>
-<p data-source="scalars/contributed/andimarek/date-time.md#L56-L57">In order to simplify this Scalar this convention is dropped and an offset of <code>-00:00</code> is not allowed.</p>
+<p data-source="scalars/contributed/andimarek/date-time.md#L61-L62">In order to simplify this Scalar this convention is dropped and an offset of <code>-00:00</code> is not allowed.</p>
 </section>
 <section id="sec-Overview.Examples" class="subsec">
-<h6 data-source="scalars/contributed/andimarek/date-time.md#L59"><a href="#sec-Overview.Examples" title="link to this subsection">Examples</a></h6>
-<p data-source="scalars/contributed/andimarek/date-time.md#L61-L62">The general format is described in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC3339 Section 5.6</a>.</p>
-<p data-source="scalars/contributed/andimarek/date-time.md#L64-L65">Under consideration of the additional restrictions and explanations above here are valid and invalid examples:</p>
-<p data-source="scalars/contributed/andimarek/date-time.md#L67">These are valid examples:</p>
+<h6 data-source="scalars/contributed/andimarek/date-time.md#L64"><a href="#sec-Overview.Examples" title="link to this subsection">Examples</a></h6>
+<p data-source="scalars/contributed/andimarek/date-time.md#L66-L67">The general format is described in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC3339 Section 5.6</a>.</p>
+<p data-source="scalars/contributed/andimarek/date-time.md#L69-L70">Under consideration of the additional restrictions and explanations above here are valid and invalid examples:</p>
+<p data-source="scalars/contributed/andimarek/date-time.md#L72">These are valid examples:</p>
 <table>
 <thead>
-<tr data-source="scalars/contributed/andimarek/date-time.md#L69">
+<tr data-source="scalars/contributed/andimarek/date-time.md#L74">
 <th>String</th>
 <th>Explanation</th>
 </tr>
 </thead>
 <tbody>
-<tr data-source="scalars/contributed/andimarek/date-time.md#L71">
+<tr data-source="scalars/contributed/andimarek/date-time.md#L76">
 <td><code>2011-08-30T13:22:53.108Z</code></td>
 <td>A DateTime with UTC offset (+00:00).</td>
 </tr>
-<tr data-source="scalars/contributed/andimarek/date-time.md#L72">
+<tr data-source="scalars/contributed/andimarek/date-time.md#L77">
 <td><code>2011-08-30T13:22:53.108+00:00</code></td>
 <td>A DateTime with <code>+00:00</code> which is the same as UTC.</td>
 </tr>
-<tr data-source="scalars/contributed/andimarek/date-time.md#L73">
+<tr data-source="scalars/contributed/andimarek/date-time.md#L78">
 <td><code>2011-08-30t13:22:53.108z</code></td>
 <td>The <code>z</code> and <code>t</code> may be lower case.</td>
 </tr>
-<tr data-source="scalars/contributed/andimarek/date-time.md#L74">
+<tr data-source="scalars/contributed/andimarek/date-time.md#L79">
 <td><code>2011-08-30T13:22:53.108-03:00</code></td>
 <td>A DateTime with -3h offset.</td>
 </tr>
-<tr data-source="scalars/contributed/andimarek/date-time.md#L75">
+<tr data-source="scalars/contributed/andimarek/date-time.md#L80">
 <td><code>2011-08-30T13:22:53.108+03:30</code></td>
 <td>A DateTime with +3h 30min offset.</td>
 </tr>
 </tbody>
 </table>
-<p data-source="scalars/contributed/andimarek/date-time.md#L77">These are invalid examples:</p>
+<p data-source="scalars/contributed/andimarek/date-time.md#L82">These are invalid examples:</p>
 <table>
 <thead>
-<tr data-source="scalars/contributed/andimarek/date-time.md#L79">
+<tr data-source="scalars/contributed/andimarek/date-time.md#L84">
 <th>String</th>
 <th>Why is it invalid</th>
 </tr>
 </thead>
 <tbody>
-<tr data-source="scalars/contributed/andimarek/date-time.md#L81">
+<tr data-source="scalars/contributed/andimarek/date-time.md#L86">
 <td><code>2011-08-30T13:22:53.108-03</code></td>
 <td>The minutes of the offset are missing.</td>
 </tr>
-<tr data-source="scalars/contributed/andimarek/date-time.md#L82">
+<tr data-source="scalars/contributed/andimarek/date-time.md#L87">
 <td><code>2011-08-30T13:22:53.108912Z</code></td>
 <td>Too many digits for fractions of a second. Exactly three expected.</td>
 </tr>
-<tr data-source="scalars/contributed/andimarek/date-time.md#L83">
+<tr data-source="scalars/contributed/andimarek/date-time.md#L88">
 <td><code>2011-08-30T24:22:53Z</code></td>
 <td>Fractions of a second are missing.</td>
 </tr>
-<tr data-source="scalars/contributed/andimarek/date-time.md#L84">
+<tr data-source="scalars/contributed/andimarek/date-time.md#L89">
 <td><code>2011-08-30T13:22:53.108</code></td>
 <td>No offset provided.</td>
 </tr>
-<tr data-source="scalars/contributed/andimarek/date-time.md#L85">
+<tr data-source="scalars/contributed/andimarek/date-time.md#L90">
 <td><code>2011-08-30</code></td>
 <td>No time provided.</td>
 </tr>
-<tr data-source="scalars/contributed/andimarek/date-time.md#L86">
+<tr data-source="scalars/contributed/andimarek/date-time.md#L91">
 <td><code>2011-08-30T13:22:53.108-00:00</code></td>
 <td>Negative offset (<code>-00:00</code>) is not allowed</td>
 </tr>
-<tr data-source="scalars/contributed/andimarek/date-time.md#L87">
+<tr data-source="scalars/contributed/andimarek/date-time.md#L92">
 <td><code>2011-08-30T13:22:53.108+03:30:15</code></td>
 <td>Seconds are not allowed for the offset</td>
 </tr>
-<tr data-source="scalars/contributed/andimarek/date-time.md#L88">
+<tr data-source="scalars/contributed/andimarek/date-time.md#L93">
 <td><code>2011-08-30T24:22:53.108Z</code></td>
 <td><code>24</code> is not allowed as hour of the time.</td>
 </tr>
-<tr data-source="scalars/contributed/andimarek/date-time.md#L89">
+<tr data-source="scalars/contributed/andimarek/date-time.md#L94">
 <td><code>2010-02-30T21:22:53.108Z</code></td>
 <td>30th of February is not a valid date</td>
 </tr>
-<tr data-source="scalars/contributed/andimarek/date-time.md#L90">
+<tr data-source="scalars/contributed/andimarek/date-time.md#L95">
 <td><code>2010-02-11T21:22:53.108Z+25:11</code></td>
 <td>25 is not a valid hour for offset</td>
 </tr>
@@ -151,17 +155,18 @@ this can be represented with an offset of "-00:00".
 </section>
 </section>
 <section id="sec-Name" secid="2">
-<h1 data-source="scalars/contributed/andimarek/date-time.md#L92"><span class="spec-secid" title="link to this section"><a href="#sec-Name">2</a></span>Name</h1>
-<p data-source="scalars/contributed/andimarek/date-time.md#L94">The recommended name is <code>DateTime</code>. An alternative is <code>OffsetDateTime</code>.</p>
-<p data-source="scalars/contributed/andimarek/date-time.md#L96-L97"><code>Date</code> is potentially misleading as this Scalar also specifies a time, not only a date.</p>
+<h1 data-source="scalars/contributed/andimarek/date-time.md#L97"><span class="spec-secid" title="link to this section"><a href="#sec-Name">2</a></span>Name</h1>
+<p data-source="scalars/contributed/andimarek/date-time.md#L99">The recommended name is <code>DateTime</code>. An alternative is <code>OffsetDateTime</code>.</p>
+<p data-source="scalars/contributed/andimarek/date-time.md#L101-L102"><code>Date</code> is potentially misleading as this Scalar also specifies a time, not only a date.</p>
 </section>
 <section id="sec-Result" secid="3">
-<h1 data-source="scalars/contributed/andimarek/date-time.md#L99"><span class="spec-secid" title="link to this section"><a href="#sec-Result">3</a></span>Result</h1>
-<p data-source="scalars/contributed/andimarek/date-time.md#L101-L103">The result must be formatted as described above with the further requirement that UTC offset should be always be represented as <code>Z</code> and not <code>+00:00</code> and the two divider characters <code>T</code> and <code>Z</code> are always uppercase, never <code>t</code> or <code>z</code>.</p>
+<h1 data-source="scalars/contributed/andimarek/date-time.md#L104"><span class="spec-secid" title="link to this section"><a href="#sec-Result">3</a></span>Result</h1>
+<p data-source="scalars/contributed/andimarek/date-time.md#L106-L108">The result must be formatted as described above with the further requirement that UTC offset should be always be represented as <code>Z</code> and not <code>+00:00</code> and the two divider characters <code>T</code> and <code>Z</code> are always uppercase, never <code>t</code> or <code>z</code>.</p>
 </section>
 <section id="sec-Input" secid="4">
-<h1 data-source="scalars/contributed/andimarek/date-time.md#L105"><span class="spec-secid" title="link to this section"><a href="#sec-Input">4</a></span>Input</h1>
-<p data-source="scalars/contributed/andimarek/date-time.md#L107-L108">As Input every valid String as described above must be accepted. </p>
+<h1 data-source="scalars/contributed/andimarek/date-time.md#L110"><span class="spec-secid" title="link to this section"><a href="#sec-Input">4</a></span>Input</h1>
+<p data-source="scalars/contributed/andimarek/date-time.md#L112">As Input every valid String as described above must be accepted.</p>
+<p data-source="scalars/contributed/andimarek/date-time.md#L114-L115">&lt;!&mdash; cSpell:ignore andimarek secfrac &rarr; </p>
 </section>
 <section id="index" secid="index" class="spec-index">
 <h1>
