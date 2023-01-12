@@ -42,5 +42,3 @@ Provide positive and negative examples of JSON values.
 # References
 
 List external references, other background information etc.
-
-<!-- cSpell:ignore <github user name> -->

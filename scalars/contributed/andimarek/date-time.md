@@ -110,5 +110,3 @@ two divider characters `T` and `Z` are always uppercase, never `t` or `z`.
 # Input
 
 As Input every valid String as described above must be accepted.
-
-<!-- cSpell:ignore andimarek secfrac -->

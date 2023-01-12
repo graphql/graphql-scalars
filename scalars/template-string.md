@@ -37,5 +37,3 @@ Provide positive and negative examples of literal and JSON raw input values.
 # References
 
 List external references, other background information etc.
-
-<!-- cSpell:ignore <github user name> -->

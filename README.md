@@ -37,7 +37,11 @@ this project.
    locally build the resulting public specification files. Navigate to the
    `/public` folder to view the built files.
 
-4. [Open a new pull request](https://github.com/graphql/graphql-scalars/pulls)
+4. Run `npm test` to ensure proper formatting before submitting a pull request.
+   You may need to add terms to
+   [cspell.yml](https://github.com/graphql/graphql-scalars/tree/main/cspell.yml).
+
+5. [Open a new pull request](https://github.com/graphql/graphql-scalars/pulls)
    for each Custom Scalar specification you would like to add.
 
 ### Review process
