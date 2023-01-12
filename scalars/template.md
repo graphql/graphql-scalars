@@ -1,4 +1,6 @@
-# Custom Scalar spec \<name\>
+<!-- cspell:ignore <github user name> -->
+
+# \<name\> — GraphQL Custom Scalar
 
 "Author:\<github user name\> "
 

@@ -1,4 +1,6 @@
-# Custom Scalar spec DateTime
+<!-- cspell:ignore andimarek secfrac -->
+
+# DateTime — GraphQL Custom Scalar
 
 Author: andimarek
 
