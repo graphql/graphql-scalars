@@ -6,6 +6,11 @@ Date: 2022-10-18
 
 This is a String-based Scalar.
 
+**License and Copyright**
+
+Copyright © GraphQL contributors. This specification is licensed under
+[OWFa 1.0](https://www.openwebfoundation.org/the-agreements/the-owf-1-0-agreements-granted-claims/owfa-1-0).
+
 # Overview
 
 This Scalar represents an exact point in time. This point in time is specified
@@ -105,3 +110,5 @@ two divider characters `T` and `Z` are always uppercase, never `t` or `z`.
 # Input
 
 As Input every valid String as described above must be accepted.
+
+<!-- cSpell:ignore andimarek secfrac -->

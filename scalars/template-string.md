@@ -1,10 +1,16 @@
-# This template is meant to be copied and modified. This template is meant for Scalars which are based on the built-in String Scalar
-
 # Custom Scalar spec \<name\>
 
 "Author:\<github user name\> "
 
 "Date: \<the date of the first publication in YYYY-MM-DD format\>"
+
+This template is meant to be copied and modified. This template is meant for
+Scalars which are based on the built-in String Scalar
+
+**License and Copyright**
+
+Copyright © GraphQL contributors. This specification is licensed under
+[OWFa 1.0](https://www.openwebfoundation.org/the-agreements/the-owf-1-0-agreements-granted-claims/owfa-1-0).
 
 # Overview
 
@@ -31,3 +37,5 @@ Provide positive and negative examples of literal and JSON raw input values.
 # References
 
 List external references, other background information etc.
+
+<!-- cSpell:ignore <github user name> -->
