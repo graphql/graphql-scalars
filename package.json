@@ -2,22 +2,24 @@
   "name": "graphql-scalars",
   "private": true,
   "license": "OWFa-1.0",
-  "homepage": "https://spec.graphql.org/",
+  "homepage": "https://scalars.graphql.org/",
   "repository": {
     "type": "git",
-    "url": "http://github.com/graphql/graphql-spec.git"
+    "url": "http://github.com/graphql/graphql-scalars.git"
   },
   "scripts": {
-    "test": "npm run test:build",
-    "test:build": "spec-md scalars/guide.md > /dev/null",
+    "test": "npm run test:spelling && npm run test:format && npm run test:build",
+    "test:spelling": "cspell \"**/*.md\"",
+    "test:format": "prettier --check \"**/*.{md,yml,yaml,json}\"",
     "format": "prettier --write \"**/*.{md,yml,yaml,json}\"",
-    "format:check": "prettier --check \"**/*.{md,yml,yaml,json}\"",
-    "build": "./build.sh",
+    "test:build": "OUT_DIR=$(mktemp -d) ./build.sh",
+    "build": "OUT_DIR=public ./build.sh",
     "watch": "nodemon -e json,md --exec \"npm run build\""
   },
   "devDependencies": {
+    "cspell": "6.18.1",
     "nodemon": "2.0.12",
-    "prettier": "^2.3.0",
+    "prettier": "2.8.2",
     "spec-md": "3.0.2"
   },
   "prettier": {
