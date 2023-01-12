@@ -63,8 +63,8 @@ HTML="<html>
     <h2>Contributed specifications</h2>
     <table>
      <tr>
+        <th>Specification name</th>
         <th>Author</th>
-        <th>Spec name</th>
       </tr>"
 
 echo "building specs"
@@ -74,8 +74,8 @@ for AUTHOR in scalars/contributed/*; do
     spec-md --githubSource "https://github.com/graphql/graphql-scalars/blame/main/" "$FILE" > "$OUT_DIR/$(basename $AUTHOR)"/"$(basename $FILE .md)".html
     HTML="$HTML
       <tr>
-        <td>$(basename $AUTHOR)</td>
         <td><a href=\"$(basename $AUTHOR)/$(basename $FILE .md).html\">$(basename ${FILE%.*})</a></td>
+        <td>$(basename $AUTHOR)</td>
       </tr>"
     true
   done

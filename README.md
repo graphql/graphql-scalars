@@ -61,12 +61,12 @@ as `OffsetDateTime` to differentiate from `DateTime`.
 ## Licensing
 
 Specifications contributed to the GraphQL Scalars repository are part of the
-GraphQL Specification Project and available by the
+GraphQL Specification Project and are made available by the
 [Joint Development Foundation](https://www.jointdevelopment.org/). The current
 [GraphQL Working Group](https://github.com/graphql/graphql-wg) charter, which
 includes the IP policy governing all working group deliverables (including
-specifications, source code, and datasets) may be found at
-[https://technical-charter.graphql.org](https://technical-charter.graphql.org).
+specifications, source code, and datasets) may be found in the
+[technical charter](https://technical-charter.graphql.org).
 
 By contributing to this repository, you agree to license your work according to
 the licenses governing GraphQL Specification Project deliverables, which are:
@@ -113,5 +113,5 @@ POSSIBILITY OF SUCH DAMAGE.
 
 ## Code of Conduct
 
-This project abides by the GraphQL Foundation Code of Conduct at
-https://graphql.org/codeofconduct/.
+This project abides by the GraphQL Foundation's
+[Code of Conduct](https://graphql.org/codeofconduct/).
