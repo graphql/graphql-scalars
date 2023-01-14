@@ -4,14 +4,13 @@ Thanks for contributing to GraphQL Scalars.
 
 The goal of the GraphQL Scalars project is to provide a directory of GraphQL
 Custom Scalar specifications, contributed by the community. Contributed
-specifications will be hosted on a GraphQL Foundation owned domain
+specifications are hosted on a GraphQL Foundation owned domain
 [scalars.graphql.org](https://scalars.graphql.org), which can be referenced with
-the built-in `@specifiedBy` GraphQL directive.
+the built-in `@specifiedBy`
+[GraphQL directive](https://spec.graphql.org/draft/#sec--specifiedBy).
 
 GraphQL Custom Scalar specifications are language agnostic and thus can be used
 to document and standardize behavior across different languages.
-
-We will confirm the domain details soon. We are currently setting this up.
 
 Please ensure that you read the
 [Code of Conduct](https://graphql.org/codeofconduct/) before contributing to

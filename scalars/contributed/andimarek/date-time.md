@@ -2,9 +2,9 @@
 
 # DateTime — GraphQL Custom Scalar
 
-Author: andimarek
+Author - andimarek
 
-Date: 2022-10-18
+Date - 2022-10-18
 
 This is a String-based Scalar.
 
