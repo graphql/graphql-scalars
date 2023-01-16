@@ -1,4 +1,4 @@
-<!-- cspell:ignore <github user name> -->
+<!-- cspell:ignore andimarek -->
 
 # LocalDate — GraphQL Custom Scalar
 
