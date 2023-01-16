@@ -46,4 +46,3 @@ Every input must follow the pattern "YYYY-MM-DD" as described above.
 # References
 
 [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601)
-
