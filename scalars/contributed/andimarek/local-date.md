@@ -2,7 +2,7 @@
 
 # LocalDate — GraphQL Custom Scalar
 
-"Author - andimarek "
+"Author - andimarek"
 
 "Date - TODO"
 
