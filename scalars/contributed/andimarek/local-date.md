@@ -21,15 +21,16 @@ This scalar represents a date without a time-zone in the
 The pattern is "YYYY-MM-DD" with "YYYY" representing the year, "MM" the month
 and "DD" the day.
 
-For example "1983-20-10" or "2023-04-01".
+Valid examples are "1983-10-20" or "2023-04-01". An invalid example would be
+"2011-13-10" because there is no 13 month.
 
 The prefix "Local" comes from the fact that without a time-zone it is not a
 specific point in time, but rather expresses a "local point of view". A popular
 use case for using this scalar are birthdays for example, which are normally not
 stored with a specific timezone.
 
-Because this scalar depends on the ISO-8601 calendar it is not recommended to use
-for dates before the year 1582.
+Because this scalar depends on the ISO-8601 calendar it is not recommended to
+use for dates before the year 1582.
 
 # Name
 
