@@ -23,7 +23,7 @@ and "DD" the day.
 
 For example "1983-20-10" or "2023-04-01".
 
-The prefix "Local" comes from the fact that without a time-zone it is a not a
+The prefix "Local" comes from the fact that without a time-zone it is not a
 specific point in time, but rather expresses a "local point of view". A popular
 use case for using this scalar are birthdays for example, which are normally not
 stored with a specific timezone.
