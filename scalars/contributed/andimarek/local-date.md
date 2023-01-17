@@ -28,7 +28,7 @@ specific point in time, but rather expresses a "local point of view". A popular
 use case for using this scalar are birthdays for example, which are normally not
 stored with a specific timezone.
 
-Because this scalar depends on the ISO-8601 calendar it is not recommend to use
+Because this scalar depends on the ISO-8601 calendar it is not recommended to use
 for dates before the year 1582.
 
 # Name
