@@ -22,7 +22,7 @@ The pattern is "YYYY-MM-DD" with "YYYY" representing the year, "MM" the month
 and "DD" the day.
 
 Valid examples are "1983-10-20" or "2023-04-01". An invalid example would be
-"2011-13-10" because there is no 13 month.
+"2011-13-10" because there isn't a 13th month in a year.
 
 The prefix "Local" comes from the fact that without a time-zone it is not a
 specific point in time, but rather expresses a "local point of view". A popular
