@@ -35,7 +35,7 @@ The domain part may contain any of the following ASCII characters:
 The general format is described in [RFC5322 Section 3.4.1](https://www.rfc-editor.org/rfc/rfc5322#section-3.4.1).
 These examples are taken from [WikiPedia](https://en.wikipedia.org/wiki/Email_address#Examples), which is also based off of [RFC5322 Section 3.4.1](https://www.rfc-editor.org/rfc/rfc5322#section-3.4.1).
 
-These are valid eamples:
+These are valid examples:
 
 | String                                           | Explanation                                                           |
 | ------------------------------------------------ | --------------------------------------------------------------------- |
