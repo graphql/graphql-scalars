@@ -43,7 +43,7 @@ These are valid eamples:
 | `very.common@example.com`                        | An EmailAddress with a dot inside the local part.                     |
 | `disposable.style.email.with+symbol@example.com` | An EmailAddress with dots and a plus sign inside the local part.      |
 | `other.email-with-hyphen@example.com`            | An EmailAddress with a dot and hyphens inside the local part.         |
-| `fully-qualified-domain@example.com`             | An EmailAddress with hypehns inside the local part.                   |
+| `fully-qualified-domain@example.com`             | An EmailAddress with hyphens inside the local part.                   |
 | `user.name+tag+sorting@example.com`              | An EmailAddress with a dot and plus signs inside the local part       |
 | `x@example.com`                                  | An EmailAddress with a single character in the local part.            |
 | `example-indeed@strange-example.com`             | An EmailAddress with a hyphen in both the local and domain parts.     |
