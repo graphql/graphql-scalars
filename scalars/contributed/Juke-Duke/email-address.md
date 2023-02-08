@@ -57,7 +57,7 @@ These are valid eamples:
 These are invalid examples:
 | String                                                                           | Explanation                                                    |
 | -------------------------------------------------------------------------------- | -------------------------------------------------------------- |
-| `Abc.example.com`                                                                | No `@` sign seperating the local and domain components.        |
+| `Abc.example.com`                                                                | No `@` sign separating the local and domain components.        |
 | `A@b@c@example.com`                                                              | Only one is allowed to divide the local and domain components. |
 | `a"b(c)d,e:f;g<h>i[j\k]l@example.com`                                            | The local part contains invalid characters.                    |
 | `just"not"right@example.com`                                                     | Quotes are not allowed in the local component.                 |
