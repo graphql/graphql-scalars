@@ -69,6 +69,11 @@ These are invalid examples:
 | `QA[icon]CHOCOLATE[icon]@test.com`                                               | Non UTF-8 characters are not allowed in the local component.   |
 | `all-numerical-top-level@domain.3778`                                            | Top-level domains cannot be all numerical.                     |
 
+This regex provided below follows the above examples:
+```regex
+^(?!\.)(?!.*\.\.)[a-zA-Z0-9!#$%&'*+-/=?^_`{|}~\.]{0,63}[^\.]@(?!\-)[a-zA-Z0-9-]+[^\-]\.?(?!\d+$)[a-zA-Z0-9]{2,255}$
+```
+
 # Name
 
 The recommended name is `EmailAddress`. Alternatives may be `Email`, `E-Mail`, `MailAddress`.
