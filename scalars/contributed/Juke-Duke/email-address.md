@@ -53,7 +53,7 @@ These are valid eamples:
 | `mailhost!username@example.org`                  | An EmailAddress with a bang in the local part.                        |
 | `user%example.com@example.org`                   | An EmailAddress with a percent sign in the local part.                |
 | `user-@example.org`                              | An EmailAddress with a hyphen in the local part.                      |
-|`non-all-numerical-top@level@domain.g2g`          | An EmailAddress with a non-all-numerical top-level domain.            |
+| `non-all-numerical-top@level@domain.g2g`         | An EmailAddress with a non-all-numerical top-level domain.            |
 
 These are invalid examples:
 | String                                                                           | Explanation                                                    |
