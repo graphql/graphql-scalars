@@ -27,7 +27,7 @@ The local part may contain any of the following ASCII characters:
 
 The domain part may contain any of the following ASCII characters:
 - Uppercase and lowercase Latin letters `A` to `Z` and `a` to `z`
-- Digits `0` to `9`, provided that top-level domain names are not all-numeric (.com, .net, .org, etc.)
+- Digits `0` to `9`, provided that top-level domain names are non-numeric (.com, .net, .org, etc.)
 - Hyphen `-`, provided that it is not the first or last character
 
 **Examples**
