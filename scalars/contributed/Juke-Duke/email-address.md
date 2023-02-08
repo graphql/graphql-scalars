@@ -69,7 +69,6 @@ These are invalid examples:
 | `QA[icon]CHOCOLATE[icon]@test.com`                                               | Non UTF-8 characters are not allowed in the local component.   |
 | `all-numerical-top-level@domain.3778`                                            | Top-level domains cannot be all numerical.                     |
 
-
 # Name
 
 The recommended name is `EmailAddress`. Alternatives may be `Email`, `E-Mail`, `MailAddress`.
