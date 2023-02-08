@@ -63,9 +63,10 @@ These are invalid examples:
 | `just"not"right@example.com`                                                     | Quotes are not allowed in the local component.                 |
 | `this is"not\allowed@example.com`                                                | Spaces and backslashes are not allowed in the local component. |
 | `this\ still\"not\\allowed@example.com`                                          | Spaces and backslashes are not allowed in the local component. |
-| `1234567890123456789012345678901234567890123456789012345678901234+x@example.com` | The local component is longer than 64 characters.                   |
+| `1234567890123456789012345678901234567890123456789012345678901234+x@example.com` | The local component is longer than 64 characters.              |
 | `i_like_underscore@but_its_not_allowed_in_this_part.example.com`                 | Underscores are not allowed in the domain component.           |
 | `QA[icon]CHOCOLATE[icon]@test.com`                                               | Non UTF-8 characters are not allowed in the local component.   |
+|`all-numerical-top@levelDomain@3778.com`                                          | Top-level domains cannot be all numerical.                     |
 
 
 # Name
