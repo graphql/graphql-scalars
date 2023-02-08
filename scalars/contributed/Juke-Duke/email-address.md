@@ -67,7 +67,7 @@ These are invalid examples:
 | `1234567890123456789012345678901234567890123456789012345678901234+x@example.com` | The local component is longer than 64 characters.              |
 | `i_like_underscore@but_its_not_allowed_in_this_part.example.com`                 | Underscores are not allowed in the domain component.           |
 | `QA[icon]CHOCOLATE[icon]@test.com`                                               | Non UTF-8 characters are not allowed in the local component.   |
-| `all-numerical-top@level@domain.3778`                                            | Top-level domains cannot be all numerical.                     |
+| `all-numerical-top-level@domain.3778`                                            | Top-level domains cannot be all numerical.                     |
 
 
 # Name
