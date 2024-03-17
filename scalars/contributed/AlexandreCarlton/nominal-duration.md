@@ -1,6 +1,6 @@
 <!-- cspell:ignore Alexandre -->
 
-# AccurateDuration — GraphQL Custom Scalar
+# NominalDuration — GraphQL Custom Scalar
 
 Author - AlexandreCarlton
 
