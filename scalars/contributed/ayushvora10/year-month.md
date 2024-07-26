@@ -2,9 +2,9 @@
 
 # YearMonth — GraphQL Custom Scalar
 
-"Author - ayushvora10"
+Author - ayushvora10
 
-"Date - 2024-07-27"
+Date - 2024-07-27
 
 **License and Copyright**
 
@@ -21,10 +21,10 @@ This can be used for records that are monthly in nature. Eg. a monthly sales for
 
 # Name
 
-`YearMonth` inspired by [Java](https://docs.oracle.com/javase/8/docs/api/java/time/YearMonth.html)
+`YearMonth`, inspired by [Java](https://docs.oracle.com/javase/8/docs/api/java/time/YearMonth.html)
 
-Or `ISO8601YearMonth`
-Or just `Month`?
+Or `ISO8601YearMonth`\
+Or just `Month`?\
 `ISO8601Month`?
 
 # Result spec
@@ -48,7 +48,7 @@ The result must be an ISO 8601 extended format string with just the year and mon
 | `2024-07-01`    | Full date is not expected, precision must only be up to month |
 | `2024-07-01T00:00:00Z`    | Full date-time is not expected, precision must only be up to month |
 | `07-2024`    | Should be YYYY-MM, not the other way |
-| `2024-00`    | Month must be 1-indexed, not 0-indexed: Jan = 01, Dec = 12 |
+| `2024-00`    | Month must be 1-indexed, not 0-indexed: Jan is 01, Dec is 12 |
 | `202407`    | Hyphen missing; ISO recommends the “basic format (one without hyphens) should be avoided in plain text” |
 | `2024/07`    | Slash instead of hyphen |
 | `2024`    | Incomplete - month missing |
@@ -77,4 +77,3 @@ For input, _any valid ISO 8601 string_ is allowed.
 # References
 
 - [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)
-List external references, other background information etc.
