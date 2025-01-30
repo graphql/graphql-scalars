@@ -87,7 +87,7 @@ These are invalid examples:
 | ---------------------------------- | ------------------------------------------------------------------ |
 | `2011-08-30T13:22:53.108-03`       | The minutes of the offset are missing.                             |
 | `2011-08-30T13:22:53.108912Z`      | Too many digits for fractions of a second. Exactly three expected. |
-| `2011-08-30T24:22:53Z`             | Fractions of a second are missing.                                 |
+| `2011-08-30T23:22:53Z`             | Fractions of a second are missing.                                 |
 | `2011-08-30T13:22:53.108`          | No offset provided.                                                |
 | `2011-08-30`                       | No time provided.                                                  |
 | `2011-08-30T13:22:53.108-00:00`    | Negative offset (`-00:00`) is not allowed                          |
