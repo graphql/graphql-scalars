@@ -84,7 +84,7 @@ These are valid examples:
 These are invalid examples:
 
 | String                             | Why is it invalid                                                  |
-|------------------------------------| ------------------------------------------------------------------ |
+| ---------------------------------- | ------------------------------------------------------------------ |
 | `2011-08-30T13:22:53.108-03`       | The minutes of the offset are missing.                             |
 | `2011-08-30T13:22:53.108912Z`      | Too many digits for fractions of a second. Exactly three expected. |
 | `2011-08-30T23:22:53Z`             | Fractions of a second are missing.                                 |
