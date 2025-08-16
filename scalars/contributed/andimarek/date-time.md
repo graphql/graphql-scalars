@@ -84,7 +84,7 @@ These are valid examples:
 These are invalid examples:
 
 | String                             | Why is it invalid                                                  |
-| ---------------------------------- | ------------------------------------------------------------------ |
+|------------------------------------| ------------------------------------------------------------------ |
 | `2011-08-30T13:22:53.108-03`       | The minutes of the offset are missing.                             |
 | `2011-08-30T13:22:53.108912Z`      | Too many digits for fractions of a second. Exactly three expected. |
 | `2011-08-30T23:22:53Z`             | Fractions of a second are missing.                                 |
@@ -94,7 +94,7 @@ These are invalid examples:
 | `2011-08-30T13:22:53.108+03:30:15` | Seconds are not allowed for the offset                             |
 | `2011-08-30T24:22:53.108Z`         | `24` is not allowed as hour of the time.                           |
 | `2010-02-30T21:22:53.108Z`         | 30th of February is not a valid date                               |
-| `2010-02-11T21:22:53.108Z+25:11`   | 25 is not a valid hour for offset                                  |
+| `2010-02-11T21:22:53.108+25:11`    | 25 is not a valid hour for offset                                  |
 
 # Name
 
