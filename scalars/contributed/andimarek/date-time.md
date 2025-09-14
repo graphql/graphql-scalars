@@ -94,7 +94,7 @@ These are invalid examples:
 | `2011-08-30T13:22:53.108+03:30:15` | Seconds are not allowed for the offset                             |
 | `2011-08-30T24:22:53.108Z`         | `24` is not allowed as hour of the time.                           |
 | `2010-02-30T21:22:53.108Z`         | 30th of February is not a valid date                               |
-| `2010-02-11T21:22:53.108Z+25:11`   | 25 is not a valid hour for offset                                  |
+| `2010-02-11T21:22:53.108+25:11`    | 25 is not a valid hour for offset                                  |
 
 # Name
 
