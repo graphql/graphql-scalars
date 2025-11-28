@@ -33,13 +33,13 @@ this project.
    URL for your specification. In case you are using an organization name, we will
    manually verify that you are allowed to make the contribution in the name of the organization.
 
-4. Install dependencies with `npm install` and the run `npm run build` to
+3. Install dependencies with `npm install` and the run `npm run build` to
    locally build the resulting public specification files. Navigate to the
    `/public` folder to view the built files.
 
-5. Run `npm test` to ensure proper formatting before submitting a pull request.
+4. Run `npm test` to ensure proper formatting before submitting a pull request.
 
-6. [Open a new pull request](https://github.com/graphql/graphql-scalars/pulls)
+5. [Open a new pull request](https://github.com/graphql/graphql-scalars/pulls)
    for each Custom Scalar specification you would like to add.
 
 ### Review process
