@@ -27,7 +27,7 @@ this project.
    [graphql-scalars GitHub repository](https://github.com/graphql/graphql-scalars/tree/main/scalars).
 
 2. Modify your selected template, and save it in the correct place
-   `scalars/contributed/<github-user-or-organisation-name>/<scalar-name>.md` in
+   `scalars/contributed/<github-user-or-organization-name>/<scalar-name>.md` in
    the
    [graphql-scalars GitHub repository](https://github.com/graphql/graphql-scalars/tree/main/scalars/contributed).
    The directory location is important, as this will form part of the reference
