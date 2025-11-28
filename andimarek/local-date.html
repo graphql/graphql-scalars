@@ -15,7 +15,7 @@
 <section id="intro">
 <p data-source="scalars/contributed/andimarek/local-date.md#L5">&ldquo;Author &ndash; andimarek&rdquo;</p>
 <p data-source="scalars/contributed/andimarek/local-date.md#L7">&ldquo;Date - 2023-01-18&rdquo;</p>
-<p data-source="scalars/contributed/andimarek/local-date.md#L9">This is a String-based Scalar.</p>
+<p data-source="scalars/contributed/andimarek/local-date.md#L9">This is a String-based scalar.</p>
 <section id="sec-License-and-Copyright" class="subsec">
 <h6 data-source="scalars/contributed/andimarek/local-date.md#L11"><a href="#sec-License-and-Copyright" title="link to this subsection">License and Copyright</a></h6>
 <p data-source="scalars/contributed/andimarek/local-date.md#L13-L14">Copyright © GraphQL contributors. This specification is licensed under <a href="https://www.openwebfoundation.org/the-agreements/the-owf-1-0-agreements-granted-claims/owfa-1-0">OWFa 1.0</a>.</p>
@@ -26,8 +26,8 @@
 <ol>
 <li><a href="#sec-Overview"><span class="spec-secid">1</span>Overview</a></li>
 <li><a href="#sec-Name"><span class="spec-secid">2</span>Name</a></li>
-<li><a href="#sec-Result-spec"><span class="spec-secid">3</span>Result spec</a></li>
-<li><a href="#sec-Input-spec"><span class="spec-secid">4</span>Input spec</a></li>
+<li><a href="#sec-Result"><span class="spec-secid">3</span>Result</a></li>
+<li><a href="#sec-Input"><span class="spec-secid">4</span>Input</a></li>
 <li><a href="#sec-References"><span class="spec-secid">5</span>References</a></li>
 </ol>
 </nav>
@@ -35,21 +35,21 @@
 <section id="sec-Overview" secid="1">
 <h1 data-source="scalars/contributed/andimarek/local-date.md#L16"><span class="spec-secid" title="link to this section"><a href="#sec-Overview">1</a></span>Overview</h1>
 <p data-source="scalars/contributed/andimarek/local-date.md#L18-L19">This scalar represents a date without a time-zone in the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO-8601</a> calendar system.</p>
-<p data-source="scalars/contributed/andimarek/local-date.md#L21-L22">The pattern is &ldquo;YYYY-MM-DD&rdquo; with &ldquo;YYYY&rdquo; representing the year, &ldquo;MM&rdquo; the month and &ldquo;DD&rdquo; the day.</p>
+<p data-source="scalars/contributed/andimarek/local-date.md#L21-L22">The pattern is &ldquo;YYYY-MM-DD&rdquo; with &ldquo;YYYY&rdquo; representing the year, &ldquo;MM&rdquo; the month, and &ldquo;DD&rdquo; the day.</p>
 <p data-source="scalars/contributed/andimarek/local-date.md#L24-L25">Valid examples are &ldquo;1983-10-20&rdquo; or &ldquo;2023-04-01&rdquo;. An invalid example would be &ldquo;2011-13-10&rdquo; because there isn&rsquo;t a 13th month in a year.</p>
-<p data-source="scalars/contributed/andimarek/local-date.md#L27-L30">The prefix &ldquo;Local&rdquo; comes from the fact that without a time-zone it is not a specific point in time, but rather expresses a &ldquo;local point of view&rdquo;. A popular use case for using this scalar are birthdays for example, which are normally not stored with a specific timezone.</p>
+<p data-source="scalars/contributed/andimarek/local-date.md#L27-L30">The prefix &ldquo;Local&rdquo; comes from the fact that without a time-zone it is not a specific point in time, but rather expresses a &ldquo;local point of view&rdquo;. A popular use case for using this scalar are birthdays for example, which are normally not stored with a specific time zone.</p>
 <p data-source="scalars/contributed/andimarek/local-date.md#L32-L33">Because this scalar depends on the ISO-8601 calendar it is not recommended to use for dates before the year 1582.</p>
 </section>
 <section id="sec-Name" secid="2">
 <h1 data-source="scalars/contributed/andimarek/local-date.md#L35"><span class="spec-secid" title="link to this section"><a href="#sec-Name">2</a></span>Name</h1>
 <p data-source="scalars/contributed/andimarek/local-date.md#L37">The recommended name is &ldquo;LocalDate&rdquo;.</p>
 </section>
-<section id="sec-Result-spec" secid="3">
-<h1 data-source="scalars/contributed/andimarek/local-date.md#L39"><span class="spec-secid" title="link to this section"><a href="#sec-Result-spec">3</a></span>Result spec</h1>
+<section id="sec-Result" secid="3">
+<h1 data-source="scalars/contributed/andimarek/local-date.md#L39"><span class="spec-secid" title="link to this section"><a href="#sec-Result">3</a></span>Result</h1>
 <p data-source="scalars/contributed/andimarek/local-date.md#L41">Every result must follow the pattern &ldquo;YYYY-MM-DD&rdquo; as described above.</p>
 </section>
-<section id="sec-Input-spec" secid="4">
-<h1 data-source="scalars/contributed/andimarek/local-date.md#L43"><span class="spec-secid" title="link to this section"><a href="#sec-Input-spec">4</a></span>Input spec</h1>
+<section id="sec-Input" secid="4">
+<h1 data-source="scalars/contributed/andimarek/local-date.md#L43"><span class="spec-secid" title="link to this section"><a href="#sec-Input">4</a></span>Input</h1>
 <p data-source="scalars/contributed/andimarek/local-date.md#L45">Every input must follow the pattern &ldquo;YYYY-MM-DD&rdquo; as described above.</p>
 </section>
 <section id="sec-References" secid="5">
@@ -65,8 +65,8 @@ Written in <a href="https://spec-md.com" target="_blank">Spec Markdown</a>.</foo
 <div class="title"><a href="#">LocalDate &mdash; GraphQL Custom Scalar</a></div>
 <ol><li id="_sidebar_1"><a href="#sec-Overview"><span class="spec-secid">1</span>Overview</a></li>
 <li id="_sidebar_2"><a href="#sec-Name"><span class="spec-secid">2</span>Name</a></li>
-<li id="_sidebar_3"><a href="#sec-Result-spec"><span class="spec-secid">3</span>Result spec</a></li>
-<li id="_sidebar_4"><a href="#sec-Input-spec"><span class="spec-secid">4</span>Input spec</a></li>
+<li id="_sidebar_3"><a href="#sec-Result"><span class="spec-secid">3</span>Result</a></li>
+<li id="_sidebar_4"><a href="#sec-Input"><span class="spec-secid">4</span>Input</a></li>
 <li id="_sidebar_5"><a href="#sec-References"><span class="spec-secid">5</span>References</a></li>
 </ol>
 </div>

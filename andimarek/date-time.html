@@ -15,7 +15,7 @@
 <section id="intro">
 <p data-source="scalars/contributed/andimarek/date-time.md#L5">Author &ndash; andimarek</p>
 <p data-source="scalars/contributed/andimarek/date-time.md#L7">Date - 2022-10-18</p>
-<p data-source="scalars/contributed/andimarek/date-time.md#L9">This is a String-based Scalar.</p>
+<p data-source="scalars/contributed/andimarek/date-time.md#L9">This is a String-based scalar.</p>
 <section id="sec-License-and-Copyright" class="subsec">
 <h6 data-source="scalars/contributed/andimarek/date-time.md#L11"><a href="#sec-License-and-Copyright" title="link to this subsection">License and Copyright</a></h6>
 <p data-source="scalars/contributed/andimarek/date-time.md#L13-L14">Copyright © GraphQL contributors. This specification is licensed under <a href="https://www.openwebfoundation.org/the-agreements/the-owf-1-0-agreements-granted-claims/owfa-1-0">OWFa 1.0</a>.</p>
@@ -33,24 +33,24 @@
 </header>
 <section id="sec-Overview" secid="1">
 <h1 data-source="scalars/contributed/andimarek/date-time.md#L16"><span class="spec-secid" title="link to this section"><a href="#sec-Overview">1</a></span>Overview</h1>
-<p data-source="scalars/contributed/andimarek/date-time.md#L18-L19">This Scalar represents an exact point in time. This point in time is specified by having an offset to UTC and does <strong>not</strong> use a time zone.</p>
-<p data-source="scalars/contributed/andimarek/date-time.md#L21-L23">It is a slightly refined version of <a href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> including the <a href="https://www.rfc-editor.org/errata/rfc3339">errata</a>.</p>
+<p data-source="scalars/contributed/andimarek/date-time.md#L18-L19">This scalar represents an exact point in time. This point in time is specified by having an offset to UTC and does <strong>not</strong> use a time zone.</p>
+<p data-source="scalars/contributed/andimarek/date-time.md#L21-L23">It is a slightly refined version of <a href="https://tools.ietf.org/html/rfc3339">RFC 3339</a>, including the <a href="https://www.rfc-editor.org/errata/rfc3339">errata</a>.</p>
 <p data-source="scalars/contributed/andimarek/date-time.md#L25-L26">All definitions of RFC 3339 are adopted and nothing is added or removed unless explicitly mentioned here.</p>
 <p data-source="scalars/contributed/andimarek/date-time.md#L28">The following refinements/clarifications apply:</p>
 <section id="sec-Overview.Only-date-time-" class="subsec">
 <h6 data-source="scalars/contributed/andimarek/date-time.md#L30"><a href="#sec-Overview.Only-date-time-" title="link to this subsection">Only &ldquo;date-time&rdquo;</a></h6>
 <p data-source="scalars/contributed/andimarek/date-time.md#L32">This scalar represents a &ldquo;date-time&rdquo; as specified in section 5.6 of RFC 3339.</p>
-<p data-source="scalars/contributed/andimarek/date-time.md#L34-L35">The other productions in section 5.6 are only used to support &ldquo;date-time&rdquo; but never stand alone for this Scalar.</p>
+<p data-source="scalars/contributed/andimarek/date-time.md#L34-L35">The other productions in section 5.6 are only used to support &ldquo;date-time&rdquo; but never stand alone for this scalar.</p>
 </section>
 <section id="sec-Overview.Non-optional-exact-milliseconds" class="subsec">
 <h6 data-source="scalars/contributed/andimarek/date-time.md#L37"><a href="#sec-Overview.Non-optional-exact-milliseconds" title="link to this subsection">Non-optional exact milliseconds</a></h6>
 <p data-source="scalars/contributed/andimarek/date-time.md#L39">RFC 3339 defines <code>time-secfrac</code> optional as:</p>
 <pre data-source="scalars/contributed/andimarek/date-time.md#L41-L43"><code>time-secfrac    = "." 1*DIGIT (Meaning 1 or more DIGIT)
 </code></pre>
-<p data-source="scalars/contributed/andimarek/date-time.md#L45-L46">This allows for an unlimited numbers of digits. For this scalar the rule is not optional anymore and refined as:</p>
+<p data-source="scalars/contributed/andimarek/date-time.md#L45-L46">This allows for an unlimited number of digits. For this scalar, the rule is no longer optional and is refined as:</p>
 <pre data-source="scalars/contributed/andimarek/date-time.md#L48-L50"><code>time-secfrac    = "." DIGIT DIGIT DIGIT
 </code></pre>
-<p data-source="scalars/contributed/andimarek/date-time.md#L52">consisting always of exact three digits representing milliseconds.</p>
+<p data-source="scalars/contributed/andimarek/date-time.md#L52">... consisting always of exactly three digits representing milliseconds.</p>
 </section>
 <section id="sec-Overview.No-Unknown-Local-Offset-Convention-" class="subsec">
 <h6 data-source="scalars/contributed/andimarek/date-time.md#L54"><a href="#sec-Overview.No-Unknown-Local-Offset-Convention-" title="link to this subsection">No &lsquo;Unknown Local Offset Convention&rsquo;</a></h6>
@@ -58,7 +58,7 @@
 <pre data-source="scalars/contributed/andimarek/date-time.md#L58-L61"><code>If the time in UTC is known, but the offset to local time is unknown,
 this can be represented with an offset of "-00:00".
 </code></pre>
-<p data-source="scalars/contributed/andimarek/date-time.md#L63-L64">In order to simplify this Scalar this convention is dropped and an offset of <code>-00:00</code> is not allowed.</p>
+<p data-source="scalars/contributed/andimarek/date-time.md#L63-L64">In order to simplify this scalar this convention is dropped and an offset of <code>-00:00</code> is not allowed.</p>
 </section>
 <section id="sec-Overview.Examples" class="subsec">
 <h6 data-source="scalars/contributed/andimarek/date-time.md#L66"><a href="#sec-Overview.Examples" title="link to this subsection">Examples</a></h6>
@@ -151,7 +151,7 @@ this can be represented with an offset of "-00:00".
 <section id="sec-Name" secid="2">
 <h1 data-source="scalars/contributed/andimarek/date-time.md#L99"><span class="spec-secid" title="link to this section"><a href="#sec-Name">2</a></span>Name</h1>
 <p data-source="scalars/contributed/andimarek/date-time.md#L101">The recommended name is <code>DateTime</code>. An alternative is <code>OffsetDateTime</code>.</p>
-<p data-source="scalars/contributed/andimarek/date-time.md#L103-L104"><code>Date</code> is potentially misleading as this Scalar also specifies a time, not only a date.</p>
+<p data-source="scalars/contributed/andimarek/date-time.md#L103-L104"><code>Date</code> is potentially misleading as this scalar also specifies a time, not only a date.</p>
 </section>
 <section id="sec-Result" secid="3">
 <h1 data-source="scalars/contributed/andimarek/date-time.md#L106"><span class="spec-secid" title="link to this section"><a href="#sec-Result">3</a></span>Result</h1>
@@ -159,7 +159,7 @@ this can be represented with an offset of "-00:00".
 </section>
 <section id="sec-Input" secid="4">
 <h1 data-source="scalars/contributed/andimarek/date-time.md#L112"><span class="spec-secid" title="link to this section"><a href="#sec-Input">4</a></span>Input</h1>
-<p data-source="scalars/contributed/andimarek/date-time.md#L114-L115">As Input every valid String as described above must be accepted. </p>
+<p data-source="scalars/contributed/andimarek/date-time.md#L114-L115">As input, every valid String as described above must be accepted. </p>
 </section>
 </article>
 <footer>
