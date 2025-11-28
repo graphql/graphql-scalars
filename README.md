@@ -56,7 +56,8 @@ available reference documents. We will permit small edits which do not change
 specification semantics, such as typo fixes.
 
 A new version of a Custom Scalar specification can either use a new scalar name
-or aadd a version as part of its url like `scalars/contributed/<github-user-name>/<version>/<scalar-name>.md`.
+or add a version as part of its url like
+`scalars/contributed/<github-user-name>/<version>/<scalar-name>.md`.
 
 ## Licensing
 
