@@ -6,7 +6,7 @@ Author - andimarek
 
 Date - 2022-10-18
 
-This is a String-based Scalar.
+This is a String-based scalar.
 
 **License and Copyright**
 
@@ -15,11 +15,11 @@ Copyright © GraphQL contributors. This specification is licensed under
 
 # Overview
 
-This Scalar represents an exact point in time. This point in time is specified
+This scalar represents an exact point in time. This point in time is specified
 by having an offset to UTC and does **not** use a time zone.
 
 It is a slightly refined version of
-[RFC 3339](https://tools.ietf.org/html/rfc3339) including the
+[RFC 3339](https://tools.ietf.org/html/rfc3339), including the
 [errata](https://www.rfc-editor.org/errata/rfc3339).
 
 All definitions of RFC 3339 are adopted and nothing is added or removed unless
@@ -32,7 +32,7 @@ The following refinements/clarifications apply:
 This scalar represents a “date-time” as specified in section 5.6 of RFC 3339.
 
 The other productions in section 5.6 are only used to support "date-time" but
-never stand alone for this Scalar.
+never stand alone for this scalar.
 
 **Non-optional exact milliseconds**
 
@@ -42,14 +42,14 @@ RFC 3339 defines `time-secfrac` optional as:
 time-secfrac    = "." 1*DIGIT (Meaning 1 or more DIGIT)
 ```
 
-This allows for an unlimited numbers of digits. For this scalar the rule is not
-optional anymore and refined as:
+This allows for an unlimited number of digits. For this scalar, the rule is no
+longer optional and is refined as:
 
 ```
 time-secfrac    = "." DIGIT DIGIT DIGIT
 ```
 
-consisting always of exact three digits representing milliseconds.
+... consisting always of exactly three digits representing milliseconds.
 
 **No 'Unknown Local Offset Convention'**
 
@@ -60,7 +60,7 @@ If the time in UTC is known, but the offset to local time is unknown,
 this can be represented with an offset of "-00:00".
 ```
 
-In order to simplify this Scalar this convention is dropped and an offset of
+In order to simplify this scalar this convention is dropped and an offset of
 `-00:00` is not allowed.
 
 **Examples**
@@ -87,20 +87,20 @@ These are invalid examples:
 | ---------------------------------- | ------------------------------------------------------------------ |
 | `2011-08-30T13:22:53.108-03`       | The minutes of the offset are missing.                             |
 | `2011-08-30T13:22:53.108912Z`      | Too many digits for fractions of a second. Exactly three expected. |
-| `2011-08-30T24:22:53Z`             | Fractions of a second are missing.                                 |
+| `2011-08-30T23:22:53Z`             | Fractions of a second are missing.                                 |
 | `2011-08-30T13:22:53.108`          | No offset provided.                                                |
 | `2011-08-30`                       | No time provided.                                                  |
 | `2011-08-30T13:22:53.108-00:00`    | Negative offset (`-00:00`) is not allowed                          |
 | `2011-08-30T13:22:53.108+03:30:15` | Seconds are not allowed for the offset                             |
 | `2011-08-30T24:22:53.108Z`         | `24` is not allowed as hour of the time.                           |
 | `2010-02-30T21:22:53.108Z`         | 30th of February is not a valid date                               |
-| `2010-02-11T21:22:53.108Z+25:11`   | 25 is not a valid hour for offset                                  |
+| `2010-02-11T21:22:53.108+25:11`    | 25 is not a valid hour for offset                                  |
 
 # Name
 
 The recommended name is `DateTime`. An alternative is `OffsetDateTime`.
 
-`Date` is potentially misleading as this Scalar also specifies a time, not only
+`Date` is potentially misleading as this scalar also specifies a time, not only
 a date.
 
 # Result
@@ -111,4 +111,4 @@ two divider characters `T` and `Z` are always uppercase, never `t` or `z`.
 
 # Input
 
-As Input every valid String as described above must be accepted.
+As input, every valid String as described above must be accepted.
