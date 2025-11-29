@@ -2,7 +2,7 @@
 
 # \<name\> — GraphQL Custom Scalar
 
-"Author - \<github user or organization  name\> "
+"Author - \<github user or organization name\> "
 
 "Date - \<the date of the first publication in YYYY-MM-DD format\>"
 

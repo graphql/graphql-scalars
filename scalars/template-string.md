@@ -31,7 +31,8 @@ Provide positive and negative examples of String return values.
 
 # Input coercion
 
-Define which GraphQL string Literals or external string values are accepted as input.
+Define which GraphQL string Literals or external string values are accepted as
+input.
 
 Provide positive and negative examples.
 
