@@ -1,15 +1,15 @@
-# GraphQL Custom Scalars Specification Contribution Guide
+# GraphQL scalars Specification Contribution Guide
 
-Thanks for contributing to GraphQL Scalars.
+Thanks for contributing to GraphQL scalars.
 
-The goal of the GraphQL Scalars project is to provide a directory of GraphQL
-Custom Scalar specifications, contributed by the community. Contributed
+The goal of the GraphQL scalars project is to provide a directory of GraphQL
+custom scalar specifications, contributed by the community. Contributed
 specifications are hosted on a GraphQL Foundation owned domain
 [scalars.graphql.org](https://scalars.graphql.org), which can be referenced with
 the built-in `@specifiedBy`
 [GraphQL directive](https://spec.graphql.org/draft/#sec--specifiedBy).
 
-GraphQL Custom Scalar specifications are language agnostic and thus can be used
+GraphQL custom scalar specifications are language-agnostic and thus can be used
 to document and standardize behavior across different languages.
 
 Please ensure that you read the
@@ -20,10 +20,10 @@ this project.
 
 1. Copy the `template-string.md`
    [template](https://github.com/graphql/graphql-scalars/blob/main/scalars/template-string.md)
-   for Custom Scalars based on the built-in String Scalar, or otherwise use the
+   for custom scalars based on the built-in String scalar, or otherwise use the
    `template.md`
    [template](https://github.com/graphql/graphql-scalars/blob/main/scalars/template.md)
-   for all other Custom Scalars. Templates are located in the
+   for all other custom scalars. Templates are located in the
    [graphql-scalars GitHub repository](https://github.com/graphql/graphql-scalars/tree/main/scalars).
 
 2. Modify your selected template, and save it in the correct place
@@ -42,7 +42,7 @@ this project.
 4. Run `npm test` to ensure proper formatting before submitting a pull request.
 
 5. [Open a new pull request](https://github.com/graphql/graphql-scalars/pulls)
-   for each Custom Scalar specification you would like to add.
+   for each custom scalar specification you would like to add.
 
 ### Review process
 
@@ -58,13 +58,13 @@ Specification semantics must not change, as specifications are publicly
 available reference documents. We will permit small edits which do not change
 specification semantics, such as typo fixes.
 
-A new version of a Custom Scalar specification should have a new scalar name,
+A new version of a custom scalar specification should have a new scalar name,
 either with a number appended such as `<scalar-name>2`, or a different name such
 as `OffsetDateTime` to differentiate from `DateTime`.
 
 ## Licensing
 
-Specifications contributed to the GraphQL Scalars repository are part of the
+Specifications contributed to the GraphQL scalars repository are part of the
 GraphQL Specification Project and are made available by the
 [Joint Development Foundation](https://www.jointdevelopment.org/). The current
 [GraphQL Working Group](https://github.com/graphql/graphql-wg) charter, which

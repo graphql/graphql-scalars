@@ -1,13 +1,13 @@
 <!-- cspell:ignore <github user name> -->
 
-# \<name\> — GraphQL Custom Scalar
+# \<name\> — GraphQL custom scalar
 
 "Author - \<github user name\> "
 
 "Date - \<the date of the first publication in YYYY-MM-DD format\>"
 
 This template is meant to be copied and modified. This template is meant for
-Scalars which are _not_ based on the built-in String Scalar
+scalars which are _not_ based on the built-in String scalar
 
 **License and Copyright**
 
@@ -16,12 +16,12 @@ Copyright © GraphQL contributors. This specification is licensed under
 
 # Overview
 
-Provide an overview of what this Scalar does and provide any background
+Provide an overview of what this scalar does and provide any background
 information.
 
 # Name
 
-Provide a recommended Scalar name and list alternatives, if available.
+Provide a recommended scalar name and list alternatives, if available.
 
 # Result JSON spec
 
