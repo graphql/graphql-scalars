@@ -27,10 +27,13 @@ this project.
    [graphql-scalars GitHub repository](https://github.com/graphql/graphql-scalars/tree/main/scalars).
 
 2. Modify your selected template, and save it in the correct place
-   `scalars/contributed/<github-user-name>/<scalar-name>.md` in the
+   `scalars/contributed/<github-user-or-organization-name>/<scalar-name>.md` in
+   the
    [graphql-scalars GitHub repository](https://github.com/graphql/graphql-scalars/tree/main/scalars/contributed).
    The directory location is important, as this will form part of the reference
-   URL for your specification.
+   URL for your specification. In case you are using an organization name, we
+   will manually verify that you are allowed to make the contribution in the
+   name of the organization.
 
 3. Install dependencies with `npm install` and the run `npm run build` to
    locally build the resulting public specification files. Navigate to the
