@@ -2,7 +2,7 @@
 
 # \<name\> — GraphQL Custom Scalar
 
-"Author - \<github user name\> "
+"Author - \<github user or organization name\> "
 
 "Date - \<the date of the first publication in YYYY-MM-DD format\>"
 
@@ -23,18 +23,17 @@ information.
 
 Provide a recommended Scalar name and list alternatives, if available.
 
-# Result spec
+# Result coercion
 
 Define which Strings can be returned.
 
 Provide positive and negative examples of String return values.
 
-# Input spec
+# Input coercion
 
-Define which String values are accepted as input as GraphQL Literal and as JSON
-raw input.
+Define which GraphQL string Literals or external string values are accepted as input.
 
-Provide positive and negative examples of literal and JSON raw input values.
+Provide positive and negative examples.
 
 # References
 
