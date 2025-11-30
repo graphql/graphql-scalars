@@ -13,9 +13,7 @@ Copyright © GraphQL contributors. This specification is licensed under
 
 # Overview
 
-This Scalar represents a 64-bit signed integer (non-fractional) value, ranging from `-2^63` to `2^63-1`. Such values are commonly
-used to represent timestamps as the number of milliseconds since the UNIX epoch (`1970-01-01T00:00:00.000Z`)
-among other use cases.
+This scalar represents a 64-bit signed integer (non-fractional) value, ranging from `-2^63` to `2^63-1`. ```
 
 # Name
 
