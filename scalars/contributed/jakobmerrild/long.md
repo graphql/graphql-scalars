@@ -20,7 +20,7 @@ This scalar represents a 64-bit signed integer (non-fractional) value, ranging f
 The scalar should be named `Long` to match commonly used names for the same data structure in a variety of programming languages.
 Alternatively the scalar can be named `Int64` to represent the 64-bit encoding.
 
-# Result JSON spec
+# Result coercion
 
 A field of type `Long` should result in a JSON `number` without a fractional or exponential part. A leading `-` should only be
 added if the field represents a negative value.
