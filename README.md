@@ -1,4 +1,4 @@
-# GraphQL scalars Specification Contribution Guide
+# GraphQL Custom Scalars Specification Contribution Guide
 
 Thanks for contributing to GraphQL scalars.
 
