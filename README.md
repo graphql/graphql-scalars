@@ -58,7 +58,7 @@ Specification semantics must not change, as specifications are publicly
 available reference documents. We will permit small edits which do not change
 specification semantics, such as typo fixes.
 
-A new version of a Custom Scalar specification must use a new url but may still
+A new version of a Custom Scalar specification must use a new URL but may still
 recommend using the old name.
 
 For example, `scalars/contributed/my_username/date-time-v2.md` may recommend to
