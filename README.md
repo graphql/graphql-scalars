@@ -64,7 +64,7 @@ recommend using the old name.
 For example, `scalars/contributed/my_username/date-time-v2.md` may recommend
 using `DateTime` for the scalar name.
 
-You may use `-v<version>` suffix to indicate new versions but this is not a
+You may use a `-v<version>` suffix to indicate new versions, but this is not a
 requirement.
 
 ## Licensing
