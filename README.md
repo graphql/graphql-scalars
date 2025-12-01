@@ -50,7 +50,7 @@ Because this repository is separate from the main GraphQL spec, and because seve
 
 Anyone may review pull requests. Feedback may or may not be incorporated at the discretion of the original author. When they consider the pull request has reached a satisfactory state, but not before a 2 week review window, the author may ask a TSC member to merge the pull request. The TSC will then merge the pull request without further discussion.
 
-### Review process for other part of this repository
+### Review process for other parts of this repository
 
 This document, and every content excluding `contributed/` may be changed with the [TSC](https://github.com/graphql/graphql-wg/blob/main/GraphQL-TSC.md)'s approval. This is usually longer than reviewing new specifications.
 
