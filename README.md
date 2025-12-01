@@ -52,7 +52,7 @@ Anyone may review pull requests. Feedback may or may not be incorporated at the 
 
 ### Review process for other parts of this repository
 
-This document, and every content excluding `contributed/` may be changed with the [TSC](https://github.com/graphql/graphql-wg/blob/main/GraphQL-TSC.md)'s approval. This is usually longer than reviewing new specifications.
+This document, and all content excluding `contributed/` may be changed with the [TSC](https://github.com/graphql/graphql-wg/blob/main/GraphQL-TSC.md)'s approval. This is usually longer than reviewing new specifications.
 
 ### Immutable specifications
 
