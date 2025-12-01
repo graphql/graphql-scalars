@@ -64,7 +64,7 @@ as `OffsetDateTime` to differentiate from `DateTime`.
 
 ## Licensing
 
-Specifications contributed to the GraphQL scalars repository are part of the
+Specifications contributed to the GraphQL Scalars repository are part of the
 GraphQL Specification Project and are made available by the
 [Joint Development Foundation](https://www.jointdevelopment.org/). The current
 [GraphQL Working Group](https://github.com/graphql/graphql-wg) charter, which
