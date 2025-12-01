@@ -1,6 +1,6 @@
 # GraphQL Custom Scalars Specification Contribution Guide
 
-Thanks for contributing to GraphQL scalars.
+Thanks for contributing to GraphQL Scalars.
 
 The goal of the GraphQL scalars project is to provide a directory of GraphQL
 custom scalar specifications, contributed by the community. Contributed
