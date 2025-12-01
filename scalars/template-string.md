@@ -1,6 +1,6 @@
 <!-- cspell:ignore <github user name> -->
 
-# \<name\> — GraphQL custom scalar
+# \<name\> — GraphQL Custom Scalar
 
 "Author - \<github user name\> "
 
