@@ -61,8 +61,8 @@ specification semantics, such as typo fixes.
 A new version of a Custom Scalar specification must use a new URL but may still
 recommend using the old name.
 
-For example, `scalars/contributed/my_username/date-time-v2.md` may recommend to
-use `DateTime` for the scalar name.
+For example, `scalars/contributed/my_username/date-time-v2.md` may recommend
+using `DateTime` for the scalar name.
 
 You may use `-v<version>` suffix to indicate new versions but this is not a
 requirement.
