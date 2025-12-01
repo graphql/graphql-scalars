@@ -2,7 +2,7 @@
 
 Thanks for contributing to GraphQL Scalars.
 
-The goal of the GraphQL scalars project is to provide a directory of GraphQL
+The goal of the GraphQL Scalars project is to provide a directory of GraphQL
 custom scalar specifications, contributed by the community. Contributed
 specifications are hosted on a GraphQL Foundation owned domain
 [scalars.graphql.org](https://scalars.graphql.org), which can be referenced with
