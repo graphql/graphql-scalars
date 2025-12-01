@@ -25,7 +25,7 @@ Provide a recommended scalar name and list alternatives, if available.
 
 # Result spec
 
-Define which string can be returned.
+Define which strings can be returned.
 
 Provide positive and negative examples of string return values.
 
