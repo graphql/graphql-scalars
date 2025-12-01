@@ -46,7 +46,7 @@ this project.
 
 ### Review process for new specifications
 
-Because this repository is separate from the main GraphQL spec, and because several specifications may exist concurrently under different names/authors, the review process for new specification under `contributed/` is very light.
+Because this repository is separate from the main GraphQL spec, and because several specifications may exist concurrently under different names/authors, the review process for new specifications under `contributed/` is very light.
 
 Anyone may review pull requests. Feedback may or may not be incorporated at the discretion of the original author. When they consider the pull request has reached a satisfactory state, but not before a 2 weeks review window, the author may ask a TSC member to merge the pull request. The TSC will then merge the pull request without further discussion.
 
