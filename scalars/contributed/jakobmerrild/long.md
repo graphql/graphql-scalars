@@ -46,8 +46,7 @@ These are invalid examples:
 
 # Input coercion
 
-For input both `number` and `string` shall be accepted so long as the `string` is a base-10 representation of a
-valid value within the range.
+For input `number` values shall be accepted so long as they fall within the range represented by the spec.
 
 These are valid examples:
 
@@ -56,7 +55,6 @@ These are valid examples:
 | `0`                    | IntValue within range                                                     |
 | `-9223372036854775808` | This is the lowest value that can be represented in the range             |
 | `9223372036854775807`  | This is the largest value that can be represented in the range            |
-| `"987654321"`          | A StringValue containing a base-10 representation of the value is allowed |
 
 These are invalid examples:
 
@@ -67,4 +65,5 @@ These are invalid examples:
 | `123.0`                 | FloatValue is not allowed                                                                                                    |
 | `"FFFFF"`               | A StringValue containing a base-16 representation of a valid value is not allowed                                            |
 | `"6543.000"`            | A StringValue containing a base-10 representation with a fractional part is not allowed. Even if the fractional part is zero |
+| `"987654321"`           | A StringValue containing a base-10 representation of the value is not allowed                                                |
 
