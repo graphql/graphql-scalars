@@ -58,9 +58,14 @@ Specification semantics must not change, as specifications are publicly
 available reference documents. We will permit small edits which do not change
 specification semantics, such as typo fixes.
 
-A new version of a Custom Scalar specification should have a new scalar name,
-either with a number appended such as `<scalar-name>2`, or a different name such
-as `OffsetDateTime` to differentiate from `DateTime`.
+A new version of a Custom Scalar specification must use a new URL but may still
+recommend using the old name.
+
+For example, `scalars/contributed/my_username/date-time-v2.md` may recommend
+using `DateTime` for the scalar name.
+
+You may use a `-v<version>` suffix to indicate new versions, but this is not a
+requirement.
 
 ## Licensing
 

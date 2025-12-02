@@ -19,7 +19,7 @@ Copyright © GraphQL contributors. This specification is licensed under
 Provide an overview of what this Scalar does and provide any background
 information.
 
-# Name
+# Recommended name
 
 Provide a recommended Scalar name and list alternatives, if available.
 
