@@ -22,7 +22,7 @@ Alternatively the scalar can be named `Int64` to represent the 64-bit encoding.
 
 # Result coercion
 
-A field of type `Long` should result in a JSON `number` without a fractional or exponential part. A leading `-` should only be
+A field of type `Long` should result in a `number` without a fractional or exponential part. A leading `-` should only be
 added if the field represents a negative value.
 
 These are valid examples:
@@ -44,9 +44,9 @@ These are invalid examples:
 | `1e6`                   | Exponential notation is not allowed, even if it represents a valid value |
 | `"12345"`               | String representations of a valid value are not allowed                  |
 
-# Literal Input spec
+# Input coercion
 
-For input both IntValue and StringValue shall be accepted so long as the StringValue is a base-10 representation of a
+For input both `number` and `string` shall be accepted so long as the `string` is a base-10 representation of a
 valid value within the range.
 
 These are valid examples:
@@ -68,10 +68,3 @@ These are invalid examples:
 | `"FFFFF"`               | A StringValue containing a base-16 representation of a valid value is not allowed                                            |
 | `"6543.000"`            | A StringValue containing a base-10 representation with a fractional part is not allowed. Even if the fractional part is zero |
 
-# Raw Input JSON spec
-
-For raw input the same rules apply as for Literal inputs.
-
-# References
-
-- [Support of `Long` (64-bit integer) scalar](https://github.com/graphql/graphql-spec/issues/73)
