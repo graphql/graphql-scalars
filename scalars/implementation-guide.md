@@ -159,10 +159,3 @@ value and vice versa.
 While the specifics of the all coercion methods are implementation specific, as
 a general rule they should only coerce a value when no information is lost and
 raise an error otherwise.
-
-Additionally, the input coercion should be liberal in what it accepts, while the
-result coercion should be much more restricted and never produce different JSON
-values for logically identical values. For example a `MyLocalDate` scalar could
-accept the literals `"01-10-2022"` and `"01102022"` as input for the first of
-October 2022, but the result coercion should always return one of the possible
-representations.
