@@ -22,8 +22,9 @@
 <div class="title">Contents</div>
 <ol>
 <li><a href="#sec-How-to-contribute"><span class="spec-secid">1</span>How to contribute</a><ol>
-<li><a href="#sec-Review-process"><span class="spec-secid">1.1</span>Review process</a></li>
-<li><a href="#sec-Immutable-specifications"><span class="spec-secid">1.2</span>Immutable specifications</a></li>
+<li><a href="#sec-Review-process-for-new-specifications"><span class="spec-secid">1.1</span>Review process for new specifications</a></li>
+<li><a href="#sec-Review-process-for-other-parts-of-this-repository"><span class="spec-secid">1.2</span>Review process for other parts of this repository</a></li>
+<li><a href="#sec-Immutable-specifications"><span class="spec-secid">1.3</span>Immutable specifications</a></li>
 </ol>
 </li>
 <li><a href="#sec-Licensing"><span class="spec-secid">2</span>Licensing</a><ol>
@@ -44,59 +45,64 @@
 <li data-source="README.md#L42">Run <code>npm test</code> to ensure proper formatting before submitting a pull request.</li>
 <li data-source="README.md#L44-L45"><a href="https://github.com/graphql/graphql-scalars/pulls">Open a new pull request</a> for each Custom Scalar specification you would like to add.</li>
 </ol>
-<section id="sec-Review-process" secid="1.1">
-<h2 data-source="README.md#L47"><span class="spec-secid" title="link to this section"><a href="#sec-Review-process">1.1</a></span>Review process</h2>
-<p data-source="README.md#L49-L53">Your specification pull request will be reviewed by a maintainer of the <a href="https://github.com/graphql/graphql-scalars">graphql-scalars repository</a>. The maintainers will verify that the template has been completed, but note that the correctness of the specification is the responsibility of the original contributor.</p>
+<section id="sec-Review-process-for-new-specifications" secid="1.1">
+<h2 data-source="README.md#L47"><span class="spec-secid" title="link to this section"><a href="#sec-Review-process-for-new-specifications">1.1</a></span>Review process for new specifications</h2>
+<p data-source="README.md#L49-L51">Because this repository is separate from the main GraphQL spec, and because several specifications may exist concurrently under different names/authors, the review process for new specifications under <code>contributed/</code> is very light.</p>
+<p data-source="README.md#L53-L57">Anyone may review pull requests. Feedback may or may not be incorporated at the discretion of the original author. When they consider the pull request has reached a satisfactory state, but not before a 2 week review window, the author may ask a TSC member to merge the pull request. The TSC will then merge the pull request without further discussion.</p>
 </section>
-<section id="sec-Immutable-specifications" secid="1.2">
-<h2 data-source="README.md#L55"><span class="spec-secid" title="link to this section"><a href="#sec-Immutable-specifications">1.2</a></span>Immutable specifications</h2>
-<p data-source="README.md#L57-L59">Specification semantics must not change, as specifications are publicly available reference documents. We will permit small edits which do not change specification semantics, such as typo fixes.</p>
-<p data-source="README.md#L61-L62">A new version of a Custom Scalar specification must use a new URL but may still recommend using the old name.</p>
-<p data-source="README.md#L64-L65">For example, <code>scalars/contributed/my_username/date-time-v2.md</code> may recommend using <code>DateTime</code> for the scalar name.</p>
-<p data-source="README.md#L67-L68">You may use a <code>-v&lt;version&gt;</code> suffix to indicate new versions, but this is not a requirement.</p>
+<section id="sec-Review-process-for-other-parts-of-this-repository" secid="1.2">
+<h2 data-source="README.md#L59"><span class="spec-secid" title="link to this section"><a href="#sec-Review-process-for-other-parts-of-this-repository">1.2</a></span>Review process for other parts of this repository</h2>
+<p data-source="README.md#L61-L63">This document, and all content excluding <code>contributed/</code> may be changed with the <a href="https://github.com/graphql/graphql-wg/blob/main/GraphQL-TSC.md">TSC</a>&lsquo;s approval. This is usually longer than reviewing new specifications.</p>
+</section>
+<section id="sec-Immutable-specifications" secid="1.3">
+<h2 data-source="README.md#L65"><span class="spec-secid" title="link to this section"><a href="#sec-Immutable-specifications">1.3</a></span>Immutable specifications</h2>
+<p data-source="README.md#L67-L69">Specification semantics must not change, as specifications are publicly available reference documents. We will permit small edits which do not change specification semantics, such as typo fixes.</p>
+<p data-source="README.md#L71-L72">A new version of a Custom Scalar specification must use a new URL but may still recommend using the old name.</p>
+<p data-source="README.md#L74-L75">For example, <code>scalars/contributed/my_username/date-time-v2.md</code> may recommend using <code>DateTime</code> for the scalar name.</p>
+<p data-source="README.md#L77-L78">You may use a <code>-v&lt;version&gt;</code> suffix to indicate new versions, but this is not a requirement.</p>
 </section>
 </section>
 <section id="sec-Licensing" secid="2">
-<h1 data-source="README.md#L70"><span class="spec-secid" title="link to this section"><a href="#sec-Licensing">2</a></span>Licensing</h1>
-<p data-source="README.md#L72-L78">Specifications contributed to the GraphQL Scalars repository are part of the GraphQL Specification Project and are made available by the <a href="https://www.jointdevelopment.org/">Joint Development Foundation</a>. The current <a href="https://github.com/graphql/graphql-wg">GraphQL Working Group</a> charter, which includes the IP policy governing all working group deliverables (including specifications, source code, and datasets) may be found in the <a href="https://technical-charter.graphql.org">technical charter</a>.</p>
-<p data-source="README.md#L80-L81">By contributing to this repository, you agree to license your work according to the licenses governing GraphQL Specification Project deliverables, which are:</p>
+<h1 data-source="README.md#L80"><span class="spec-secid" title="link to this section"><a href="#sec-Licensing">2</a></span>Licensing</h1>
+<p data-source="README.md#L82-L88">Specifications contributed to the GraphQL Scalars repository are part of the GraphQL Specification Project and are made available by the <a href="https://www.jointdevelopment.org/">Joint Development Foundation</a>. The current <a href="https://github.com/graphql/graphql-wg">GraphQL Working Group</a> charter, which includes the IP policy governing all working group deliverables (including specifications, source code, and datasets) may be found in the <a href="https://technical-charter.graphql.org">technical charter</a>.</p>
+<p data-source="README.md#L90-L91">By contributing to this repository, you agree to license your work according to the licenses governing GraphQL Specification Project deliverables, which are:</p>
 <table>
 <thead>
-<tr data-source="README.md#L83">
+<tr data-source="README.md#L93">
 <th>Deliverable</th>
 <th>License</th>
 </tr>
 </thead>
 <tbody>
-<tr data-source="README.md#L85">
+<tr data-source="README.md#L95">
 <td>Specifications</td>
 <td><a href="https://www.openwebfoundation.org/the-agreements/the-owf-1-0-agreements-granted-claims/owfa-1-0">Open Web Foundation Agreement 1.0 (Patent and Copyright Grants)</a></td>
 </tr>
-<tr data-source="README.md#L86">
+<tr data-source="README.md#L96">
 <td>Source code</td>
 <td><a href="https://opensource.org/licenses/MIT">MIT License</a></td>
 </tr>
-<tr data-source="README.md#L87">
+<tr data-source="README.md#L97">
 <td>Data sets</td>
 <td><a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a></td>
 </tr>
 </tbody>
 </table>
 <section id="sec-Contributor-License-Agreement" secid="2.1">
-<h2 data-source="README.md#L89"><span class="spec-secid" title="link to this section"><a href="#sec-Contributor-License-Agreement">2.1</a></span>Contributor License Agreement</h2>
-<p data-source="README.md#L91-L96">This repository is managed by EasyCLA. Project participants must sign the free <a href="https://preview-spec-membership.graphql.org">GraphQL Specification Membership agreement</a> before making a contribution. You only need to do this one time, and it can be signed by <a href="http://individual-spec-membership.graphql.org/">individual contributors</a> or their <a href="http://corporate-spec-membership.graphql.org/">employers</a>.</p>
-<p data-source="README.md#L98-L100">To initiate the signature process please open a PR against this repo. The EasyCLA bot will block the merge if we still need a membership agreement from you.</p>
-<p data-source="README.md#L102-L105">You can find <a href="https://github.com/graphql/graphql-wg/tree/main/membership">detailed information here</a>. If you have issues, please email <a href="mailto:operations@graphql.org">operations@graphql.org</a>.</p>
+<h2 data-source="README.md#L99"><span class="spec-secid" title="link to this section"><a href="#sec-Contributor-License-Agreement">2.1</a></span>Contributor License Agreement</h2>
+<p data-source="README.md#L101-L106">This repository is managed by EasyCLA. Project participants must sign the free <a href="https://preview-spec-membership.graphql.org">GraphQL Specification Membership agreement</a> before making a contribution. You only need to do this one time, and it can be signed by <a href="http://individual-spec-membership.graphql.org/">individual contributors</a> or their <a href="http://corporate-spec-membership.graphql.org/">employers</a>.</p>
+<p data-source="README.md#L108-L110">To initiate the signature process please open a PR against this repo. The EasyCLA bot will block the merge if we still need a membership agreement from you.</p>
+<p data-source="README.md#L112-L115">You can find <a href="https://github.com/graphql/graphql-wg/tree/main/membership">detailed information here</a>. If you have issues, please email <a href="mailto:operations@graphql.org">operations@graphql.org</a>.</p>
 </section>
 <section id="sec-Copyright" secid="2.2">
-<h2 data-source="README.md#L107"><span class="spec-secid" title="link to this section"><a href="#sec-Copyright">2.2</a></span>Copyright</h2>
-<p data-source="README.md#L109">Copyright © GraphQL contributors</p>
-<p data-source="README.md#L111-L121">THESE MATERIALS ARE PROVIDED &ldquo;AS IS&rdquo;. The parties expressly disclaim any warranties (express, implied, or otherwise), including implied warranties of merchantability, non-infringement, fitness for a particular purpose, or title, related to the materials. The entire risk as to implementing or otherwise using the materials is assumed by the implementer and user. IN NO EVENT WILL THE PARTIES BE LIABLE TO ANY OTHER PARTY FOR LOST PROFITS OR ANY FORM OF INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF ANY CHARACTER FROM ANY CAUSES OF ACTION OF ANY KIND WITH RESPECT TO THIS DELIVERABLE OR ITS GOVERNING AGREEMENT, WHETHER BASED ON BREACH OF CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE, AND WHETHER OR NOT THE OTHER MEMBER HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+<h2 data-source="README.md#L117"><span class="spec-secid" title="link to this section"><a href="#sec-Copyright">2.2</a></span>Copyright</h2>
+<p data-source="README.md#L119">Copyright © GraphQL contributors</p>
+<p data-source="README.md#L121-L131">THESE MATERIALS ARE PROVIDED &ldquo;AS IS&rdquo;. The parties expressly disclaim any warranties (express, implied, or otherwise), including implied warranties of merchantability, non-infringement, fitness for a particular purpose, or title, related to the materials. The entire risk as to implementing or otherwise using the materials is assumed by the implementer and user. IN NO EVENT WILL THE PARTIES BE LIABLE TO ANY OTHER PARTY FOR LOST PROFITS OR ANY FORM OF INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF ANY CHARACTER FROM ANY CAUSES OF ACTION OF ANY KIND WITH RESPECT TO THIS DELIVERABLE OR ITS GOVERNING AGREEMENT, WHETHER BASED ON BREACH OF CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE, AND WHETHER OR NOT THE OTHER MEMBER HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
 </section>
 </section>
 <section id="sec-Code-of-Conduct" secid="3">
-<h1 data-source="README.md#L123"><span class="spec-secid" title="link to this section"><a href="#sec-Code-of-Conduct">3</a></span>Code of Conduct</h1>
-<p data-source="README.md#L125-L127">This project abides by the GraphQL Foundation&rsquo;s <a href="https://graphql.org/codeofconduct/">Code of Conduct</a>. </p>
+<h1 data-source="README.md#L133"><span class="spec-secid" title="link to this section"><a href="#sec-Code-of-Conduct">3</a></span>Code of Conduct</h1>
+<p data-source="README.md#L135-L137">This project abides by the GraphQL Foundation&rsquo;s <a href="https://graphql.org/codeofconduct/">Code of Conduct</a>. </p>
 </section>
 </article>
 <footer>
@@ -108,8 +114,9 @@ Written in <a href="https://spec-md.com" target="_blank">Spec Markdown</a>.</foo
 <ol><li id="_sidebar_1"><a href="#sec-How-to-contribute"><span class="spec-secid">1</span>How to contribute</a>
 <input hidden class="toggle" type="checkbox" id="_toggle_1" /><label for="_toggle_1"></label>
 <ol>
-<li id="_sidebar_1.1"><a href="#sec-Review-process"><span class="spec-secid">1.1</span>Review process</a></li>
-<li id="_sidebar_1.2"><a href="#sec-Immutable-specifications"><span class="spec-secid">1.2</span>Immutable specifications</a></li>
+<li id="_sidebar_1.1"><a href="#sec-Review-process-for-new-specifications"><span class="spec-secid">1.1</span>Review process for new specifications</a></li>
+<li id="_sidebar_1.2"><a href="#sec-Review-process-for-other-parts-of-this-repository"><span class="spec-secid">1.2</span>Review process for other parts of this repository</a></li>
+<li id="_sidebar_1.3"><a href="#sec-Immutable-specifications"><span class="spec-secid">1.3</span>Immutable specifications</a></li>
 </ol>
 </li>
 <li id="_sidebar_2"><a href="#sec-Licensing"><span class="spec-secid">2</span>Licensing</a>
