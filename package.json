@@ -25,5 +25,8 @@
   "prettier": {
     "proseWrap": "always",
     "trailingComma": "none"
+  },
+  "cspell": {
+    "words": ["secfrac", "apollographql", "fullyear", "mday", "numoffset"]
   }
 }
