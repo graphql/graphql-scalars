@@ -44,13 +44,23 @@ this project.
 5. [Open a new pull request](https://github.com/graphql/graphql-scalars/pulls)
    for each custom scalar specification you would like to add.
 
-### Review process
+### Review process for new specifications
 
-Your specification pull request will be reviewed by a maintainer of the
-[graphql-scalars repository](https://github.com/graphql/graphql-scalars). The
-maintainers will verify that the template has been completed, but note that the
-correctness of the specification is the responsibility of the original
-contributor.
+Because this repository is separate from the main GraphQL spec, and because
+several specifications may exist concurrently under different names/authors, the
+review process for new specifications under `contributed/` is very light.
+
+Anyone may review pull requests. Feedback may or may not be incorporated at the
+discretion of the original author. When they consider the pull request has
+reached a satisfactory state, but not before a 2 week review window, the author
+may ask a TSC member to merge the pull request. The TSC will then merge the pull
+request without further discussion.
+
+### Review process for other parts of this repository
+
+This document, and all content excluding `contributed/` may be changed with the
+[TSC](https://github.com/graphql/graphql-wg/blob/main/GraphQL-TSC.md)'s
+approval. This is usually longer than reviewing new specifications.
 
 ### Immutable specifications
 
@@ -58,9 +68,14 @@ Specification semantics must not change, as specifications are publicly
 available reference documents. We will permit small edits which do not change
 specification semantics, such as typo fixes.
 
-A new version of a custom scalar specification should have a new scalar name,
-either with a number appended such as `<scalar-name>2`, or a different name such
-as `OffsetDateTime` to differentiate from `DateTime`.
+A new version of a custom scalar specification must use a new URL but may still
+recommend using the old name.
+
+For example, `scalars/contributed/my_username/date-time-v2.md` may recommend
+using `DateTime` for the scalar name.
+
+You may use a `-v<version>` suffix to indicate new versions, but this is not a
+requirement.
 
 ## Licensing
 
