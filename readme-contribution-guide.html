@@ -14,8 +14,8 @@
 <h1>GraphQL Custom Scalars Specification Contribution Guide</h1>
 <section id="intro">
 <p data-source="README.md#L3">Thanks for contributing to GraphQL Scalars.</p>
-<p data-source="README.md#L5-L10">The goal of the GraphQL Scalars project is to provide a directory of GraphQL Custom Scalar specifications, contributed by the community. Contributed specifications are hosted on a GraphQL Foundation owned domain <a href="https://scalars.graphql.org">scalars.graphql.org</a>, which can be referenced with the built-in <code>@specifiedBy</code> <a href="https://spec.graphql.org/draft/#sec--specifiedBy">GraphQL directive</a>.</p>
-<p data-source="README.md#L12-L13">GraphQL Custom Scalar specifications are language agnostic and thus can be used to document and standardize behavior across different languages.</p>
+<p data-source="README.md#L5-L10">The goal of the GraphQL Scalars project is to provide a directory of GraphQL custom scalar specifications, contributed by the community. Contributed specifications are hosted on a GraphQL Foundation owned domain <a href="https://scalars.graphql.org">scalars.graphql.org</a>, which can be referenced with the built-in <code>@specifiedBy</code> <a href="https://spec.graphql.org/draft/#sec--specifiedBy">GraphQL directive</a>.</p>
+<p data-source="README.md#L12-L13">GraphQL custom scalar specifications are language-agnostic and thus can be used to document and standardize behavior across different languages.</p>
 <p data-source="README.md#L15-L17">Please ensure that you read the <a href="https://graphql.org/codeofconduct/">Code of Conduct</a> before contributing to this project.</p>
 </section>
 <nav class="spec-toc">
@@ -39,11 +39,11 @@
 <section id="sec-How-to-contribute" secid="1">
 <h1 data-source="README.md#L19"><span class="spec-secid" title="link to this section"><a href="#sec-How-to-contribute">1</a></span>How to contribute</h1>
 <ol>
-<li data-source="README.md#L21-L27">Copy the <code>template-string.md</code> <a href="https://github.com/graphql/graphql-scalars/blob/main/scalars/template-string.md">template</a> for Custom Scalars based on the built-in String Scalar, or otherwise use the <code>template.md</code> <a href="https://github.com/graphql/graphql-scalars/blob/main/scalars/template.md">template</a> for all other Custom Scalars. Templates are located in the <a href="https://github.com/graphql/graphql-scalars/tree/main/scalars">graphql-scalars GitHub repository</a>.</li>
+<li data-source="README.md#L21-L27">Copy the <code>template-string.md</code> <a href="https://github.com/graphql/graphql-scalars/blob/main/scalars/template-string.md">template</a> for custom scalars based on the built-in String scalar, or otherwise use the <code>template.md</code> <a href="https://github.com/graphql/graphql-scalars/blob/main/scalars/template.md">template</a> for all other custom scalars. Templates are located in the <a href="https://github.com/graphql/graphql-scalars/tree/main/scalars">graphql-scalars GitHub repository</a>.</li>
 <li data-source="README.md#L29-L36">Modify your selected template, and save it in the correct place <code>scalars/contributed/&lt;github-user-or-organization-name&gt;/&lt;scalar-name&gt;.md</code> in the <a href="https://github.com/graphql/graphql-scalars/tree/main/scalars/contributed">graphql-scalars GitHub repository</a>. The directory location is important, as this will form part of the reference URL for your specification. In case you are using an organization name, we will manually verify that you are allowed to make the contribution in the name of the organization.</li>
 <li data-source="README.md#L38-L40">Install dependencies with <code>npm install</code> and the run <code>npm run build</code> to locally build the resulting public specification files. Navigate to the <code>/public</code> folder to view the built files.</li>
 <li data-source="README.md#L42">Run <code>npm test</code> to ensure proper formatting before submitting a pull request.</li>
-<li data-source="README.md#L44-L45"><a href="https://github.com/graphql/graphql-scalars/pulls">Open a new pull request</a> for each Custom Scalar specification you would like to add.</li>
+<li data-source="README.md#L44-L45"><a href="https://github.com/graphql/graphql-scalars/pulls">Open a new pull request</a> for each custom scalar specification you would like to add.</li>
 </ol>
 <section id="sec-Review-process-for-new-specifications" secid="1.1">
 <h2 data-source="README.md#L47"><span class="spec-secid" title="link to this section"><a href="#sec-Review-process-for-new-specifications">1.1</a></span>Review process for new specifications</h2>
@@ -57,7 +57,7 @@
 <section id="sec-Immutable-specifications" secid="1.3">
 <h2 data-source="README.md#L65"><span class="spec-secid" title="link to this section"><a href="#sec-Immutable-specifications">1.3</a></span>Immutable specifications</h2>
 <p data-source="README.md#L67-L69">Specification semantics must not change, as specifications are publicly available reference documents. We will permit small edits which do not change specification semantics, such as typo fixes.</p>
-<p data-source="README.md#L71-L72">A new version of a Custom Scalar specification must use a new URL but may still recommend using the old name.</p>
+<p data-source="README.md#L71-L72">A new version of a custom scalar specification must use a new URL but may still recommend using the old name.</p>
 <p data-source="README.md#L74-L75">For example, <code>scalars/contributed/my_username/date-time-v2.md</code> may recommend using <code>DateTime</code> for the scalar name.</p>
 <p data-source="README.md#L77-L78">You may use a <code>-v&lt;version&gt;</code> suffix to indicate new versions, but this is not a requirement.</p>
 </section>
