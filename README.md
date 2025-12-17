@@ -3,13 +3,13 @@
 Thanks for contributing to GraphQL Scalars.
 
 The goal of the GraphQL Scalars project is to provide a directory of GraphQL
-Custom Scalar specifications, contributed by the community. Contributed
+custom scalar specifications, contributed by the community. Contributed
 specifications are hosted on a GraphQL Foundation owned domain
 [scalars.graphql.org](https://scalars.graphql.org), which can be referenced with
 the built-in `@specifiedBy`
 [GraphQL directive](https://spec.graphql.org/draft/#sec--specifiedBy).
 
-GraphQL Custom Scalar specifications are language agnostic and thus can be used
+GraphQL custom scalar specifications are language-agnostic and thus can be used
 to document and standardize behavior across different languages.
 
 Please ensure that you read the
@@ -20,10 +20,10 @@ this project.
 
 1. Copy the `template-string.md`
    [template](https://github.com/graphql/graphql-scalars/blob/main/scalars/template-string.md)
-   for Custom Scalars based on the built-in String Scalar, or otherwise use the
+   for custom scalars based on the built-in String scalar, or otherwise use the
    `template.md`
    [template](https://github.com/graphql/graphql-scalars/blob/main/scalars/template.md)
-   for all other Custom Scalars. Templates are located in the
+   for all other custom scalars. Templates are located in the
    [graphql-scalars GitHub repository](https://github.com/graphql/graphql-scalars/tree/main/scalars).
 
 2. Modify your selected template, and save it in the correct place
@@ -42,7 +42,7 @@ this project.
 4. Run `npm test` to ensure proper formatting before submitting a pull request.
 
 5. [Open a new pull request](https://github.com/graphql/graphql-scalars/pulls)
-   for each Custom Scalar specification you would like to add.
+   for each custom scalar specification you would like to add.
 
 ### Review process for new specifications
 
@@ -68,7 +68,7 @@ Specification semantics must not change, as specifications are publicly
 available reference documents. We will permit small edits which do not change
 specification semantics, such as typo fixes.
 
-A new version of a Custom Scalar specification must use a new URL but may still
+A new version of a custom scalar specification must use a new URL but may still
 recommend using the old name.
 
 For example, `scalars/contributed/my_username/date-time-v2.md` may recommend
