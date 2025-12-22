@@ -95,7 +95,6 @@ These are invalid examples:
 | `1983-00-20T23:59:59`              | 00 is not a valid month.                |
 | `1983-01-32T23:59:59`              | 32 is not a valid day.                  |
 | `1983-01-32T23:59:59.123456789123` | Seconds exceed nanosecond precision.    |
-| `1983-01-32T23:59:59.1234567890`   | More than nine digits for `sec-frac`.   |
 | `2018-04-01T15:20:15-07:00`        | Time offsets are not allowed.           |
 | `10000-10-20 23:59:59`             | More than 4 digits for `date-fullyear`. |
 | `52-10-20 23:59:59`                | Less than 4 digits for `date-fullyear`. |
