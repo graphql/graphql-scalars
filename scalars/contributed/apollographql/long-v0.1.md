@@ -17,7 +17,7 @@ The minimum value is −9223372036854775808 and the maximum value
 is 9223372036854775807.
 
 Note: JavaScript `JSON.parse()` looses precision for numbers outside the [-(2^53
-– 1), 2^53 - 1] range. Use with care if you are using in applications that
+– 1), 2^53 - 1] range. Use with care if you are using it in applications that
 require precise integer arithmetic.
 
 # Recommended Name

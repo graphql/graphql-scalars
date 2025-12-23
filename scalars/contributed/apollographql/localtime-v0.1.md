@@ -37,7 +37,7 @@ For convenience, this specification enforces nanosecond precision with at most
 nine digits.
 
 Note: JavaScript `Date` only has millisecond precision. Use `LocalTime` with
-care if you are using in applications that require precise times.
+care if you are using it in applications that require precise times.
 
 # Recommended Name
 
