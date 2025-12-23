@@ -27,8 +27,8 @@ this project.
    [graphql-scalars GitHub repository](https://github.com/graphql/graphql-scalars/tree/main/scalars).
 
 2. Modify your selected template, and save it in the correct place
-   `scalars/contributed/<github-user-or-organization-name>/<scalar-name>.md` in
-   the
+   `scalars/contributed/<github-user-or-organization-name>/v<version>/<scalar-name>.md`
+   in the
    [graphql-scalars GitHub repository](https://github.com/graphql/graphql-scalars/tree/main/scalars/contributed).
    The directory location is important, as this will form part of the reference
    URL for your specification. In case you are using an organization name, we
@@ -52,30 +52,58 @@ review process for new specifications under `contributed/` is very light.
 
 Anyone may review pull requests. Feedback may or may not be incorporated at the
 discretion of the original author. When they consider the pull request has
-reached a satisfactory state, but not before a 2 week review window, the author
+reached a satisfactory state, but not before a 2-week review window, the author
 may ask a TSC member to merge the pull request. The TSC will then merge the pull
 request without further discussion.
 
 ### Review process for other parts of this repository
 
-This document, and all content excluding `contributed/` may be changed with the
+This document and all content excluding `contributed/` may be changed with the
 [TSC](https://github.com/graphql/graphql-wg/blob/main/GraphQL-TSC.md)'s
 approval. This is usually longer than reviewing new specifications.
 
-### Immutable specifications
+## Versioning
 
-Specification semantics must not change, as specifications are publicly
-available reference documents. We will permit small edits which do not change
-specification semantics, such as typo fixes.
+Specifications in this repository are versioned with a major and minor version,
+such as `2.0`:
 
-A new version of a custom scalar specification must use a new URL but may still
-recommend using the old name.
+```graphql
+scalar DateTime
+  @specifiedBy(url: "https://scalars.graphql.org/my_username/date-time/v2.0/")
+```
 
-For example, `scalars/contributed/my_username/date-time-v2.md` may recommend
-using `DateTime` for the scalar name.
+Editorial changes, such as typos, that do not change the semantics of a
+specification are allowed without changing the version.
 
-You may use a `-v<version>` suffix to indicate new versions, but this is not a
-requirement.
+Every other change MUST create a new version.
+
+Versions in the `0.x` range SHOULD be used to indicate a rapidly evolving
+specification that should be used with care.
+
+For version `1.0` and later, the minor version MAY be bumped for smaller
+changes. The major version SHOULD be bumped for bigger changes. What constitutes
+a smaller or bigger change is left to the appreciation of the specification
+author.
+
+New versions SHOULD use the same recommended name.
+
+[!NOTE]
+
+> Some scalars in this repository do not have a version for historical reasons.
+> Moving forward, all scalars MUST have a version.
+
+## The `graphql` namespace
+
+The `graphql` namespace contains specifications that have been approved by the
+GraphQL TSC. While not part of the official GraphQL specification, those scalars
+specifications are deemed high quality and recommended to use liberally.
+
+Anyone may submit a specification for inclusion in the `graphql` namespace by
+opening a pull request and adding the item to a primary GraphQL working group
+agenda.
+
+The pull request is merged when it gets 5 TSC approvals and has addressed all
+requests for changes, but no sooner than the following primary working group.
 
 ## Licensing
 
