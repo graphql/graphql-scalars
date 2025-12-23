@@ -47,7 +47,7 @@ valid, in accordance with RFC 3339.
 
 **Fractional second precision:**
 
-RFC 3339 allows representing arbitrary precision for the fractional seconds, which is
+RFC 3339 allows representing fractional seconds with arbitrary precision, which is
 impractical in most programming languages.
 
 For convenience, this specification enforces nanosecond precision with at most
