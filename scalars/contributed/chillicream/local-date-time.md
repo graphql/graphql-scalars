@@ -1,4 +1,4 @@
-<!-- cspell:ignore DDTHH -->
+<!-- cspell:ignore birthdates, DDTHH -->
 
 # LocalDateTime — GraphQL Custom Scalar
 
