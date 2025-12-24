@@ -1,3 +1,5 @@
+<!-- cspell:ignore birthdates -->
+
 # LocalDate — GraphQL Custom Scalar
 
 Author – ChilliCream
