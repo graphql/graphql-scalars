@@ -95,8 +95,8 @@ New versions SHOULD use the same recommended name.
 ## The `graphql` namespace
 
 The `graphql` namespace contains specifications that have been approved by the
-GraphQL TSC. While not part of the official GraphQL specification, those scalars
-specifications are deemed high quality and recommended to use liberally.
+GraphQL TSC. While not part of the official GraphQL specification, these specifications
+are regarded as authoritative and are recommended for interoperability.
 
 Anyone may submit a specification for inclusion in the `graphql` namespace by
 opening a pull request and adding the item to a primary GraphQL working group
