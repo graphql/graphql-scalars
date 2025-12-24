@@ -27,7 +27,7 @@ this project.
    [graphql-scalars GitHub repository](https://github.com/graphql/graphql-scalars/tree/main/scalars).
 
 2. Modify your selected template, and save it in the correct place
-   `scalars/contributed/<github-user-or-organization-name>/<scalar-name>/v<version>/index.md`
+   `scalars/contributed/<github-user-or-organization-name>/<scalar-name>/v<version>.md`
    in the
    [graphql-scalars GitHub repository](https://github.com/graphql/graphql-scalars/tree/main/scalars/contributed).
    The directory location is important, as this will form part of the reference
@@ -69,7 +69,7 @@ such as `2.0`:
 
 ```graphql
 scalar DateTime
-  @specifiedBy(url: "https://scalars.graphql.org/my_username/date-time/v2.0/")
+  @specifiedBy(url: "https://scalars.graphql.org/my_username/date-time/v2.0.md")
 ```
 
 Editorial changes, such as typos, that do not change the semantics of a
