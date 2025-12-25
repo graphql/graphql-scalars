@@ -2,9 +2,9 @@
 
 # LocalDate — GraphQL Custom Scalar
 
-"Author - andimarek"
+Author - andimarek
 
-"Date - 2023-01-18"
+Date - 2023-01-18
 
 This is a String-based scalar.
 

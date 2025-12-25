@@ -2,9 +2,9 @@
 
 # \<name\> — GraphQL Custom Scalar
 
-"Author - \<github user name\> "
+Author - \<github user name\>
 
-"Date - \<the date of the first publication in YYYY-MM-DD format\>"
+Date - \<the date of the first publication in YYYY-MM-DD format\>
 
 This template is meant to be copied and modified. This template is meant for
 scalars which are based on the built-in String scalar
