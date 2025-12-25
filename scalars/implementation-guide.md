@@ -160,6 +160,10 @@ While the specifics of the all coercion methods are implementation specific, as
 a general rule they should only coerce a value when no information is lost and
 raise an error otherwise.
 
-Most Scalars adhere to a semantic symmetry between input and output: every valid input value has at least one corresponding output value and vice versa.
+Most Scalars adhere to a semantic symmetry between input and output: every valid
+input value has at least one corresponding output value and vice versa.
 
-Additionally, it is common to allow different input values, which are semantically identical but not technically the same. For example, the ID Scalar accepts Int and String literals, while the output value is always String. This can improve user experience by allowing flexible inputs.
+Additionally, it is common to allow different input values, which are
+semantically identical but not technically the same. For example, the ID Scalar
+accepts Int and String literals, while the output value is always String. This
+can improve user experience by allowing flexible inputs.
