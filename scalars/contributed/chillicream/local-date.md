@@ -1,5 +1,3 @@
-<!-- cspell:ignore birthdates -->
-
 # LocalDate — GraphQL Custom Scalar
 
 Author – ChilliCream
@@ -14,9 +12,10 @@ Copyright © GraphQL contributors. This specification is licensed under
 # Overview
 
 The `LocalDate` scalar type represents a date without time or time zone
-information. It is intended for scenarios where only the calendar date matters,
-such as recording birthdates, anniversaries, or any date-based information where
-the specific time of day is irrelevant.
+information. It is intended for scenarios where only the calendar date matters
+in a local context, such as contract effective dates, publication dates, or
+recurring events (e.g., "New Year's Day is January 1st"), where the specific
+time of day and time zone are irrelevant or managed separately.
 
 Unlike instant-based DateTime scalars that represent a specific moment in time,
 `LocalDate` represents a calendar date that could refer to different moments
@@ -90,7 +89,7 @@ GraphQL Literal:
 
 ```graphql
 mutation {
-  updateProfile(birthDate: "2000-12-24") {
+  createContract(effectiveDate: "2000-12-24") {
     id
   }
 }
@@ -100,7 +99,7 @@ JSON input:
 
 ```json
 {
-  "birthDate": "2000-12-24"
+  "effectiveDate": "2000-12-24"
 }
 ```
 
