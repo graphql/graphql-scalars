@@ -43,7 +43,6 @@ These are valid result values:
 | ------------------ | ---------------------------------- |
 | `SGVsbG8gV29ybGQ=` | Base64-encoded "Hello World".      |
 | `AQIDBA==`         | Base64-encoded bytes [1, 2, 3, 4]. |
-| ``                 | Empty byte array (zero bytes).     |
 
 These are invalid result values:
 
