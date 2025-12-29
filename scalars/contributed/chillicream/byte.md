@@ -19,6 +19,8 @@ Unlike the built-in `Int` scalar which represents signed 32-bit integers, `Byte`
 provides stronger type safety and validation for values that must fit within an
 unsigned 8-bit range.
 
+This scalar is based on the .NET `Byte` type.
+
 # Recommended name
 
 The recommended name for this scalar is `Byte`.
@@ -95,3 +97,5 @@ Invalid input values:
 
 - [GraphQL Specification - Int](https://spec.graphql.org/September2025/#sec-Int)
   — Built-in integer scalar type
+- [.NET Byte Structure](https://learn.microsoft.com/en-us/dotnet/api/system.byte)
+  — The .NET type this scalar is based on
