@@ -12,13 +12,15 @@ Copyright © GraphQL contributors. This specification is licensed under
 # Overview
 
 The `Date` scalar type represents a date in UTC. Unlike `LocalDate`, which
-represents a calendar date without time zone context, `Date` is time-zone-aware
-and always represents the UTC date.
+represents a calendar date with local context (such as where a contract was
+signed), `Date` always represents the UTC date without any local context.
 
 When serializing, implementations must convert the underlying date-time value to
 UTC before extracting the date component. This ensures that `Date` represents a
 specific calendar day in UTC, regardless of the local time zone of the server or
-client.
+client. This makes it suitable for representing dates that refer to specific
+moments in time, such as birthdates or historical events, where the date should
+be consistent globally.
 
 For example, if a timestamp represents `2023-12-24T23:00:00-05:00` (11 PM on
 December 24th in UTC-5), it would serialize as `2023-12-25` because that moment
@@ -96,8 +98,8 @@ Valid input values:
 GraphQL Literal:
 
 ```graphql
-query {
-  events(startDate: "2023-12-24") {
+mutation {
+  updateProfile(birthDate: "2000-12-24") {
     id
   }
 }
@@ -107,7 +109,7 @@ JSON input:
 
 ```json
 {
-  "startDate": "2023-12-24"
+  "birthDate": "2000-12-24"
 }
 ```
 
