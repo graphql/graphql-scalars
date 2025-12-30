@@ -75,6 +75,11 @@ const htmlHeader = `<html>
         font-size: 1.33em;
         margin: 2rem 0 1em;
       }
+      h3 {
+        font-size: 1.17em;
+        margin: 1.5rem 0 0.5em;
+        color: #666666;
+      }
       ul {
         padding-left: 2rem;
       }
@@ -85,13 +90,12 @@ const htmlHeader = `<html>
     <p>This is a directory of GraphQL Custom Scalar specifications, contributed by the community.</p>
     <p>Specifications in this directory can be referred to with the <a href="https://spec.graphql.org/draft/#sec--specifiedBy">@specifiedBy directive</a>, a built-in directive for documenting the behavior of custom scalar types.</p>
 
-    <h2>Contributed specifications</h2>
-    <ul>`;
+    <h2>Contributed specifications</h2>`;
 
 // Build specs from contributed directory
 console.log("building specs");
 
-const listItems: string[] = [];
+const authorGroups: Map<string, string[]> = new Map();
 const contributedDir = "scalars/contributed";
 
 if (fs.existsSync(contributedDir)) {
@@ -99,7 +103,8 @@ if (fs.existsSync(contributedDir)) {
     .readdirSync(contributedDir)
     .filter((name) =>
       fs.statSync(path.join(contributedDir, name)).isDirectory()
-    );
+    )
+    .sort();
 
   for (const author of authors) {
     const authorDir = path.join(contributedDir, author);
@@ -108,8 +113,10 @@ if (fs.existsSync(contributedDir)) {
 
     const files = fs
       .readdirSync(authorDir)
-      .filter((file) => file.endsWith(".md"));
+      .filter((file) => file.endsWith(".md"))
+      .sort();
 
+    const specs: string[] = [];
     for (const file of files) {
       const inputPath = path.join(authorDir, file);
       const baseName = path.basename(file, ".md");
@@ -117,15 +124,28 @@ if (fs.existsSync(contributedDir)) {
 
       buildSpec(inputPath, outputPath);
 
-      listItems.push(
-        `      <li><a href="${author}/${baseName}.html">${author}/${baseName}</a></li>`
+      specs.push(
+        `        <li><a href="${author}/${baseName}.html">${baseName}</a></li>`
       );
+    }
+
+    if (specs.length > 0) {
+      authorGroups.set(author, specs);
     }
   }
 }
 
+// Generate grouped HTML
+const groupedSections: string[] = [];
+for (const [author, specs] of authorGroups) {
+  groupedSections.push(`
+    <h3>${author}</h3>
+    <ul>
+${specs.join("\n")}
+    </ul>`);
+}
+
 const htmlFooter = `
-    </ul>
 
     <h2>How to contribute</h2>
     <ul>
@@ -137,7 +157,7 @@ const htmlFooter = `
   </body>
 </html>`;
 
-const fullHtml = htmlHeader + "\n" + listItems.join("\n") + htmlFooter;
+const fullHtml = htmlHeader + groupedSections.join("") + htmlFooter;
 fs.writeFileSync(path.join(OUT_DIR, "index.html"), fullHtml);
 
 console.log("");
