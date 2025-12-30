@@ -77,6 +77,20 @@ using `DateTime` for the scalar name.
 You may use a `-v<version>` suffix to indicate new versions, but this is not a
 requirement.
 
+## The `graphql` namespace
+
+The `graphql` namespace contains specifications that have been approved by the
+GraphQL TSC. While not part of the official GraphQL specification, these
+specifications are regarded as authoritative and are recommended for
+interoperability.
+
+Anyone may submit a specification for inclusion in the `graphql` namespace by
+opening a pull request and adding the item to a primary GraphQL working group
+agenda.
+
+The pull request is merged when it gets 5 TSC approvals and has addressed all
+requests for changes, but no sooner than the following primary working group.
+
 ## Licensing
 
 Specifications contributed to the GraphQL Scalars repository are part of the
