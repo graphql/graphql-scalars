@@ -53,23 +53,23 @@ The serialized date must represent the UTC date of the underlying value.
 
 These are valid result values:
 
-| String       | Explanation                             |
-| ------------ | --------------------------------------- |
-| `2023-12-24` | December 24th, 2023 in UTC.             |
-| `2000-02-29` | February 29th, 2000 in UTC (leap year). |
+| Value          | Explanation                             |
+| -------------- | --------------------------------------- |
+| `"2023-12-24"` | December 24th, 2023 in UTC.             |
+| `"2000-02-29"` | February 29th, 2000 in UTC (leap year). |
 
 These are invalid result values:
 
-| String                 | Why is it invalid                                |
-| ---------------------- | ------------------------------------------------ |
-| `2023-12-24T15:30:00`  | Contains time component.                         |
-| `2023-12-24T15:30:00Z` | Contains time and time zone information.         |
-| `2023-13-01`           | Invalid month (13).                              |
-| `2023-12-32`           | Invalid day (32).                                |
-| `2023-2-5`             | Month and day must be zero-padded to two digits. |
-| `23-12-24`             | Year must be four digits.                        |
-| `2023/12/24`           | Invalid separator (slash instead of hyphen).     |
-| `2001-02-29`           | Invalid date (2001 is not a leap year).          |
+| Value                    | Why is it invalid                                |
+| ------------------------ | ------------------------------------------------ |
+| `"2023-12-24T15:30:00"`  | Contains time component.                         |
+| `"2023-12-24T15:30:00Z"` | Contains time and time zone information.         |
+| `"2023-13-01"`           | Invalid month (13).                              |
+| `"2023-12-32"`           | Invalid day (32).                                |
+| `"2023-2-5"`             | Month and day must be zero-padded to two digits. |
+| `"23-12-24"`             | Year must be four digits.                        |
+| `"2023/12/24"`           | Invalid separator (slash instead of hyphen).     |
+| `"2001-02-29"`           | Invalid date (2001 is not a leap year).          |
 
 # Input spec
 
@@ -117,14 +117,14 @@ JSON input:
 
 Invalid input values:
 
-| String                | Why is it invalid                  |
-| --------------------- | ---------------------------------- |
-| `2023-12-24T15:30:00` | Contains time component.           |
-| `2023-13-01`          | Invalid month (13).                |
-| `2023-12-32`          | Invalid day (32).                  |
-| `2023-2-5`            | Month and day must be zero-padded. |
-| `2023/12/24`          | Invalid separator.                 |
-| `2023-02-30`          | Invalid date (February 30th).      |
+| Value                   | Why is it invalid                  |
+| ----------------------- | ---------------------------------- |
+| `"2023-12-24T15:30:00"` | Contains time component.           |
+| `"2023-13-01"`          | Invalid month (13).                |
+| `"2023-12-32"`          | Invalid day (32).                  |
+| `"2023-2-5"`            | Month and day must be zero-padded. |
+| `"2023/12/24"`          | Invalid separator.                 |
+| `"2023-02-30"`          | Invalid date (February 30th).      |
 
 # References
 
