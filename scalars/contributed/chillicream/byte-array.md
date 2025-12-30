@@ -39,19 +39,20 @@ The Base64 encoding should follow RFC 4648, using the standard Base64 alphabet
 
 These are valid result values:
 
-| String             | Explanation                        |
-| ------------------ | ---------------------------------- |
-| `SGVsbG8gV29ybGQ=` | Base64-encoded "Hello World".      |
-| `AQIDBA==`         | Base64-encoded bytes [1, 2, 3, 4]. |
+| Value                | Explanation                        |
+| -------------------- | ---------------------------------- |
+| `"SGVsbG8gV29ybGQ="` | Base64-encoded "Hello World".      |
+| `"AQIDBA=="`         | Base64-encoded bytes [1, 2, 3, 4]. |
+| `""`                 | Empty byte array (zero bytes).     |
 
 These are invalid result values:
 
-| Value             | Why is it invalid                               |
-| ----------------- | ----------------------------------------------- |
-| `Hello World`     | Not Base64-encoded.                             |
-| `SGVsbG8gV29ybGQ` | Missing padding (should be `SGVsbG8gV29ybGQ=`). |
-| `SGVs bG8=`       | Contains whitespace.                            |
-| `123`             | Not a string value.                             |
+| Value               | Why is it invalid                               |
+| ------------------- | ----------------------------------------------- |
+| `"Hello World"`     | Not Base64-encoded.                             |
+| `"SGVsbG8gV29ybGQ"` | Missing padding (should be `SGVsbG8gV29ybGQ=`). |
+| `"SGVs bG8="`       | Contains whitespace.                            |
+| `123`               | Not a string value.                             |
 
 # Input spec
 
@@ -99,12 +100,12 @@ JSON input:
 
 Invalid input values:
 
-| String        | Why is it invalid                     |
-| ------------- | ------------------------------------- |
-| `Hello World` | Not Base64-encoded.                   |
-| `SGVs bG8=`   | Contains whitespace.                  |
-| `SGVsbG8!`    | Contains invalid character (!).       |
-| `SGVsbG8`     | Invalid length (not a multiple of 4). |
+| Value           | Why is it invalid                     |
+| --------------- | ------------------------------------- |
+| `"Hello World"` | Not Base64-encoded.                   |
+| `"SGVs bG8="`   | Contains whitespace.                  |
+| `"SGVsbG8!"`    | Contains invalid character (!).       |
+| `"SGVsbG8"`     | Invalid length (not a multiple of 4). |
 
 # References
 
