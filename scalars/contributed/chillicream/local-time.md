@@ -48,25 +48,25 @@ The serialized value must **not** include time zone offset information.
 
 These are valid result values:
 
-| String               | Explanation                         |
-| -------------------- | ----------------------------------- |
-| `15:30:00`           | 3:30 PM without fractional seconds. |
-| `09:00:00.123456789` | 9:00 AM with nanosecond precision.  |
-| `00:00:00`           | Midnight.                           |
-| `23:59:59`           | One second before midnight.         |
+| Value                  | Explanation                         |
+| ---------------------- | ----------------------------------- |
+| `"15:30:00"`           | 3:30 PM without fractional seconds. |
+| `"09:00:00.123456789"` | 9:00 AM with nanosecond precision.  |
+| `"00:00:00"`           | Midnight.                           |
+| `"23:59:59"`           | One second before midnight.         |
 
 These are invalid result values:
 
-| String                | Why is it invalid                     |
-| --------------------- | ------------------------------------- |
-| `15:30:00Z`           | Contains time zone indicator `Z`.     |
-| `15:30:00+00:00`      | Contains time zone offset.            |
-| `2023-12-24T15:30:00` | Contains date component.              |
-| `15:30`               | Missing seconds component.            |
-| `24:00:00`            | Invalid hour (24).                    |
-| `15:60:00`            | Invalid minute (60).                  |
-| `15:30:60`            | Invalid second (60).                  |
-| `15:30:00.1234567890` | More than 9 fractional second digits. |
+| Value                   | Why is it invalid                     |
+| ----------------------- | ------------------------------------- |
+| `"15:30:00Z"`           | Contains time zone indicator `Z`.     |
+| `"15:30:00+00:00"`      | Contains time zone offset.            |
+| `"2023-12-24T15:30:00"` | Contains date component.              |
+| `"15:30"`               | Missing seconds component.            |
+| `"24:00:00"`            | Invalid hour (24).                    |
+| `"15:60:00"`            | Invalid minute (60).                  |
+| `"15:30:60"`            | Invalid second (60).                  |
+| `"15:30:00.1234567890"` | More than 9 fractional second digits. |
 
 # Input spec
 
@@ -116,15 +116,15 @@ JSON input:
 
 Invalid input values:
 
-| String                | Why is it invalid                     |
-| --------------------- | ------------------------------------- |
-| `15:30:00Z`           | Contains time zone indicator `Z`.     |
-| `15:30:00+05:30`      | Contains time zone offset.            |
-| `2023-12-24T15:30:00` | Contains date component.              |
-| `15:30`               | Missing seconds component.            |
-| `24:00:00`            | Invalid hour (24).                    |
-| `15:60:00`            | Invalid minute (60).                  |
-| `15:30:00.1234567890` | More than 9 fractional second digits. |
+| Value                   | Why is it invalid                     |
+| ----------------------- | ------------------------------------- |
+| `"15:30:00Z"`           | Contains time zone indicator `Z`.     |
+| `"15:30:00+05:30"`      | Contains time zone offset.            |
+| `"2023-12-24T15:30:00"` | Contains date component.              |
+| `"15:30"`               | Missing seconds component.            |
+| `"24:00:00"`            | Invalid hour (24).                    |
+| `"15:60:00"`            | Invalid minute (60).                  |
+| `"15:30:00.1234567890"` | More than 9 fractional second digits. |
 
 # References
 
