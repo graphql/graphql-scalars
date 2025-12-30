@@ -78,13 +78,6 @@ const htmlHeader = `<html>
       ul {
         padding-left: 2rem;
       }
-      table {
-        border-spacing: 1rem 0.2rem;
-        padding-left: 1rem;
-      }
-      th, td {
-        text-align: left;
-      }
     </style>
   </head>
   <body>
@@ -93,16 +86,12 @@ const htmlHeader = `<html>
     <p>Specifications in this directory can be referred to with the <a href="https://spec.graphql.org/draft/#sec--specifiedBy">@specifiedBy directive</a>, a built-in directive for documenting the behavior of custom scalar types.</p>
 
     <h2>Contributed specifications</h2>
-    <table>
-     <tr>
-        <th>Specification name</th>
-        <th>Author</th>
-      </tr>`;
+    <ul>`;
 
 // Build specs from contributed directory
 console.log("building specs");
 
-const tableRows: string[] = [];
+const listItems: string[] = [];
 const contributedDir = "scalars/contributed";
 
 if (fs.existsSync(contributedDir)) {
@@ -128,16 +117,15 @@ if (fs.existsSync(contributedDir)) {
 
       buildSpec(inputPath, outputPath);
 
-      tableRows.push(`      <tr>
-        <td><a href="${author}/${baseName}.html">${baseName}</a></td>
-        <td>${author}</td>
-      </tr>`);
+      listItems.push(
+        `      <li><a href="${author}/${baseName}.html">${author}/${baseName}</a></li>`
+      );
     }
   }
 }
 
 const htmlFooter = `
-    </table>
+    </ul>
 
     <h2>How to contribute</h2>
     <ul>
@@ -149,7 +137,7 @@ const htmlFooter = `
   </body>
 </html>`;
 
-const fullHtml = htmlHeader + "\n" + tableRows.join("\n") + htmlFooter;
+const fullHtml = htmlHeader + "\n" + listItems.join("\n") + htmlFooter;
 fs.writeFileSync(path.join(OUT_DIR, "index.html"), fullHtml);
 
 console.log("");
