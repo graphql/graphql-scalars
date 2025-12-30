@@ -10,17 +10,19 @@
   "scripts": {
     "test": "npm run test:spelling && npm run test:format && npm run test:build",
     "test:spelling": "cspell \"**/*.md\"",
-    "test:format": "prettier --check \"**/*.{md,yml,yaml,json}\"",
-    "format": "prettier --write \"**/*.{md,yml,yaml,json}\"",
-    "test:build": "OUT_DIR=$(mktemp -d) ./build.sh",
-    "build": "OUT_DIR=public ./build.sh",
+    "test:format": "prettier --check \"**/*.{md,yml,yaml,json,ts}\"",
+    "format": "prettier --write \"**/*.{md,yml,yaml,json,ts}\"",
+    "test:build": "OUT_DIR=$(mktemp -d) tsx build.ts",
+    "build": "OUT_DIR=public tsx build.ts",
     "watch": "nodemon -e json,md --exec \"npm run build\""
   },
   "devDependencies": {
+    "@types/node": "^20.11.5",
     "cspell": "6.18.1",
     "nodemon": "2.0.20",
     "prettier": "2.8.2",
-    "spec-md": "3.1.0"
+    "spec-md": "3.1.0",
+    "tsx": "^4.7.0"
   },
   "prettier": {
     "proseWrap": "always",
