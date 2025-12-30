@@ -62,29 +62,29 @@ production.
 
 These are valid result values:
 
-| String                          | Explanation                                  |
-| ------------------------------- | -------------------------------------------- |
-| `2023-12-24T15:30:00`           | A LocalDateTime without fractional seconds.  |
-| `2023-12-24t15:30:00`           | The `t` separator may be lowercase.          |
-| `2023-12-24T15:30:00.123`       | A LocalDateTime with millisecond precision.  |
-| `2023-12-24T15:30:00.123456789` | A LocalDateTime with nanosecond precision.   |
-| `2023-01-01T00:00:00`           | Midnight on January 1st.                     |
-| `2023-12-31T23:59:59`           | One second before midnight on December 31st. |
+| Value                             | Explanation                                  |
+| --------------------------------- | -------------------------------------------- |
+| `"2023-12-24T15:30:00"`           | A LocalDateTime without fractional seconds.  |
+| `"2023-12-24t15:30:00"`           | The `t` separator may be lowercase.          |
+| `"2023-12-24T15:30:00.123"`       | A LocalDateTime with millisecond precision.  |
+| `"2023-12-24T15:30:00.123456789"` | A LocalDateTime with nanosecond precision.   |
+| `"2023-01-01T00:00:00"`           | Midnight on January 1st.                     |
+| `"2023-12-31T23:59:59"`           | One second before midnight on December 31st. |
 
 These are invalid result values:
 
-| String                           | Why is it invalid                     |
-| -------------------------------- | ------------------------------------- |
-| `2023-12-24T15:30:00Z`           | Contains time zone indicator `Z`.     |
-| `2023-12-24T15:30:00+00:00`      | Contains time zone offset.            |
-| `2023-12-24 15:30:00`            | Missing `T` or `t` separator.         |
-| `2023-12-24`                     | Missing time component.               |
-| `15:30:00`                       | Missing date component.               |
-| `2023-13-01T00:00:00`            | Invalid month (13).                   |
-| `2023-12-32T00:00:00`            | Invalid day (32).                     |
-| `2023-12-24T15:30:00.1234567890` | More than 9 fractional second digits. |
-| `2023-12-24T24:00:00`            | Invalid hour (24).                    |
-| `2023-02-30T15:30:00`            | Invalid date (February 30th).         |
+| Value                              | Why is it invalid                     |
+| ---------------------------------- | ------------------------------------- |
+| `"2023-12-24T15:30:00Z"`           | Contains time zone indicator `Z`.     |
+| `"2023-12-24T15:30:00+00:00"`      | Contains time zone offset.            |
+| `"2023-12-24 15:30:00"`            | Missing `T` or `t` separator.         |
+| `"2023-12-24"`                     | Missing time component.               |
+| `"15:30:00"`                       | Missing date component.               |
+| `"2023-13-01T00:00:00"`            | Invalid month (13).                   |
+| `"2023-12-32T00:00:00"`            | Invalid day (32).                     |
+| `"2023-12-24T15:30:00.1234567890"` | More than 9 fractional second digits. |
+| `"2023-12-24T24:00:00"`            | Invalid hour (24).                    |
+| `"2023-02-30T15:30:00"`            | Invalid date (February 30th).         |
 
 # Input spec
 
@@ -141,15 +141,15 @@ JSON input:
 
 Invalid input values:
 
-| String                           | Why is it invalid                                |
-| -------------------------------- | ------------------------------------------------ |
-| `2023-12-24T15:30:00Z`           | Contains time zone indicator `Z`.                |
-| `2023-12-24T15:30:00+05:30`      | Contains time zone offset.                       |
-| `2023-12-24 15:30:00`            | Invalid separator (space instead of `T` or `t`). |
-| `2023-12-24T25:00:00`            | Invalid hour (25).                               |
-| `2023-12-24T15:60:00`            | Invalid minute (60).                             |
-| `2023-02-30T15:30:00`            | Invalid date (February 30th).                    |
-| `2023-12-24T15:30:00.1234567890` | More than 9 fractional second digits.            |
+| Value                              | Why is it invalid                                |
+| ---------------------------------- | ------------------------------------------------ |
+| `"2023-12-24T15:30:00Z"`           | Contains time zone indicator `Z`.                |
+| `"2023-12-24T15:30:00+05:30"`      | Contains time zone offset.                       |
+| `"2023-12-24 15:30:00"`            | Invalid separator (space instead of `T` or `t`). |
+| `"2023-12-24T25:00:00"`            | Invalid hour (25).                               |
+| `"2023-12-24T15:60:00"`            | Invalid minute (60).                             |
+| `"2023-02-30T15:30:00"`            | Invalid date (February 30th).                    |
+| `"2023-12-24T15:30:00.1234567890"` | More than 9 fractional second digits.            |
 
 # References
 
