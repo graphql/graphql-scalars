@@ -30,9 +30,6 @@ using JavaScript should handle `Decimal` values with care, potentially using
 libraries like `decimal.js`, `big.js`, or `bignumber.js` for precise decimal
 arithmetic.
 
-This scalar is based on the .NET `Decimal` type, which supports up to 28-29
-significant digits.
-
 # Recommended name
 
 The recommended name for this scalar is `Decimal`.
@@ -118,5 +115,3 @@ Invalid input values:
 
 - [GraphQL Specification - Float](https://spec.graphql.org/September2025/#sec-Float)
   — Built-in floating-point scalar type
-- [.NET Decimal Structure](https://learn.microsoft.com/en-us/dotnet/api/system.decimal)
-  — The .NET type this scalar is based on
