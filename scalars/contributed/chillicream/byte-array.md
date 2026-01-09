@@ -21,8 +21,6 @@ data.
 Base64 encoding allows binary data to be safely represented as text in JSON and
 GraphQL, which natively only support text-based formats.
 
-This scalar is based on the .NET `Byte[]` (byte array) type.
-
 # Recommended name
 
 The recommended name for this scalar is `ByteArray`.
@@ -110,5 +108,3 @@ Invalid input values:
 # References
 
 - [RFC 4648](https://www.rfc-editor.org/rfc/rfc4648) — The Base64 Data Encoding
-- [.NET Byte](https://learn.microsoft.com/en-us/dotnet/api/system.byte) — The
-  .NET type this scalar is based on
