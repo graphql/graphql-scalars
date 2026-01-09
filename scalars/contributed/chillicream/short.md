@@ -20,8 +20,6 @@ Unlike the built-in `Int` scalar which represents signed 32-bit integers,
 `Short` provides stronger type safety and validation for values that must fit
 within a signed 16-bit range.
 
-This scalar is based on the .NET `Int16` type.
-
 # Recommended name
 
 The recommended name for this scalar is `Short`.
@@ -101,5 +99,3 @@ Invalid input values:
 
 - [GraphQL Specification - Int](https://spec.graphql.org/September2025/#sec-Int)
   — Built-in integer scalar type
-- [.NET Int16 Structure](https://learn.microsoft.com/en-us/dotnet/api/system.int16)
-  — The .NET type this scalar is based on
