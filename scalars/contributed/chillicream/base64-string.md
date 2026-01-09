@@ -1,6 +1,6 @@
 <!-- cspell:ignore AQIDBA -->
 
-# ByteArray — GraphQL Custom Scalar
+# Base64String — GraphQL Custom Scalar
 
 Author – ChilliCream
 
@@ -13,7 +13,7 @@ Copyright © GraphQL contributors. This specification is licensed under
 
 # Overview
 
-The `ByteArray` scalar type represents an array of bytes encoded as a Base64
+The `Base64String` scalar type represents an array of bytes encoded as a Base64
 string. It is intended for scenarios where binary data needs to be transmitted,
 such as file contents, cryptographic keys, image data, or any arbitrary binary
 data.
@@ -23,12 +23,12 @@ GraphQL, which natively only support text-based formats.
 
 # Recommended name
 
-The recommended name for this scalar is `ByteArray`.
+The recommended name for this scalar is `Base64String`.
 
 # Result spec
 
-A `ByteArray` scalar must serialize to a Base64-encoded string representing the
-binary data.
+A `Base64String` scalar must serialize to a Base64-encoded string representing
+the binary data.
 
 The Base64 encoding should follow RFC 4648, using the standard Base64 alphabet
 (A-Z, a-z, 0-9, +, /) with padding characters (=) as needed.
@@ -54,7 +54,7 @@ These are invalid result values:
 
 # Input spec
 
-A `ByteArray` scalar accepts Base64-encoded string values, both as GraphQL
+A `Base64String` scalar accepts Base64-encoded string values, both as GraphQL
 literals and as JSON input values.
 
 The input must be a valid Base64-encoded string following RFC 4648.
