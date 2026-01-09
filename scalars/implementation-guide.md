@@ -160,9 +160,10 @@ While the specifics of the all coercion methods are implementation specific, as
 a general rule they should only coerce a value when no information is lost and
 raise an error otherwise.
 
-Additionally, the input coercion should be liberal in what it accepts, while the
-result coercion should be much more restricted and never produce different JSON
-values for logically identical values. For example a `MyLocalDate` scalar could
-accept the literals `"01-10-2022"` and `"01102022"` as input for the first of
-October 2022, but the result coercion should always return one of the possible
-representations.
+Most Scalars adhere to a semantic symmetry between input and output: every valid
+input value has at least one corresponding output value and vice versa.
+
+Additionally, it is common to allow different input values, which are
+semantically identical but not technically the same. For example, the ID Scalar
+accepts Int and String literals, while the output value is always String. This
+can improve user experience by allowing flexible inputs.
