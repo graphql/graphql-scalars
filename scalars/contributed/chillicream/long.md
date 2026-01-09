@@ -26,8 +26,6 @@ precision when parsed as JavaScript numbers. Client applications using
 JavaScript should handle `Long` values with care, potentially using libraries
 like `json-bigint` or representing them as strings.
 
-This scalar is based on the .NET `Int64` type.
-
 # Recommended name
 
 The recommended name for this scalar is `Long`.
@@ -110,5 +108,3 @@ Invalid input values:
 
 - [GraphQL Specification - Int](https://spec.graphql.org/September2025/#sec-Int)
   — Built-in integer scalar type
-- [.NET Int64 Structure](https://learn.microsoft.com/en-us/dotnet/api/system.int64)
-  — The .NET type this scalar is based on
