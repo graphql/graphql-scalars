@@ -21,8 +21,8 @@ valid GraphQL value including objects, lists, strings, numbers, booleans, and
 null. This provides flexibility at the cost of losing GraphQL's type safety for
 that field.
 
-**Note:** Object property names must be valid GraphQL names (matching the
-pattern `/[_A-Za-z][_0-9A-Za-z]*/`).
+**Note:** Object field names must be valid GraphQL names (matching the pattern
+`/[_A-Za-z][_0-9A-Za-z]*/`).
 
 # Recommended name
 
