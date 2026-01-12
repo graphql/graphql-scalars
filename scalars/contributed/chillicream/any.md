@@ -21,6 +21,9 @@ valid GraphQL value including objects, lists, strings, numbers, booleans, and
 null. This provides flexibility at the cost of losing GraphQL's type safety for
 that field.
 
+**Note:** Object property names must be valid GraphQL names (matching the
+pattern `/[_A-Za-z][_0-9A-Za-z]*/`).
+
 # Recommended name
 
 The recommended name for this scalar is `Any`.
@@ -56,11 +59,10 @@ These are valid result values:
 
 These are invalid result values:
 
-| Value       | Why is it invalid          |
-| ----------- | -------------------------- |
-| `undefined` | Not a valid GraphQL value. |
-| `NaN`       | Not a valid GraphQL value. |
-| `Infinity`  | Not a valid GraphQL value. |
+| Value                       | Why is it invalid                      |
+| --------------------------- | -------------------------------------- |
+| `{ "123invalid": "value" }` | Field name doesn't match name pattern. |
+| `ACTIVE`                    | Enum values are not valid.             |
 
 # Input spec
 
@@ -69,7 +71,7 @@ input values.
 
 The input can be:
 
-- A GraphQL object
+- A GraphQL input object
 - A GraphQL list
 - A GraphQL string
 - A GraphQL integer or float
@@ -115,11 +117,10 @@ JSON input:
 
 Invalid input values:
 
-| Value       | Why is it invalid          |
-| ----------- | -------------------------- |
-| `undefined` | Not a valid GraphQL value. |
-| `NaN`       | Not a valid GraphQL value. |
-| `Infinity`  | Not a valid GraphQL value. |
+| Value                       | Why is it invalid                      |
+| --------------------------- | -------------------------------------- |
+| `{ "123invalid": "value" }` | Field name doesn't match name pattern. |
+| `ACTIVE`                    | Enum values are not valid.             |
 
 # References
 
