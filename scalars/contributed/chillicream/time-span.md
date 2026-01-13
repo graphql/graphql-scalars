@@ -118,3 +118,5 @@ Invalid input values:
 
 - [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) — Date and
   time format (includes duration format)
+- [ISO 8601 Durations](https://en.wikipedia.org/wiki/ISO_8601#Durations) —
+  Wikipedia reference for duration format
