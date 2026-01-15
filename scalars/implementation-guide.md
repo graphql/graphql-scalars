@@ -161,6 +161,6 @@ a general rule they should only coerce a value when no information is lost and
 raise an error otherwise.
 
 For some scalars, input coercion may be more flexible than result coercion.  
-For example, the ID Scalar accepts both int and strings literals (for both GraphQL 
-and JSON literals), while the result is always a string. This can improve user experience by 
-allowing flexible inputs.
+For example, the ID Scalar accepts both int and strings literals (for both
+GraphQL and JSON literals), while the result is always a string. This can
+improve user experience by allowing flexible inputs.
