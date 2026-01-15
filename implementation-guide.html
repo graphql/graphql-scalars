@@ -128,7 +128,7 @@ The input of a function is not to be confused with &ldquo;Input Coercion&rdquo;.
 <section id="sec-Coercion-guidelines" secid="7">
 <h1 data-source="scalars/implementation-guide.md#L157"><span class="spec-secid" title="link to this section"><a href="#sec-Coercion-guidelines">7</a></span>Coercion guidelines</h1>
 <p data-source="scalars/implementation-guide.md#L159-L161">While the specifics of the all coercion methods are implementation specific, as a general rule they should only coerce a value when no information is lost and raise an error otherwise.</p>
-<p data-source="scalars/implementation-guide.md#L163-L169">Additionally, the input coercion should be liberal in what it accepts, while the result coercion should be much more restricted and never produce different JSON values for logically identical values. For example a <code>MyLocalDate</code> scalar could accept the literals <code>"01-10-2022"</code> and <code>"01102022"</code> as input for the first of October 2022, but the result coercion should always return one of the possible representations. </p>
+<p data-source="scalars/implementation-guide.md#L163-L167">For some scalars, input coercion may be more flexible than result coercion. For example, the ID Scalar accepts both int and strings literals (for both GraphQL and JSON literals), while the result is always a string. This can improve user experience by allowing flexible inputs. </p>
 </section>
 </article>
 <footer>
