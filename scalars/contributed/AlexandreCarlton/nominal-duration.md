@@ -29,9 +29,9 @@ following components are included:
 Negative durations per [ISO 8601-2](https://en.wikipedia.org/wiki/ISO_8601) are
 supported.
 
-# Name
+# Recommended name
 
-`NominalDuration`, originating from the wording in
+The recommended name is `NominalDuration`, originating from the wording in
 [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601):
 
 <blockquote>Duration can be expressed by a combination of components with accurate duration (hour, minute and second)

@@ -31,9 +31,9 @@ Days (unlike calendar days) are supported under the definition of
 Negative durations per [ISO 8601-2](https://en.wikipedia.org/wiki/ISO_8601) are
 supported.
 
-# Name
+# Recommended name
 
-`AccurateDuration`, originating from the wording in
+The recommended name is `AccurateDuration`, originating from the wording in
 [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601):
 
 <blockquote>Duration can be expressed by a combination of components with accurate duration (hour, minute and second)
