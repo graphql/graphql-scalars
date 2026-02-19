@@ -116,7 +116,5 @@ Invalid input values:
 
 # References
 
-- [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) — Date and
-  time format (includes duration format)
-- [ISO 8601 Durations](https://en.wikipedia.org/wiki/ISO_8601#Durations) —
-  Wikipedia reference for duration format
+- [RFC 3339 Appendix A](https://datatracker.ietf.org/doc/html/rfc3339#appendix-A)
+  — ABNF grammar for ISO 8601 durations
