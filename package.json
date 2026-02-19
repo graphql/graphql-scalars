@@ -29,6 +29,13 @@
     "trailingComma": "none"
   },
   "cspell": {
-    "words": ["secfrac", "apollographql", "fullyear", "mday", "numoffset"]
+    "words": [
+      "ABNF",
+      "apollographql",
+      "fullyear",
+      "mday",
+      "numoffset",
+      "secfrac"
+    ]
   }
 }
