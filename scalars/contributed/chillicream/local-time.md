@@ -32,14 +32,14 @@ The recommended name for this scalar is `LocalTime`.
 
 A `LocalTime` scalar must serialize to a string conforming to the RFC 3339
 `partial-time` production. This represents a time of day in the format:
-`HH:mm:ss` or `HH:mm:ss.fffffffff` (with optional fractional seconds).
+`HH:mm:ss` or `HH:mm:ss.fffffff` (with optional fractional seconds).
 
 The format is:
 
 - `HH`: Two-digit hour (00-23)
 - `mm`: Two-digit minute (00-59)
 - `ss`: Two-digit second (00-59)
-- `.fffffffff`: Optional fractional seconds (up to 9 digits for nanosecond
+- `.fffffff`: Optional fractional seconds (up to 7 digits for 100-nanosecond
   precision)
 
 The serialized value must **not** include time zone offset information.
@@ -48,12 +48,12 @@ The serialized value must **not** include time zone offset information.
 
 These are valid result values:
 
-| Value                  | Explanation                         |
-| ---------------------- | ----------------------------------- |
-| `"15:30:00"`           | 3:30 PM without fractional seconds. |
-| `"09:00:00.123456789"` | 9:00 AM with nanosecond precision.  |
-| `"00:00:00"`           | Midnight.                           |
-| `"23:59:59"`           | One second before midnight.         |
+| Value                | Explanation                            |
+| -------------------- | -------------------------------------- |
+| `"15:30:00"`         | 3:30 PM without fractional seconds.    |
+| `"09:00:00.1234567"` | 9:00 AM with 100-nanosecond precision. |
+| `"00:00:00"`         | Midnight.                              |
+| `"23:59:59"`         | One second before midnight.            |
 
 These are invalid result values:
 
@@ -66,7 +66,7 @@ These are invalid result values:
 | `"24:00:00"`            | Invalid hour (24).                    |
 | `"15:60:00"`            | Invalid minute (60).                  |
 | `"15:30:60"`            | Invalid second (60).                  |
-| `"15:30:00.1234567890"` | More than 9 fractional second digits. |
+| `"15:30:00.12345678"`   | More than 7 fractional second digits. |
 
 # Input spec
 
@@ -75,7 +75,7 @@ A `LocalTime` scalar accepts string values conforming to the RFC 3339
 
 The input format matches the result format and must:
 
-- Follow the pattern `HH:mm:ss` or `HH:mm:ss.fffffffff`
+- Follow the pattern `HH:mm:ss` or `HH:mm:ss.fffffff`
 - Not include time zone offset information (`Z` or `+/-HH:mm`)
 - Contain valid time values per RFC 3339
 
@@ -84,10 +84,7 @@ Implementations should validate:
 - Hour is between 00 and 23
 - Minute is between 00 and 59
 - Second is between 00 and 59 (leap seconds are not supported)
-- Fractional seconds, if present, are numeric and do not exceed the precision
-  supported by the implementation's underlying date-time type. Implementations
-  must not silently truncate or round fractional seconds beyond their supported
-  precision; instead, they should reject input that exceeds it.
+- Fractional seconds, if present, are numeric (up to 7 digits)
 
 ## Examples
 
@@ -113,7 +110,7 @@ JSON input:
 
 ```json
 {
-  "alarmTime": "07:30:00.500"
+  "alarmTime": "07:30:00.1234567"
 }
 ```
 
@@ -127,7 +124,7 @@ Invalid input values:
 | `"15:30"`               | Missing seconds component.            |
 | `"24:00:00"`            | Invalid hour (24).                    |
 | `"15:60:00"`            | Invalid minute (60).                  |
-| `"15:30:00.1234567890"` | More than 9 fractional second digits. |
+| `"15:30:00.12345678"`   | More than 7 fractional second digits. |
 
 # References
 
