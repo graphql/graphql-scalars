@@ -108,7 +108,10 @@ Implementations should validate:
 - Hour is between 00 and 23
 - Minute is between 00 and 59
 - Second is between 00 and 59
-- Fractional seconds, if present, are numeric (up to 9 digits)
+- Fractional seconds, if present, are numeric and do not exceed the precision
+  supported by the implementation's underlying date-time type. Implementations
+  must not silently truncate or round fractional seconds beyond their supported
+  precision; instead, they should reject input that exceeds it.
 - Time zone offset is valid (between -23:59 and +23:59, or `Z`/`z`)
 
 ## Examples
