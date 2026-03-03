@@ -1,4 +1,4 @@
-# Uuid — GraphQL Custom Scalar
+# UUID — GraphQL Custom Scalar
 
 Author – ChilliCream
 
@@ -11,12 +11,12 @@ Copyright © GraphQL contributors. This specification is licensed under
 
 # Overview
 
-The `Uuid` scalar type represents a Universally Unique Identifier (UUID) as
+The `UUID` scalar type represents a Universally Unique Identifier (UUID) as
 defined by RFC 9562. It is intended for scenarios where globally unique
 identifiers are required, such as database primary keys, distributed system
 identifiers, or any situation requiring collision-resistant unique identifiers.
 
-Unlike the built-in `ID` scalar which can be any string or number, `Uuid`
+Unlike the built-in `ID` scalar which can be any string or number, `UUID`
 enforces the specific format and structure of UUIDs, providing stronger
 guarantees about uniqueness and format validity.
 
@@ -24,11 +24,11 @@ The scalar uses the standard UUID string representation as defined in RFC 9562.
 
 # Recommended name
 
-The recommended name for this scalar is `Uuid`.
+The recommended name for this scalar is `UUID`.
 
 # Result spec
 
-A `Uuid` scalar must serialize to a string conforming to the UUID string
+A `UUID` scalar must serialize to a string conforming to the UUID string
 representation defined in RFC 9562. This represents a UUID in the format:
 `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` where each `x` is a hexadecimal digit
 (0-9, a-f, A-F).
@@ -71,7 +71,7 @@ These are invalid result values:
 
 # Input spec
 
-A `Uuid` scalar accepts string values conforming to the UUID string
+A `UUID` scalar accepts string values conforming to the UUID string
 representation defined in RFC 9562, both as GraphQL literals and as JSON input
 values.
 

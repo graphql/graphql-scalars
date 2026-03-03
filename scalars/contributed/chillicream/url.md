@@ -1,4 +1,4 @@
-# Url — GraphQL Custom Scalar
+# URL — GraphQL Custom Scalar
 
 Author – ChilliCream
 
@@ -11,21 +11,21 @@ Copyright © GraphQL contributors. This specification is licensed under
 
 # Overview
 
-The `Url` scalar type represents a Uniform Resource Locator (URL) as defined by
+The `URL` scalar type represents a Uniform Resource Locator (URL) as defined by
 RFC 3986. It is intended for scenarios where a field must contain a valid URL,
 such as links to external resources, API endpoints, image sources, or any
 web-accessible resource.
 
-Unlike the built-in `String` scalar which accepts any text, `Url` provides
+Unlike the built-in `String` scalar which accepts any text, `URL` provides
 validation to ensure the value conforms to the URL specification.
 
 # Recommended name
 
-The recommended name for this scalar is `Url`.
+The recommended name for this scalar is `URL`.
 
 # Result spec
 
-A `Url` scalar must serialize to a string representation of a valid URL
+A `URL` scalar must serialize to a string representation of a valid URL
 conforming to RFC 3986.
 
 A valid URL must include:
@@ -62,7 +62,7 @@ These are invalid result values:
 
 # Input spec
 
-A `Url` scalar accepts string values representing valid URLs conforming to RFC
+A `URL` scalar accepts string values representing valid URLs conforming to RFC
 3986, both as GraphQL literals and as JSON input values.
 
 Implementations should validate:
