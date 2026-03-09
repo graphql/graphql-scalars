@@ -1,4 +1,4 @@
-# TimeSpan — GraphQL Custom Scalar
+# Duration — GraphQL Custom Scalar
 
 Author – ChilliCream
 
@@ -11,21 +11,21 @@ Copyright © GraphQL contributors. This specification is licensed under
 
 # Overview
 
-The `TimeSpan` scalar type represents a duration of time. It is intended for
+The `Duration` scalar type represents a duration of time. It is intended for
 scenarios where you need to represent time intervals, such as elapsed time,
 timeout durations, scheduling intervals, or any measurement of time that is not
 tied to a specific date or time.
 
-Unlike date-time scalars which represent points in time, `TimeSpan` represents a
+Unlike date-time scalars which represent points in time, `Duration` represents a
 length of time that could be applied to any point in time.
 
 # Recommended name
 
-The recommended name for this scalar is `TimeSpan`.
+The recommended name for this scalar is `Duration`.
 
 # Result spec
 
-A `TimeSpan` scalar must serialize to a string representation conforming to the
+A `Duration` scalar must serialize to a string representation conforming to the
 ISO 8601 duration format.
 
 The format follows the pattern: `P[n]Y[n]M[n]W[n]DT[n]H[n]M[n]S` where:
@@ -68,7 +68,7 @@ These are invalid result values:
 
 # Input spec
 
-A `TimeSpan` scalar accepts string values representing durations in ISO 8601
+A `Duration` scalar accepts string values representing durations in ISO 8601
 duration format, both as GraphQL literals and as JSON input values.
 
 Implementations should validate:
