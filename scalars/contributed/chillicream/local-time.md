@@ -110,7 +110,7 @@ JSON input:
 
 ```json
 {
-  "alarmTime": "07:30:00.500"
+  "alarmTime": "07:30:00.123456789"
 }
 ```
 
