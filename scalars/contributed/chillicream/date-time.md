@@ -153,7 +153,7 @@ Invalid input values:
 | ----------------------------------- | -------------------------------------- |
 | `"2023-12-24T15:30:00"`             | Missing time zone offset.              |
 | `"2023-12-24 15:30:00Z"`            | Space instead of `T` or `t` separator. |
-| `"2023-12-24T25:00:00Z"`            | Invalid hour (25).                     |
+| `"2023-12-24T24:00:00Z"`            | Invalid hour (24).                     |
 | `"2023-12-24T15:60:00Z"`            | Invalid minute (60).                   |
 | `"2023-02-30T15:30:00Z"`            | Invalid date (February 30th).          |
 | `"2023-12-24T15:30:00.1234567890Z"` | More than 9 fractional second digits.  |
